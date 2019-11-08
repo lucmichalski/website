@@ -12,7 +12,7 @@ const EmailForm= () => (
   <form>
     <label>
       Name:
-      <input type="email" value={this.state.value} onChange={this.handleChange} />
+      <input type="email" value="arnaud@gmail.com" />
     </label>
     <input type="submit" value="Submit" />
   </form>
