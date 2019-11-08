@@ -8,7 +8,7 @@ const BodyWrapper = styled.div`
 
 const Heading = () => (
   <div style={{paddingTop: "120px"}}>
-    <Col span={12} offset={6}>
+    <Col gutter={12} offset={6}>
       <BodyWrapper>
         <h1>Enpower content strategy conversions</h1>
         <h4>The all-in-one tool dedicated to content-centric marketers.
