@@ -11,7 +11,7 @@ const EmailForm= () => (
   <div style={{ marginTop: 100 }}>
     <Form layout='inline'>
       <FormItem>
-        <Input size='large' name='email' placeholder="Type in your e-mail address..." style={{ width: 250 }} />
+        <Input size='large' type='email' placeholder="Type in your e-mail address..." style={{ width: 250 }} />
       </FormItem>
       <FormItem>
         <Button size='large' type='primary' htmlType='submit'>
