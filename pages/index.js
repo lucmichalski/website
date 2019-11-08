@@ -1,6 +1,14 @@
 import Head from 'next/head'
+import TagManager from 'react-gtm-module'
 import Header from "../components/Header"
 import Heading from "../components/Heading"
+
+// Google Tag Manager
+const tagManagerArgs = {
+  gtmId: 'GTM-MQ2QHK6'
+}
+TagManager.initialize(tagManagerArgs)
+// End Google Tag Manager
 
 export default () => (
   <div>
@@ -26,6 +34,7 @@ export default () => (
         font-weight: normal;
       }
     `}</style>
+    
     <Header />
     <Heading />
   </div>
