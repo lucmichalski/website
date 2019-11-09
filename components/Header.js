@@ -2,14 +2,29 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 
 const HeaderGroup = styled.header`
-  display: flex;
-  align-items: center;
-  min-height: 50px;
-  padding: 0.5rem 1rem;
-  background-color: #072F47; 
-  color: #fff;
-  margin-bottom: 1rem;
-  justify-content: space-between!important
+  width: 1040px;
+  max-width: 100%;
+  padding: 0 20px;
+  margin: auto;
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 101;
+  height: 80px;
+
+  @media (min-width: 951px) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
 `
 
 class Header extends Component {
@@ -17,11 +32,9 @@ class Header extends Component {
   render() {
     return (
       <HeaderGroup>
-        <h1 className="header-title">
-          <a href="/">
-            <img src="https://angulaire.io/wp-content/uploads/2019/08/Logo-white.svg" alt="Logo Grimp"/>
-          </a>
-        </h1>
+        <a href="/">
+          <img src="/logo.svg" alt="Logo Grimp"/>
+        </a>
       </HeaderGroup>
     )
       

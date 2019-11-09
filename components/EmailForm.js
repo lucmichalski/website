@@ -1,10 +1,18 @@
-import {Form, Input} from 'antd'
+import {Form, Input, Button} from 'antd'
+
+const FormItem = Form.Item
 
 const EmailForm= () => (
   <div style={{ marginTop: 100 }}>
     <Form layout='inline'>
-      <Input type='email' size='large' placeholder="Type in your e-mail address..." required style={{ width: 250 }} />
-      <input type="submit" class="ant-btn ant-btn-primary ant-btn-lg" value="Request access" />
+      <FormItem>
+        <Input size='large' htmlType='email' placeholder="Type in your e-mail address..." required style={{ width: 250 }} />
+      </FormItem>
+      <FormItem>
+        <Button size='large' type='primary' htmlType='submit'>
+          Request access
+        </Button>
+      </FormItem>
     </Form>
   </div>
 )
