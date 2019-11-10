@@ -7,7 +7,26 @@ const EmailForm= () => {
     info: { error: false, msg: null }
   })
 
-  const [inputs, setInputs] = useState({email: ''})
+  const [inputs, setInputs] = useState({
+    email: ''
+  })
+
+  const handleResponse = (status, msg) => {
+    if (status === 200) {
+      setStatus({
+        submitted: true,
+        submitting: false,
+        info: { error: false, msg: msg }
+      })
+      setInputs({
+        email: ''
+      })
+    } else {
+      setStatus({
+        info: { error: true, msg: msg }
+      })
+    }
+  }
 
   const handleOnChange = e => {
     e.persist()
@@ -47,8 +66,20 @@ const EmailForm= () => {
           required
           value={inputs.email}
         />
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={status.submitting}>
+          {!status.submitting
+            ? !status.submitted
+              ? 'Submit'
+              : 'Submitted'
+            : 'Submitting...'}
+        </button>
       </form>
+      {status.info.error && (
+        <div className="error">Error: {status.info.msg}</div>
+      )}
+      {!status.info.error && status.info.msg && (
+        <div className="success">{status.info.msg}</div>
+      )}
     </main>
   )
 }
