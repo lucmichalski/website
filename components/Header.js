@@ -33,7 +33,7 @@ class Header extends Component {
     return (
       <HeaderGroup>
         <a href="/">
-          <img src="/logo.svg" alt="Logo Grimp"/>
+          <img src="/logo-light.svg" alt="Logo Grimp"/>
         </a>
       </HeaderGroup>
     )
