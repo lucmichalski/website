@@ -25,4 +25,7 @@ module.exports = withCss({
     }
     return config
   },
+  env: {
+    HUBSPOT_API_KEY: process.env.HUBSPOT_API_KEY
+  }
 })
