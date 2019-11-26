@@ -3,6 +3,7 @@ import Head from 'next/head'
 import TagManager from 'react-gtm-module'
 import Header from "../components/Header"
 import Heading from "../components/Heading"
+import Footer from "../components/Footer"
 
 const tagManagerArgs = {
   gtmId: 'GTM-MQ2QHK6'
@@ -41,6 +42,7 @@ class App extends Component {
         
         <Header />
         <Heading />
+        <Footer />
       </div>
     );
   }
