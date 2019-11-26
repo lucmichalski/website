@@ -20,6 +20,13 @@ class App extends Component {
         <Head>
           <title>Grimp - Call-To-Action manager for busy marketers</title>
           <link rel='icon' href='/favicon.ico' />
+          <script>
+            !(function(p,r,i,v,a,c,y){p['MetomicObject']=a;p[a]=p[a]||function(){
+            (p[a].q=p[a].q||[]).push(arguments)},p[a].l=1*new Date();c=r.createElement(i),
+            y=r.getElementsByTagName(i)[0];c.async=1;c.src=v+'?d='+r.location.host;y.parentNode.insertBefore(c,y)
+            })(window, document, 'script', 'https://consent-manager.metomic.io/embed.js', 'Metomic');
+            Metomic('load', { projectId: 'prj:d1768f74-fb1a-4b89-9671-767d63ab5996' });
+          </script>
         </Head>
         <style jsx global>{`
           body { 
