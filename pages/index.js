@@ -48,6 +48,9 @@ class App extends Component {
             color: rgba(23, 22, 24, 0.8);
             font-weight: normal;
           }
+          *:focus {
+            outline:none
+          }
         `}</style>
         
         <Header />
