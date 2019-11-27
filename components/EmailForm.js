@@ -9,13 +9,13 @@ const StyledInput = styled.input`
   line-height: 1.5;
   font-weight: 400;
   padding: 12px;
-  width: 100%;
   margin-top: 30px;
   margin-right: 20px;
   border-width: 1px;
   border-style: solid;
   border-radius: 4px;
   border-color: #c5c9e0;
+  width: 100%;
 
   @media (min-width: 768px) { 
     width: 300px;
@@ -78,6 +78,13 @@ const BtnPrimary = styled.button`
     -webkit-transform: scale(0.5); /* Safari */
     -moz-transition:scale(0.5); /* Mozilla */
   }
+
+  @media (max-width: 768px) { 
+    transform: none;
+    padding: 0px;
+    margin-top: 12px;
+  }
+
 `;
 
 const MyTextInput = ({ label, ...props }) => {
