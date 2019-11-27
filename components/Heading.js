@@ -8,7 +8,7 @@ const BodyWrapper = styled.div`
 
 const Heading = () => (
   <Row type="flex" justify="center" align="middle" style={{paddingTop: "120px"}}>
-    <Col xs={20} sm={16} lg={12}>
+    <Col xs={20} md={12}>
       <BodyWrapper>
         <h1>Enpower content strategy conversions</h1>
         <h4>The all-in-one tool dedicated to content-centric marketers.
