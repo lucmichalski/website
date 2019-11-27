@@ -1,5 +1,6 @@
 import React from 'react';
-import { Formik, Form, useField } from 'formik';
+import { Form } from 'antd';
+import { Formik, useField } from 'formik';
 import styled from '@emotion/styled';
 import * as Yup from 'yup';
 
@@ -8,18 +9,17 @@ const StyledInput = styled.input`
   line-height: 1.5;
   font-weight: 400;
   padding: 12px;
-  margin-bottom: 12px;
+  margin-top: 30px;
   margin-right: 20px;
   border-width: 1px;
   border-style: solid;
   border-radius: 4px;
   border-color: #c5c9e0;
-  flex: 1 1 auto;
 `;
 
 const StyledErrorMessage = styled.div`
   font-size: 12px;
-  width: 400px;
+  width: 200px;
   margin-top: 0.25rem;
   &:before {
     content: "❌ ";
@@ -77,7 +77,7 @@ const MyTextInput = ({ label, ...props }) => {
   const [field, meta] = useField(props);
   return (
     <>
-      <StyledInput className="text-input" {...field} {...props} />
+      <StyledInput {...field} {...props} />
       {meta.touched && meta.error ? (
         <StyledErrorMessage>{meta.error}</StyledErrorMessage>
       ) : null}
@@ -111,13 +111,17 @@ const EmailForm = () => {
           }, 400);
         }}
       >
-        <Form>
-          <MyTextInput
-            name="email"
-            type="email"
-            placeholder="Your e-mail address..."
-          />
-          <BtnPrimary type="submit">Request access</BtnPrimary>
+        <Form layout='inline'>
+          <Form.Item>
+            <MyTextInput
+              name="email"
+              type="email"
+              placeholder="Your e-mail address..."
+            />
+          </Form.Item>
+          <Form.Item>
+            <BtnPrimary type="submit">Request access</BtnPrimary>
+          </Form.Item>
         </Form>
       </Formik>
     </>

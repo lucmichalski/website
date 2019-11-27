@@ -16,7 +16,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <Head>
           <title>Grimp - Call-To-Action manager for busy marketers</title>
           <link rel='icon' href='/favicon.ico' />
@@ -56,7 +56,7 @@ class App extends Component {
         <Header />
         <Heading />
         <Footer />
-      </div>
+      </>
     );
   }
 }
