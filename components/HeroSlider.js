@@ -4,7 +4,6 @@ import styled from '@emotion/styled';
 
 const SliderItem = styled.div`
   border-radius: 20px;
-  height: 200px;
   width: 315px;
   outline: none;
   overflow: hidden;
@@ -29,25 +28,31 @@ class HeroSlider extends React.Component {
       cssEase: 'linear',
       autoplay: true, 
       autoplaySpeed: 0,
-      speed: 750,
+      speed: 500,
       pauseOnHover: true,
-      slidesToShow: 2,
+      slidesToShow: 4,
       infinite: true,
       slidesToScroll: 0.1
     };
     return (
       <Slider {...settings}>
         <SliderItem>
-          <img src="http://placekitten.com/g/400/200" />
+          <img src="/widget1.png" alt="Widget Grimp"/>
         </SliderItem>
         <SliderItem>
-          <img src="http://placekitten.com/g/400/200" />
+          <img src="/widget2.png" alt="Widget Grimp"/>
         </SliderItem>
         <SliderItem>
-          <img src="http://placekitten.com/g/400/200" />
+          <img src="/widget3.png" alt="Widget Grimp"/>
         </SliderItem>
         <SliderItem>
-          <img src="http://placekitten.com/g/400/200" />
+          <img src="/widget4.png" alt="Widget Grimp"/>
+        </SliderItem>
+        <SliderItem>
+          <img src="/widget5.png" alt="Widget Grimp"/>
+        </SliderItem>
+        <SliderItem>
+          <img src="/widget6.png" alt="Widget Grimp"/>
         </SliderItem>
       </Slider>
     );
