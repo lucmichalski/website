@@ -31,8 +31,8 @@ class HeroSlider extends React.Component {
       speed: 500,
       pauseOnHover: true,
       slidesToShow: 4,
-      infinite: true,
-      slidesToScroll: 0.1
+      slidesToScroll: 0.1,
+      infinite: true
     };
     return (
       <Slider {...settings}>

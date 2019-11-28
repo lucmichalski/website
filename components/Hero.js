@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import EmailForm from './EmailForm'
 import HeroSlider from './HeroSlider'
 
-const WidgetsGroup = styled.div`
+const DesktopWidgetsGroup = styled.div`
   bottom: 0;
   left: 650px;
   overflow-y: hidden;
@@ -11,10 +11,19 @@ const WidgetsGroup = styled.div`
   top: 0;
   display: -ms-flexbox;
   display: flex;
+
+  @media (max-width: 768px) { 
+    display: none;
+  }
+
 `;
 
 const WidgetsHolder = styled.div`
   margin-right: 40px;
+`;
+
+const MobileWidgetsGroup = styled.div`
+
 `;
 
 const Hero = () => (
@@ -27,14 +36,14 @@ const Hero = () => (
         <EmailForm />
       </Col>
     </Row>
-    <WidgetsGroup>
+    <DesktopWidgetsGroup>
       <WidgetsHolder>
         <HeroSlider />
       </WidgetsHolder>
       <WidgetsHolder>
         <HeroSlider />
       </WidgetsHolder>
-    </WidgetsGroup>
+    </DesktopWidgetsGroup>
   </>
 )
 

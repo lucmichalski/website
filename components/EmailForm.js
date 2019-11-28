@@ -37,6 +37,7 @@ const BtnPrimary = styled.button`
   font-weight: 500;
   color: #FFF;
   background-color: #FA6401;
+  cursor: pointer;
   padding: 22px;
   border-radius: 6px;
   border: none;
