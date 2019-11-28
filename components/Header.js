@@ -2,28 +2,32 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 
 const HeaderGroup = styled.header`
-  width: 1040px;
-  max-width: 100%;
-  padding: 0 20px;
-  margin: auto;
-  position: relative;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  z-index: 101;
+  position: fixed;
+  z-index: 999;
   height: 80px;
+  width: 100%;
+`
 
-  @media (min-width: 951px) {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+const NavGroup = styled.nav`
+  padding: 0px 20px;
+  height: 100%;
+`
+
+const NavList = styled.ul`
+  height: 100%;
+  display: flex;
+  margin: auto;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+
+  & > a {
+    padding: 12px 0px;
+  }
+  
+  @media (min-width: 768px) { 
+    padding: 0px 60px;
   }
 `
 
@@ -32,9 +36,15 @@ class Header extends Component {
   render() {
     return (
       <HeaderGroup>
-        <a href="/">
-          <img src="/logo-dark.svg" alt="Logo Grimp"/>
-        </a>
+        <NavGroup>
+          <NavList>
+            <li>
+              <a href="/">
+                <img src="/logo-dark.svg" alt="Logo Grimp"/>
+              </a>
+            </li>
+          </NavList>
+        </NavGroup>
       </HeaderGroup>
     )
       

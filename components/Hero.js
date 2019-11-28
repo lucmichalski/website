@@ -18,13 +18,15 @@ const WidgetsHolder = styled.div`
 `;
 
 const Hero = () => (
-  <Row type="flex" align="middle">
-    <Col xs={24} md={12}>
-      <h1>Empower content strategy conversions</h1>
-      <p>The all-in-one tool dedicated to content-centric marketers.
-      Create, embed, test, and measure – with Grimp.</p>
-      <EmailForm />
-    </Col>
+  <>
+    <Row type="flex" justify="left" align="middle" style={{height: '100vh'}}>
+      <Col xs={24} md={10}>
+        <h1>Conversions widgets for busy marketers</h1>
+        <p>The all-in-one tool to empower blogposts, landing pages or websites.
+        Create, embed, test, and measure – with Grimp.</p>
+        <EmailForm />
+      </Col>
+    </Row>
     <WidgetsGroup>
       <WidgetsHolder>
         <HeroSlider />
@@ -33,7 +35,7 @@ const Hero = () => (
         <HeroSlider />
       </WidgetsHolder>
     </WidgetsGroup>
-  </Row>
+  </>
 )
 
 export default Hero;

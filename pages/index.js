@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import Head from 'next/head'
 import TagManager from 'react-gtm-module'
+import styled from 'styled-components'
 import Header from "../components/Header"
 import Hero from "../components/Hero"
 import Footer from "../components/Footer"
+
+const Content = styled.div`
+  padding: 0 80px;
+`;
 
 const tagManagerArgs = {
   gtmId: 'GTM-MQ2QHK6'
@@ -37,18 +42,19 @@ class App extends Component {
           body { 
             font-family: Colfax, "Neue Helvetica W02", "Helvetica Neue", Helvetica, Arial, sans-serif;
             -webkit-font-smoothing: antialiased;
+            text-rendering: optimizelegibility;
             line-height: 1.3;
-            background-color: #000000;
+            background-color: #000;
           }
           h1 {
             color: #FFF;
             font-weight: 600;
-            font-size: 72px;
+            font-size: 52px;
             letter-spacing: -4px;
             line-height: 1;
           }
           p {
-            color: #FFF;
+            color: #8F9292;
             font-size: 26px;
             font-weight: 400;
             line-height: 1.4;
@@ -59,7 +65,11 @@ class App extends Component {
           }
         `}</style>
         <Header />
-        <Hero />
+        <main>
+          <Content>
+            <Hero />
+          </Content>
+        </main>
         <Footer />
       </>
     );

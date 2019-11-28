@@ -8,16 +8,16 @@ const StyledInput = styled.input`
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
-  padding: 12px;
-  margin-right: 20px;
+  padding: 19px;
   border-width: 1px;
   border-style: solid;
-  border-radius: 4px;
-  border-color: #c5c9e0;
+  border-radius: 6px;
+  border-color: #FFF;
   width: 100%;
 
   @media (min-width: 768px) { 
-    width: 300px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
 `;
 
@@ -33,7 +33,23 @@ const StyledErrorMessage = styled.div`
 `;
 
 const BtnPrimary = styled.button`
-  background-color: rgb(0, 85, 255);
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFF;
+  background-color: #FA6401;
+  padding: 22px;
+  border-radius: 6px;
+  border: none;
+  display: inline-block;
+  width: 100%;
+  margin-top: 12px;
+
+  @media (min-width: 768px) { 
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-top: 0;
+  }
+
 `;
 
 const MyTextInput = ({ label, ...props }) => {
@@ -77,14 +93,14 @@ const EmailForm = () => {
         }}
       >
         <Form>
-          <Col xs={24} md={12}>
+          <Col xs={24} md={13}>
             <MyTextInput
               name="email"
               type="email"
               placeholder="Your e-mail address..."
             />
           </Col>
-          <Col xs={24} md={12}>
+          <Col xs={24} md={8}>
             <BtnPrimary type="submit">Request access</BtnPrimary>
           </Col>
         </Form>
