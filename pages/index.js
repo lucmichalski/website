@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Head from 'next/head'
 import TagManager from 'react-gtm-module'
 import Header from "../components/Header"
-import Heading from "../components/Heading"
+import Hero from "../components/Hero"
 import Footer from "../components/Footer"
 
 const tagManagerArgs = {
@@ -30,31 +30,36 @@ class App extends Component {
               Metomic('load', { projectId: 'prj:d1768f74-fb1a-4b89-9671-767d63ab5996' });
             `}}
           />
+          <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
         </Head>
         <style jsx global>{`
           body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: Colfax, "Neue Helvetica W02", "Helvetica Neue", Helvetica, Arial, sans-serif;
             -webkit-font-smoothing: antialiased;
             line-height: 1.3;
+            background-color: #000000;
           }
           h1 {
-            font-size: 46px;
+            color: #FFF;
+            font-weight: 600;
+            font-size: 72px;
+            letter-spacing: -4px;
+            line-height: 1;
           }
-          h4 {
-            font-size: 22px;
-            letter-spacing: -0.48px;
-            margin-bottom: 30px;
-            line-height: 1.6em;
-            color: rgba(23, 22, 24, 0.8);
-            font-weight: normal;
+          p {
+            color: #FFF;
+            font-size: 26px;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 40px;
           }
           *:focus {
             outline:none
           }
         `}</style>
-        
         <Header />
-        <Heading />
+        <Hero />
         <Footer />
       </>
     );
