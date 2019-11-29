@@ -8,26 +8,19 @@ const HeaderGroup = styled.header`
 `
 
 const NavGroup = styled.nav`
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   padding: 0px 20px;
   height: 100%;
-`
 
-const NavList = styled.ul`
-  height: 100%;
-  display: flex;
-  margin: auto;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  align-items: center;
-
-  & > a {
-    padding: 12px 0px;
-  }
-  
   @media (min-width: 768px) { 
-    padding: 0px 60px;
+    padding: 0px 80px;
   }
+
 `
 
 class Header extends Component {
@@ -36,13 +29,9 @@ class Header extends Component {
     return (
       <HeaderGroup>
         <NavGroup>
-          <NavList>
-            <li>
-              <a href="/">
-                <img src="/logo-dark.svg" alt="Logo Grimp"/>
-              </a>
-            </li>
-          </NavList>
+          <a href="/">
+            <img src="/logo-dark.svg" alt="Logo Grimp"/>
+          </a>
         </NavGroup>
       </HeaderGroup>
     )

@@ -17,10 +17,8 @@ const SliderItem = styled.div`
   outline: none;
   cursor: pointer;
   overflow: hidden;
-  margin-top: 40px;
-  margin-right: 40px;
-  margin-bottom: 60px;
-  min-width: 100%;
+  margin: 40px 40px 60px 0;
+  min-width: 70%;
   
   & > img {
     width: 100%;

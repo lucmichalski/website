@@ -34,9 +34,9 @@ const StyledErrorMessage = styled.div`
 
 const BtnPrimary = styled.button`
   font-size: 16px;
-  font-weight: 500;
-  color: #FFF;
-  background-color: #FA6401;
+  font-weight: 800;
+  color: #000;
+  background-color: #FFC282;
   cursor: pointer;
   padding: 22px;
   border-radius: 6px;
