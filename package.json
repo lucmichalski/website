@@ -4,8 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "node server/app.js",
-    "now": "now && now alias"
+    "start": "node server/app.js"
   },
   "dependencies": {
     "@emotion/core": "^10.0.22",
