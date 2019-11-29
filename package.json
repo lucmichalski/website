@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "node server/app.js",
+    "now": "now && now alias"
   },
   "dependencies": {
     "@emotion/core": "^10.0.22",
@@ -24,6 +25,7 @@
     "react-dom": "^16.11.0",
     "react-gtm-module": "^2.0.8",
     "react-slick": "^0.25.2",
+    "sitemap": "^5.1.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.4.1",
     "yup": "^0.27.0"
