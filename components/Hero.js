@@ -4,13 +4,13 @@ import EmailForm from './EmailForm'
 import HeroSlider from './HeroSlider'
 
 const DesktopWidgetsGroup = styled.div`
+  top: 0;
+  position: absolute;
   bottom: 0;
   left: 650px;
-  overflow-y: hidden;
-  position: absolute;
-  top: 0;
-  display: -ms-flexbox;
   display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
 
   @media (max-width: 768px) { 
     display: none;

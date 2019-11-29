@@ -28,7 +28,8 @@ class App extends Component {
     return (
       <>
         <Head>
-          <title>Grimp - Call-To-Action manager for busy marketers</title>
+          <title>Grimp - Power to marketing teams</title>
+          <meta name='description' content='Make marketing pages convert again'/>
           <link rel='icon' href='/favicon.ico' />
           <script
             dangerouslySetInnerHTML={{
