@@ -10,8 +10,8 @@ const SliderItem = styled.div`
   cursor: pointer;
   position: relative;
   margin-bottom: 40px;
-  margin-bottom: 40px;
   transition: all 250ms ease-out;
+  height: 100%;
   
   & > img {
     width: 100%;
@@ -19,7 +19,7 @@ const SliderItem = styled.div`
   }
 `;
 
-class HeroSlider extends React.Component {
+class DesktopSlider extends React.Component {
   render() {
     var settings = {
       vertical: true,
@@ -30,9 +30,9 @@ class HeroSlider extends React.Component {
       autoplaySpeed: 0,
       speed: 500,
       pauseOnHover: true,
-      slidesToShow: 4,
+      slidesToShow: 2,
       slidesToScroll: 0.1,
-      infinite: true
+      infinite: true,
     };
     return (
       <Slider {...settings}>
@@ -59,4 +59,4 @@ class HeroSlider extends React.Component {
   }
 }
 
-export default HeroSlider;
+export default DesktopSlider;

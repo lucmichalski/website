@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 
 const HeaderGroup = styled.header`
-  position: fixed;
   z-index: 999;
   height: 80px;
   width: 100%;

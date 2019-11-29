@@ -1,11 +1,12 @@
-import { Row, Col, DemoBox } from 'antd';
+import { Row, Col } from 'antd';
 import styled from 'styled-components'
 import EmailForm from './EmailForm'
-import HeroSlider from './HeroSlider'
+import DesktopSlider from './sliders/DesktopSlider'
+import MobileSlider from './sliders/MobileSlider'
 
 const DesktopWidgetsGroup = styled.div`
-  top: 0;
   position: absolute;
+  top: 0;
   bottom: 0;
   left: 650px;
   display: flex;
@@ -15,7 +16,6 @@ const DesktopWidgetsGroup = styled.div`
   @media (max-width: 768px) { 
     display: none;
   }
-
 `;
 
 const WidgetsHolder = styled.div`
@@ -23,12 +23,14 @@ const WidgetsHolder = styled.div`
 `;
 
 const MobileWidgetsGroup = styled.div`
-
+  @media (min-width: 769px) { 
+    display: none;
+  }
 `;
 
 const Hero = () => (
   <>
-    <Row type="flex" justify="left" align="middle" style={{height: '100vh'}}>
+    <Row type="flex" justify="start" align="middle">
       <Col xs={24} md={10}>
         <h1>Conversions widgets for busy marketers</h1>
         <p>The all-in-one tool to empower blogposts, landing pages or websites.
@@ -38,12 +40,15 @@ const Hero = () => (
     </Row>
     <DesktopWidgetsGroup>
       <WidgetsHolder>
-        <HeroSlider />
+        <DesktopSlider />
       </WidgetsHolder>
       <WidgetsHolder>
-        <HeroSlider />
+        <DesktopSlider />
       </WidgetsHolder>
     </DesktopWidgetsGroup>
+    <MobileWidgetsGroup>
+      <MobileSlider />
+    </MobileWidgetsGroup>
   </>
 )
 
