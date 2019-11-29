@@ -4,7 +4,6 @@ import TagManager from 'react-gtm-module'
 import styled from 'styled-components'
 import Header from "../components/Header"
 import Hero from "../components/Hero"
-import Footer from "../components/Footer"
 
 const Content = styled.div`
   padding: 0 20px;
@@ -31,16 +30,6 @@ class App extends Component {
           <title>Grimp - Power to marketing teams</title>
           <meta name='description' content='Make marketing pages convert again'/>
           <link rel='icon' href='/favicon.ico' />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-              !(function(p,r,i,v,a,c,y){p['MetomicObject']=a;p[a]=p[a]||function(){
-              (p[a].q=p[a].q||[]).push(arguments)},p[a].l=1*new Date();c=r.createElement(i),
-              y=r.getElementsByTagName(i)[0];c.async=1;c.src=v+'?d='+r.location.host;y.parentNode.insertBefore(c,y)
-              })(window, document, 'script', 'https://consent-manager.metomic.io/embed.js', 'Metomic');
-              Metomic('load', { projectId: 'prj:d1768f74-fb1a-4b89-9671-767d63ab5996' });
-            `}}
-          />
           <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
         </Head>
         <style jsx global>{`
@@ -89,7 +78,6 @@ class App extends Component {
             <Hero />
           </Content>
         </main>
-        <Footer />
       </>
     );
   }
