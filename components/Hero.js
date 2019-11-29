@@ -4,6 +4,14 @@ import EmailForm from './EmailForm'
 import DesktopSlider from './sliders/DesktopSlider'
 import MobileSlider from './sliders/MobileSlider'
 
+const HeadingGroup = styled.div`
+  margin-top: 40px;
+
+  @media (min-width: 768px) { 
+    margin-top: 80px;
+  }
+`;
+
 const DesktopWidgetsGroup = styled.div`
   position: absolute;
   top: 0;
@@ -32,10 +40,12 @@ const Hero = () => (
   <>
     <Row type="flex" justify="start" align="middle">
       <Col xs={24} md={10}>
-        <h1>Conversions widgets for busy marketers</h1>
-        <p>The all-in-one tool to empower blogposts, landing pages or websites.
-        Create, embed, test, and measure – with Grimp.</p>
-        <EmailForm />
+        <HeadingGroup>
+          <h1>Conversions widgets for busy marketers</h1>
+          <p>The all-in-one tool to empower blogposts, landing pages or websites.
+          Create, embed, test, and measure – with Grimp.</p>
+          <EmailForm />
+        </HeadingGroup>
       </Col>
     </Row>
     <DesktopWidgetsGroup>
