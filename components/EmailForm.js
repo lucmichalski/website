@@ -36,7 +36,7 @@ const BtnPrimary = styled.button`
   font-size: 16px;
   font-weight: 800;
   color: #000;
-  background-color: #FFC282;
+  background-color: #FF9A00;
   cursor: pointer;
   padding: 22px;
   border-radius: 6px;
