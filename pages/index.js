@@ -4,6 +4,7 @@ import TagManager from 'react-gtm-module'
 import styled from 'styled-components'
 import Header from "../components/Header"
 import Hero from "../components/Hero"
+import "slick-carousel/slick/slick.css";
 
 const Content = styled.div`
   padding: 0 20px;
@@ -30,7 +31,6 @@ class App extends Component {
           <title>Grimp - Power to marketing teams</title>
           <meta name='description' content='Make marketing pages convert again'/>
           <link rel='icon' href='/favicon.ico' />
-          <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
         </Head>
         <style jsx global>{`
           body { 
