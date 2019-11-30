@@ -30,7 +30,7 @@ class App extends Component {
         <Head>
           <title>Grimp - Power to marketing teams</title>
           <meta name='description' content='Make marketing pages convert again'/>
-          <link rel='icon' href='/favicon.ico' />
+          <link rel='icon' type="image/x-icon" href='/favicon.ico' />
         </Head>
         <style jsx global>{`
           body { 

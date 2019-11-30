@@ -17,9 +17,10 @@ const DesktopWidgetsGroup = styled.div`
   top: 0;
   bottom: 0;
   left: 650px;
-  display: flex;
   display: -webkit-flex;
-  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+   flex-direction: row;
 
   @media (max-width: 768px) { 
     display: none;
