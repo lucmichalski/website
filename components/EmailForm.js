@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import { Formik, Form, useField } from 'formik';
 import styled from '@emotion/styled';
+import Confetti from 'react-confetti'
 import * as Yup from 'yup';
 
 const StyledInput = styled.input`
@@ -103,7 +104,13 @@ const EmailForm = () => {
         }}
       >
         {props => props.submitCount && props.isValid ? (
-          <StyledSuccessMessage>Thank you! We'll be in touch soon</StyledSuccessMessage>
+          <>
+            <StyledSuccessMessage>Thank you! We'll be in touch soon</StyledSuccessMessage>
+            <Confetti
+              numberOfPieces={500}
+              recycle={false}
+            />
+          </>
         ) : (
         <Form>
           <Col xs={24} md={13}>
