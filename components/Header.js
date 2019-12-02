@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 
 const HeaderGroup = styled.header`
-  z-index: 101;
   height: 80px;
   width: 100%;
 `

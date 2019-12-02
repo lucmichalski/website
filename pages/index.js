@@ -38,7 +38,7 @@ class App extends Component {
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizelegibility;
             line-height: 1.3;
-            background-color: #181A1F;
+            background-color: #000;
           }
           h1 {
             color: #FFF;

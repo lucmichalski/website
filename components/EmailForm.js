@@ -2,6 +2,8 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import { Formik, Form, useField } from 'formik';
 import styled from '@emotion/styled';
+import Confetti from 'react-confetti'
+import {useWindowSize} from 'react-use';
 import * as Yup from 'yup';
 
 const StyledInput = styled.input`
@@ -78,6 +80,7 @@ const MyTextInput = ({ label, ...props }) => {
 
 // And now we can use these
 const EmailForm = () => {
+  const {width, height} = useWindowSize();
   return (
     <>
       <Formik
@@ -103,7 +106,15 @@ const EmailForm = () => {
         }}
       >
         {props => props.submitCount && props.isValid ? (
-          <StyledSuccessMessage>Thank you! We'll be in touch soon</StyledSuccessMessage>
+          <>
+            <StyledSuccessMessage>Thank you! We'll be in touch soon</StyledSuccessMessage>
+            <Confetti
+              width={width}
+              height={height}
+              numberOfPieces={500}
+              recycle={false}
+            />
+          </>
         ) : (
         <Form>
           <Col xs={24} md={13}>
