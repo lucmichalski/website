@@ -80,7 +80,6 @@ const MyTextInput = ({ label, ...props }) => {
 
 // And now we can use these
 const EmailForm = () => {
-  const {width, height} = useWindowSize();
   return (
     <>
       <Formik
@@ -108,12 +107,6 @@ const EmailForm = () => {
         {props => props.submitCount && props.isValid ? (
           <>
             <StyledSuccessMessage>Thank you! We'll be in touch soon</StyledSuccessMessage>
-            <Confetti
-              width={width}
-              height={height}
-              numberOfPieces={500}
-              recycle={false}
-            />
           </>
         ) : (
         <Form>
