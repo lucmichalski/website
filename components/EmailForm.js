@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import { Formik, Form, useField } from 'formik';
 import styled from '@emotion/styled';
+import Confetti from 'react-confetti'
 import * as Yup from 'yup';
 
 const StyledInput = styled.input`
@@ -53,6 +54,15 @@ const BtnPrimary = styled.button`
 
 `;
 
+const StyledSuccessMessage = styled.div`
+  font-size: 24px;
+  color: #00C800;
+  &:before {
+    content: "🔥 ";
+    font-size: 24px;
+  }
+`;
+
 const MyTextInput = ({ label, ...props }) => {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
   // which we can spread on <input> and also replace ErrorMessage entirely.
@@ -93,6 +103,15 @@ const EmailForm = () => {
           }, 400);
         }}
       >
+        {props => props.submitCount && props.isValid ? (
+          <>
+            <StyledSuccessMessage>Thank you! We'll be in touch soon</StyledSuccessMessage>
+            <Confetti
+              numberOfPieces={200}
+              recycle={false}
+            />
+          </>
+        ) : (
         <Form>
           <Col xs={24} md={13}>
             <MyTextInput
@@ -105,6 +124,7 @@ const EmailForm = () => {
             <BtnPrimary type="submit">Request access</BtnPrimary>
           </Col>
         </Form>
+        )}
       </Formik>
     </>
   );
