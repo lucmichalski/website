@@ -31,6 +31,18 @@ class App extends Component {
           <title>Grimp - Power to marketing teams</title>
           <meta name='description' content='Make marketing pages convert again'/>
           <link rel='icon' type="image/x-icon" href='/favicon.ico' />
+          <style jsx global>{`.async-hide { opacity: 0 !important}`}</style>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+              h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+              (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+              })(window,document.documentElement,'async-hide','dataLayer',4000,
+              {'OPT_CONTAINER_ID':true});
+              `,
+            }}
+          />
         </Head>
         <style jsx global>{`
           body { 
