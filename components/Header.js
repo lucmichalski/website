@@ -7,11 +7,9 @@ const HeaderGroup = styled.header`
 `
 
 const NavGroup = styled.nav`
-  display: flex;
-  display: -webkit-flex;
   display: -ms-flexbox;
-  flex-wrap: wrap;
-  align-items: center;
+  display: flex;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0px 20px;
   height: 100%;
