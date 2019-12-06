@@ -23,7 +23,6 @@ class DesktopSlider extends React.Component {
   render() {
     var settings = {
       vertical: true,
-      swipe: false,
       arrows: false,
       cssEase: 'linear',
       autoplay: true, 
@@ -32,7 +31,7 @@ class DesktopSlider extends React.Component {
       pauseOnHover: true,
       slidesToShow: 4,
       slidesToScroll: 0.1,
-      infinite: true
+      infinite: false
     };
     return (
       <Slider {...settings}>
