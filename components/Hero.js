@@ -16,11 +16,10 @@ const DesktopWidgetsGroup = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 650px;
+  left: 720px;
+  overflow-y: hidden;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
 
   @media (max-width: 768px) { 
     display: none;
@@ -28,7 +27,13 @@ const DesktopWidgetsGroup = styled.div`
 `;
 
 const WidgetsHolder = styled.div`
+  overflow: scroll;
   margin-right: 40px;
+  width: 315px;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const MobileWidgetsGroup = styled.div`

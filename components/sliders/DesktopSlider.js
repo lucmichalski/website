@@ -30,7 +30,7 @@ class DesktopSlider extends React.Component {
       autoplaySpeed: 0,
       speed: 500,
       pauseOnHover: true,
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 0.1,
       infinite: true
     };
