@@ -40,16 +40,15 @@ const BtnPrimary = styled.button`
   background-color: #FF9A00;
   cursor: pointer;
   padding: 22px;
-  border-radius: 6px;
   border: none;
-  display: inline-block;
-  width: 100%;
-  margin-top: 12px;
+  border-radius: 6px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-top: 0;
 
-  @media (min-width: 768px) { 
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    margin-top: 0;
+  @media (max-width: 768px) { 
+    width: 100%;
+    margin-top: 12px;
   }
 
 `;
@@ -113,14 +112,14 @@ const EmailForm = () => {
           </>
         ) : (
         <Form>
-          <Col xs={24} md={13}>
+          <Col xs={24} md={12}>
             <MyTextInput
               name="email"
               type="email"
               placeholder="Your e-mail address..."
             />
           </Col>
-          <Col xs={24} md={8}>
+          <Col xs={24} md={12}>
             <BtnPrimary type="submit">Request access</BtnPrimary>
           </Col>
         </Form>

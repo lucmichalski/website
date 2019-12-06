@@ -9,6 +9,9 @@ const HeaderGroup = styled.header`
 const NavGroup = styled.nav`
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0px 20px;
