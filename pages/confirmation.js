@@ -1,8 +1,10 @@
+import Page from '../layouts/main'
+
 export default function Confirmation() {
   return (
-    <div>
+    <Page>
       <h1>Confirmation</h1>
       <p>Thanks!</p>
-    </div>
+    </Page>
   );
 }
