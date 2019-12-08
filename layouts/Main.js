@@ -1,5 +1,5 @@
-import Meta from '../components/meta'
-import Header from '../components/header'
+import Meta from '../components/Meta'
+import Header from '../components/Header'
 import styled from 'styled-components'
 
 const Content = styled.main`
