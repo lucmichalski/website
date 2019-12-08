@@ -11,7 +11,7 @@ const Content = styled.main`
 
 `;
 
-export default ({ children }) => (
+const Page = ({ children }) => (
   <div>
     <Meta />
     <Header/>
@@ -20,3 +20,5 @@ export default ({ children }) => (
     </Content>
   </div>
 )
+
+export default Page
