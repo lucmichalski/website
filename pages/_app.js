@@ -3,7 +3,7 @@ import App from 'next/app'
 import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
-  gtmId: process.env.GOOGLE_TAG_MANAGER_ID
+  gtmId: 'GTM-MQ2QHK6'
 }
 
 class MyApp extends App {
