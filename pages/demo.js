@@ -1,5 +1,5 @@
 import { Row, Col } from 'antd';
-import Page from '../layouts/main'
+import Page from '../layouts/Main'
 
 export default () => (
   <Page>

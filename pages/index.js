@@ -1,4 +1,4 @@
-import Page from '../layouts/main'
+import Page from '../layouts/Main'
 import Hero from "../components/Hero"
 
 export default () => (
