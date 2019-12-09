@@ -5,7 +5,9 @@ import TagManager from 'react-gtm-module'
 import Providers from '../components/Providers';
 
 const tagManagerArgs = {
-  gtmId: 'GTM-MQ2QHK6'
+  gtmId: 'GTM-MQ2QHK6',
+  auth: '-CbjJNaTPP2ZK_MtZF0WXg',
+  preview: 'env-2'
 }
 
 class MyApp extends App {

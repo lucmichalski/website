@@ -28,11 +28,14 @@ const DesktopWidgetsGroup = styled.div`
 
 const WidgetsHolder = styled.div`
   overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
   margin-right: 40px;
   width: 315px;
-  
+
   &::-webkit-scrollbar {
-    display: none;
+    width: 0;
+    background: transparent;
   }
 `;
 
