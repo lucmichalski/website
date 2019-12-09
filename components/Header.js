@@ -18,7 +18,6 @@ const NavGroup = styled.nav`
   @media (min-width: 768px) { 
     padding: 0px 80px;
   }
-
 `
 
 class Header extends Component {

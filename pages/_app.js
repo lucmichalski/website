@@ -1,6 +1,8 @@
 import React from 'react'
 import App from 'next/app'
+import Meta from '../components/Meta'
 import TagManager from 'react-gtm-module'
+import Providers from '../components/Providers';
 
 const tagManagerArgs = {
   gtmId: 'GTM-MQ2QHK6'
@@ -13,7 +15,14 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props
-    return <Component {...pageProps} />
+    return (
+      <>
+        <Meta />
+        <Providers>
+          <Component {...pageProps} />
+        </Providers>
+      </>
+    )
   }
 }
 
