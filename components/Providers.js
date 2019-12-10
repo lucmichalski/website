@@ -1,24 +1,21 @@
 import React from 'react'
-import useDarkMode from 'use-dark-mode'
 import { ThemeProvider } from 'styled-components'
+import { useDarkMode } from './useDarkMode';
 import { GlobalStyle, lightTheme, darkTheme } from './Theme';
+import Toggle from './Toggle';
 
 export default ({ children }) => {
-  const { value } = useDarkMode(false, { storageKey: null, onChange: null })
-  const theme = value ? darkTheme : lightTheme
+  const [theme, toggleTheme, componentMounted] = useDarkMode();
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
-  const [mounted, setMounted] = React.useState(false)
-
-  React.useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  // prevents ssr flash for mismatched dark mode
-  if (!mounted) return null
+  if (!componentMounted) {
+    return <div />
+  };
 
   return (
-		<ThemeProvider theme={theme}>
-			<GlobalStyle />
+		<ThemeProvider theme={themeMode}>
+      <GlobalStyle />
+      <Toggle theme={theme} toggleTheme={toggleTheme} />
       {children}
     </ThemeProvider>
   );
