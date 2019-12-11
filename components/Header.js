@@ -32,7 +32,6 @@ class Header extends Component {
         </NavGroup>
       </HeaderGroup>
     )
-      
   }
 }
 

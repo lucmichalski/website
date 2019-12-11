@@ -8,9 +8,7 @@ export default ({ children }) => {
   const [theme, toggleTheme, componentMounted] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
-  if (!componentMounted) {
-    return <div />
-  };
+  if (!componentMounted) return null
 
   return (
 		<ThemeProvider theme={themeMode}>
