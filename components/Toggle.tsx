@@ -19,7 +19,7 @@ const StyledSun = styled(Sun)`
 `;
 
 class Toggle extends React.Component {
-  
+
   render() {
     return (
       <ToggleButton
