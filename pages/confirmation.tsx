@@ -1,8 +1,8 @@
-import Page from '../layouts/Main'
+import MainLayout from '../layouts/Main'
 
 export default () => (
-  <Page>
+  <MainLayout>
     <h1>Confirmation</h1>
     <p>Thanks!</p>
-  </Page>
+  </MainLayout>
 )

@@ -1,10 +1,10 @@
-import Page from '../layouts/Main'
+import MainLayout from '../layouts/Main'
 import Hero from "../components/Hero"
 
 export default () => (
-  <Page>
+  <MainLayout>
     <Hero />
-  </Page>
+  </MainLayout>
 )
 
 

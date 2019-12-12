@@ -10,7 +10,7 @@ const Content = styled.main`
 
 `;
 
-const Page = ({ children }) => (
+const MainLayout: React.FunctionComponent= ({ children }) => (
   <div>
     <Header/>
     <Content>
@@ -19,4 +19,4 @@ const Page = ({ children }) => (
   </div>
 )
 
-export default Page
+export default MainLayout

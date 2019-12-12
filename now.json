@@ -1,5 +1,7 @@
 {
-  "env": {
-    "HUBSPOT_API_KEY": "@hubspot_api_key"
+  "build": {
+    "env": {
+      "HUBSPOT_API_KEY": "@hubspot_api_key"
+    }
   }
 }
