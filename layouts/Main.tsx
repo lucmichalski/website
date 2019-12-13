@@ -10,7 +10,7 @@ const Content = styled.main`
 
 `;
 
-const MainLayout: React.FunctionComponent= ({ children }) => (
+const MainLayout: React.FunctionComponent = ({ children }) => (
   <div>
     <Header/>
     <Content>

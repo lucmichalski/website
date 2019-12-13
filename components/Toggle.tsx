@@ -18,17 +18,15 @@ const StyledSun = styled(Sun)`
   color: #FFF;
 `;
 
-class Toggle extends React.Component {
-
-  render() {
-    return (
-      <ToggleButton
-        onClick={this.props.toggleTheme}
-      >
-        {this.props.theme === 'light' ? <StyledMoon width="25px"/> : <StyledSun width="25px"/>}
-      </ToggleButton>
-    );
-  }
-};
+const Toggle = ({theme, toggleTheme}) => {
+  const isLight = theme === 'light';
+  return (
+    <ToggleButton
+      onClick={toggleTheme}
+    >
+      {isLight ? <StyledMoon width="25px"/> : <StyledSun width="25px"/>}
+    </ToggleButton>
+  );
+}
 
 export default Toggle;

@@ -1,8 +1,7 @@
 /* eslint-disable */
 const withCss = require('@zeit/next-css')
-const withTypescript = require('@zeit/next-typescript')
 
-module.exports = withCss(withTypescript({
+module.exports = withCss({
   webpack: (config, { isServer }) => {
     if (isServer) {
       const antStyles = /antd\/.*?\/style\/css.*?/
@@ -29,4 +28,4 @@ module.exports = withCss(withTypescript({
   env: {
     HUBSPOT_API_KEY: process.env.HUBSPOT_API_KEY
   }
-}))
+})

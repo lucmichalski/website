@@ -23,7 +23,8 @@
   ],
   "include": [
     "next-env.d.ts",
+    "**/*.js",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx", "components/EmailForm.jsx"
   ]
 }
