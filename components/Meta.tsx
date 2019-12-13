@@ -21,6 +21,16 @@ export default () => (
           `,
         }}
       />
+      <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            Weglot.initialize({
+              api_key: 'wg_35c061d43951fde84ded96aa7d2d25d84'
+            });
+          `,
+        }}
+      />
     </Head>
   </div>
 )
