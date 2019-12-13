@@ -1,10 +1,12 @@
 import MainLayout from '../layouts/Main'
 import Hero from "../components/Hero"
 
-export default () => (
-  <MainLayout>
-    <Hero />
-  </MainLayout>
-)
-
+const IndexPage: React.FC = () => {
+  return (
+    <MainLayout>
+      <Hero />
+    </MainLayout>
+  )
+}
+export default IndexPage
 

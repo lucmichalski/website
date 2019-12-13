@@ -9,28 +9,6 @@ export default () => (
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
       <link rel="manifest" href="/favicon/site.webmanifest" />
-      <style>{`.async-hide { opacity: 0 !important}`}</style>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
-            h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
-            (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
-            })(window,document.documentElement,'async-hide','dataLayer',4000,
-            {'GTM-MQ2QHK6':true});
-          `,
-        }}
-      />
-      <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            Weglot.initialize({
-              api_key: 'wg_35c061d43951fde84ded96aa7d2d25d84'
-            });
-          `,
-        }}
-      />
     </Head>
   </div>
 )
