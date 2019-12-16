@@ -12,7 +12,7 @@ const Content = styled.main`
 
 const MainLayout: React.FunctionComponent = ({ children }) => (
   <div>
-    <Header/>
+    <Header />
     <Content>
       { children }
     </Content>

@@ -37,14 +37,16 @@ export const darkTheme = {
 }
 
 export const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
   body {
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: 'Roboto Mono';
 		-webkit-font-smoothing: antialiased;
 		text-rendering: optimizelegibility;
 		line-height: 1.3;
 		background-color: ${props => props.theme.bg.primary};
 	}
 	h1 {
+    font-family: 'Archivo Black', sans-serif;
 		color: ${props => props.theme.text.primary};
 		font-weight: 600;
 		font-size: 48px;
@@ -59,7 +61,7 @@ export const GlobalStyle = createGlobalStyle`
 		}
 	}
 	p {
-		color: #8F9292;
+		color: #333;
 		font-size: 24px;
 		font-weight: 400;
 		line-height: 1.4;
@@ -74,5 +76,6 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	*:focus {
 		outline:none
-	}
+  }
+  
 `
