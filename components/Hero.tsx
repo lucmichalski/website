@@ -2,6 +2,10 @@ import { Row, Col } from 'antd';
 import styled from 'styled-components'
 import EmailForm from './EmailForm'
 
+const StyledRow = styled(Row)`
+  padding: 80px 0px 40px;
+`
+
 const HeadingGroup = styled.div`
   margin-top: 40px;
   margin-bottom: 40px;
@@ -25,7 +29,7 @@ const HeadingGroup = styled.div`
 `;
 
 const Hero = () => (
-  <Row type="flex" justify="center" align="middle">
+  <StyledRow type="flex" justify="center" align="middle">
     <Col xs={24} md={18}>
       <HeadingGroup>
         <div className="logo">
@@ -37,7 +41,7 @@ const Hero = () => (
         <EmailForm />
       </HeadingGroup>
     </Col>
-  </Row>
+  </StyledRow>
 )
 
 export default Hero;

@@ -10,6 +10,7 @@ const IndexPage: React.FC = () => {
       <AppPreviewSection />
       <SectionFeature visualOrder={1} contentOrder={2} />
       <SectionFeature visualOrder={2} contentOrder={1} />
+      <SectionFeature visualOrder={1} contentOrder={2} />
     </MainLayout>
   )
 }
