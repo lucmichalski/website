@@ -14,7 +14,7 @@ export default ({ children }) => {
 		<ThemeProvider theme={themeMode}>
       <GlobalStyle />
       <Toggle theme={theme} toggleTheme={toggleTheme} />
-      {children}
+        {children}
     </ThemeProvider>
   );
 }

@@ -1,15 +1,13 @@
-import { useDarkMode } from './useDarkMode';
-import Toggle from './Toggle';
+import styled from 'styled-components'
+
+const FooterGroup = styled.footer`
+  width: 100%;
+`
 
 const Footer: React.FC = () => {
-  const [theme, toggleTheme, componentMounted] = useDarkMode();
-
-  if (!componentMounted) return null
 
   return (
-    <footer>
-      <Toggle theme={theme} toggleTheme={toggleTheme} />
-    </footer>
+    <FooterGroup />
   )
 }
 export default Footer

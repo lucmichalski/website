@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 export const lightTheme = {
   bg: {
-    primary: '#eff0f5',
+    primary: '#FAFAFA',
     secondary: '#ffffff',
     inset: '#e2e4e8',
     input: 'rgba(65,67,78,0.12)'
@@ -53,7 +53,29 @@ export const GlobalStyle = createGlobalStyle`
 		letter-spacing: -4px;
 		line-height: 1;
 		text-align: center;
-	}
+  }
+  h2 {
+    @media only screen and (min-width: 1024px) {
+      font-weight: 600;
+      line-height: 1.1;
+      font-size: 58px;
+      letter-spacing: -3px;
+    }
+    media only screen and (min-width: 768px) {
+      font-weight: 600;
+      line-height: 1.1;
+      font-size: 48px;
+      letter-spacing: -2px;
+    }
+    font-family: Archivo Black, Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    line-height: 1.1;
+    font-size: 36px;
+    letter-spacing: -1.5px;
+    color: ${props => props.theme.text.primary};
+  }
 	@media (min-width: 768px) { 
 		h1 {
 			text-align: left;

@@ -27,7 +27,7 @@ class Header extends Component {
       <HeaderGroup>
         <NavGroup>
           <a href="/">
-            <img src="/logo-dark.svg" alt="Logo Grimp"/>
+            <img src="/logo-light.svg" alt="Logo Grimp"/>
           </a>
         </NavGroup>
       </HeaderGroup>
