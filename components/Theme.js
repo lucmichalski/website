@@ -39,14 +39,18 @@ export const darkTheme = {
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
   body {
-    font-family: 'Roboto Mono';
+    font-family: Colfax, Helvetica Neue, Helvetica, Arial, sans-serif;
 		-webkit-font-smoothing: antialiased;
 		text-rendering: optimizelegibility;
 		line-height: 1.3;
 		background-color: ${props => props.theme.bg.primary};
 	}
 	h1 {
-    font-family: 'Archivo Black', sans-serif;
+    @media only screen and (min-width: 768px) { 
+      text-align: left;
+      font-size: 72px;
+    }
+    font-family: Archivo Black, sans-serif;
 		color: ${props => props.theme.text.primary};
 		font-weight: 600;
 		font-size: 48px;
@@ -67,7 +71,7 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 48px;
       letter-spacing: -2px;
     }
-    font-family: Archivo Black, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Archivo Black, sans-serif;
     margin-top: 0px;
     margin-bottom: 20px;
     font-weight: 600;
@@ -76,26 +80,16 @@ export const GlobalStyle = createGlobalStyle`
     letter-spacing: -1.5px;
     color: ${props => props.theme.text.primary};
   }
-	@media (min-width: 768px) { 
-		h1 {
-			text-align: left;
-			font-size: 72px;
-		}
-	}
+	
 	p {
-		color: #333;
-		font-size: 24px;
-		font-weight: 400;
-		line-height: 1.4;
-		margin-bottom: 40px;
-		text-align: center;
+    font-family: Colfax, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.7;
 	}
-	@media (min-width: 768px) { 
-		p {
-			text-align: left;
-			font-size: 26px;
-		}
-	}
+	
 	*:focus {
 		outline:none
   }

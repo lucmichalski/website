@@ -18,7 +18,17 @@ const VisualGroup = styled.div`
 `
 
 const ContentGroup = styled.div`
- 
+  p {
+    @media only screen and (min-width: 768px) { 
+      font-size: 26px;
+    }
+    font-family: Roboto Mono;
+		color: #333;
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 1.4;
+		margin-bottom: 40px;
+  }
 `
 
 type Props = { visualOrder: number, contentOrder: number }

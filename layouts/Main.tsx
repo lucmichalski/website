@@ -1,4 +1,5 @@
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import styled from 'styled-components'
 
 const Content = styled.main`
@@ -16,6 +17,7 @@ const MainLayout: React.FunctionComponent = ({ children }) => (
     <Content>
       { children }
     </Content>
+    <Footer />
   </div>
 )
 

@@ -1,24 +1,68 @@
+import { Button } from 'antd'
 import styled from 'styled-components'
 
 const FooterGroup = styled.footer`
-  w
+  background: #131313;
+  padding: 40px 0;
+  text-align: center;
+`
+
+const LogoGroup = styled.div`
+  
+`
+
+const IconsGroup = styled.div`
+  margin-top: 20px;
+  
+  a {
+    background-color: rgb(68, 68, 68, .8);
+    color: #131313;
+    
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+
+    &:hover {
+      background-color: #FF9A00;
+      color: #131313;
+    }
+    
+  }
+  
+
+`
+
+const CopyrightGroup = styled.div`
+  p, a {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 12px;
+    color: rgb(68, 68, 68, .8);
+  }
+
+  a:hover {
+    color: white;
+  }
+
 `
 
 const Footer = () => (
-
-  <StyledRow type="flex" justify="center" align="middle">
-    <Col xs={{span: 24, order: 1}} md={{span: 10, order: visualOrder, offset: 2}}>
-      <VisualGroup>
-        <video src="https://d33wubrfki0l68.cloudfront.net/83aa5da8c65153b31d634ceee5fde93f7a35edef/ab42f/static/images/frontpage/workflow-video.mp4" poster="https://d33wubrfki0l68.cloudfront.net/565497a898cc2d44bb6ccf1bb4fe44b6c78c6132/9ce2b/static/images/frontpage/workflow-video-poster.jpg" autoPlay loop muted playsInline width="100%" className="Video-sc-1rl5e5m-0 hDpAwc" />
-      </VisualGroup>
-    </Col>
-    <Col xs={{span: 24, order: 2}} md={{span: 10, order: contentOrder, offset: 2}}>
-      <ContentGroup>
-        <h2>Simply rapid prototyping.</h2>
-        <p>Framer X offers tools to design scroll, link and page interactions. But don’t stop there—add a 3D effect or momentum. Create flows that feel real. And do it all in half the time.</p>
-      </ContentGroup> 
-    </Col>
-  </StyledRow>
+  <FooterGroup>
+    <LogoGroup>
+      <img src="/logo-dark.svg" alt="Logo Grimp"/> 
+    </LogoGroup>
+    <IconsGroup>
+      <Button type="link" icon="linkedin" size="small" href="https://linkedin.com" target="_blank" rel="noopener"/>
+      <Button type="link" icon="twitter" size="small" href="https://twitter.com" target="_blank" rel="noopener"/>
+      <Button type="link" icon="facebook" size="small" href="https://facebook.com" target="_blank" rel="noopener"/>
+      <Button type="link" icon="instagram" size="small" href="https://instagram.com/" target="_blank" rel="noopener"/>
+    </IconsGroup>
+    <CopyrightGroup>
+      <p>Copyright © 2020 <a href="https://angulaire.io" target="_blank" rel="noopener">Angulaire</a></p>
+    </CopyrightGroup>
+  </FooterGroup>
 )
 export default Footer
 
