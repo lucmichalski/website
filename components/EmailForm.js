@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Button } from 'antd';
 import { Formik, Form, useField } from 'formik';
 import styled from '@emotion/styled';
 import Confetti from 'react-confetti'
@@ -22,40 +22,6 @@ const StyledInput = styled.input`
   text-align: left;
   transition: box-shadow .2s, color .2s;
   width: 100%;
-`;
-
-const ButtonPrimary = styled.button`
-  background-color: #FF9A00;
-  border-radius: 12px;
-  border-style: none;
-  box-shadow: rgba(0,0,0,.1) 0 -1px 0 inset,rgba(0,85,255,.3) 0 1px 3px;
-  color: #fff;
-  cursor: pointer;
-  display: block;
-  font-family: Colfax,"Neue Helvetica W02","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  height: 100%;
-  letter-spacing: -.3px;
-  line-height: 1;
-  margin: 0;
-  outline: 0;
-  padding: 18px 17px 16px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transform: translateZ(0);
-  transition: box-shadow .3s, background-color .2s, color .2s;
-  user-select: none;
-  white-space: nowrap;
-  width: 100%;
-  z-index: 2;
-
-  @media only screen and (min-width: 768px) {
-    height: 56px;
-    width: auto;
-    margin-left: 12px;
-  }
 `;
 
 const StyledErrorMessage = styled.div`
@@ -136,7 +102,7 @@ const EmailForm = () => {
             />
           </Col>
           <Col xs={24} md={8}>
-            <ButtonPrimary type="submit">S'incrire à la Beta </ButtonPrimary>
+            <Button type="primary" htmlType="submit" size="large" block>S'incrire à la Beta</Button>
           </Col>
         </Row>
       </Form>
