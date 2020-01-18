@@ -36,7 +36,17 @@ const NavGroup = styled.nav`
   }
 `
 
+declare global {
+  interface Window {
+    Calendly: any;
+  }
+}
+
 class Header extends Component {
+
+  state = {
+    hasScrolled: false
+  }
 
   handleScroll = (event) => {
     const scrollTop = window.pageYOffset
@@ -48,10 +58,11 @@ class Header extends Component {
     }
   }
 
-  state = {
-    hasScrolled: false
+  handleClick(e) {
+    e.preventDefault();
+    window.Calendly.initPopupWidget({url: 'https://calendly.com/grimp/demo'});
+    return false;
   }
-  
   
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
@@ -64,7 +75,7 @@ class Header extends Component {
           <a href="/">
             <img src="/logo-light.svg" alt="Logo Grimp"/>
           </a>
-          <Button type="primary">Intégration sur Demande</Button>
+          <Button type="link" href="#" onClick={this.handleClick} >Intégration sur Demande</Button>
         </NavGroup>
       </HeaderGroup>
     )
