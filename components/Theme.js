@@ -3,7 +3,8 @@ import { createGlobalStyle } from 'styled-components'
 export const lightTheme = {
   bg: {
     primary: '#FAFAFA',
-    secondary: '#ffffff',
+    secondary: '#FFF',
+    matt: '#FFF',
     inset: '#e2e4e8',
     input: 'rgba(65,67,78,0.12)'
   },
@@ -22,6 +23,7 @@ export const darkTheme = {
   bg: {
     primary: '#050505',
     secondary: '#111111',
+    matt: '#121212',
     inset: '#111111',
     input: 'rgba(191,193,201,0.12)'
   },
@@ -44,7 +46,7 @@ export const GlobalStyle = createGlobalStyle`
 		text-rendering: optimizelegibility;
 		line-height: 1.3;
 		background-color: ${props => props.theme.bg.primary};
-	}
+  }
 	h1 {
     @media only screen and (min-width: 768px) { 
       text-align: left;

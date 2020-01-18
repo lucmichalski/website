@@ -1,5 +1,6 @@
 import { Button } from 'antd'
 import styled from 'styled-components'
+import DarkModeToggle from './DarkModeToggle'
 
 const FooterGroup = styled.footer`
   background: #131313;
@@ -8,7 +9,7 @@ const FooterGroup = styled.footer`
 `
 
 const LogoGroup = styled.div`
-  
+  margin-bottom: 12px;
 `
 
 const IconsGroup = styled.div`
@@ -54,6 +55,7 @@ const Footer = () => {
       <LogoGroup>
         <img src="/logo-dark.svg" alt="Logo Grimp"/> 
       </LogoGroup>
+      <DarkModeToggle />
       <IconsGroup>
         <Button type="link" icon="linkedin" size="small" href="https://linkedin.com" target="_blank" rel="noopener"/>
         <Button type="link" icon="twitter" size="small" href="https://twitter.com" target="_blank" rel="noopener"/>

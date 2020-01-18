@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'antd'
+import Logo from './Logo'
 import styled from 'styled-components'
 
 const HeaderGroup = styled.header`
@@ -10,10 +11,9 @@ const HeaderGroup = styled.header`
     position: fixed;
     width: 100%;
     height: 80px;
-    background: white;
     z-index: 100;
-    background: white;
     backdrop-filter: blur(20px);
+    background: ${props => props.theme.bg.matt};
   }
 `
 
@@ -35,6 +35,9 @@ const NavGroup = styled.nav`
     padding: 0px 80px;
   }
 `
+const LogoTheme = styled(Logo)`
+  fill: {props => props.theme.text.primary};
+`
 
 declare global {
   interface Window {
@@ -42,7 +45,7 @@ declare global {
   }
 }
 
-class Header extends Component {
+class Header extends React.Component {
 
   state = {
     hasScrolled: false
@@ -67,13 +70,13 @@ class Header extends Component {
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
   }
-
+  
   render() {
-    return (
-      <HeaderGroup className={(this.state.hasScrolled) === true && 'HeaderScrolled'}>
+    return (     
+      <HeaderGroup className={(this.state.hasScrolled) === true && 'HeaderScrolled bgMode'}>
         <NavGroup className={(this.state.hasScrolled) === false && 'HeaderHidden'}>
           <a href="/">
-            <img src="/logo-light.svg" alt="Logo Grimp"/>
+            <Logo />
           </a>
           <Button type="link" href="#" onClick={this.handleClick} >Intégration sur Demande</Button>
         </NavGroup>
