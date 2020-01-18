@@ -31,10 +31,11 @@ const ContentGroup = styled.div`
   }
 `
 
-type Props = { visualOrder: number, contentOrder: number }
+type Props = { visualOrder: number, contentOrder: number, title: string, content: string }
 
-const FeatureSection = ({visualOrder, contentOrder}: Props) => (
+const FeatureSection = ({visualOrder, contentOrder, title, content}: Props) => (
 
+  
   <StyledRow type="flex" justify="center" align="middle">
     <Col xs={{span: 24, order: 1}} md={{span: 10, order: visualOrder, offset: 2}}>
       <VisualGroup>
@@ -43,10 +44,11 @@ const FeatureSection = ({visualOrder, contentOrder}: Props) => (
     </Col>
     <Col xs={{span: 24, order: 2}} md={{span: 10, order: contentOrder, offset: 2}}>
       <ContentGroup>
-        <h2>Simply rapid prototyping.</h2>
-        <p>Framer X offers tools to design scroll, link and page interactions. But don’t stop there—add a 3D effect or momentum. Create flows that feel real. And do it all in half the time.</p>
-      </ContentGroup> 
+        <h2>{title}</h2>
+        <p>{content}</p>
+      </ContentGroup>
     </Col>
   </StyledRow>
+  
 )
 export default FeatureSection
