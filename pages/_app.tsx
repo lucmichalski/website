@@ -1,6 +1,6 @@
 import React from 'react'
 import App from 'next/app'
-import Meta from '../components/Meta'
+import Head from '../components/Head'
 import TagManager from 'react-gtm-module'
 import Providers from '../components/Providers';
 
@@ -17,7 +17,7 @@ class MyApp extends App {
     const { Component, pageProps } = this.props
     return (
       <>
-        <Meta />
+        <Head />
         <Providers>
           <Component {...pageProps} />
         </Providers>

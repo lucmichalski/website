@@ -1,9 +1,30 @@
 import React from 'react';
 import { Row, Col, Button } from 'antd';
 import { Formik, Form, useField } from 'formik';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import Confetti from 'react-confetti'
 import * as Yup from 'yup';
+
+const SignupGroup = styled.div`
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  min-height: 60px;
+  margin: 0px auto 15px;
+`
+const InputGroup = styled.div`
+  @media only screen and (min-width: 768px) {
+    width: 400px;
+  }
+  width: 100%;
+`
 
 const StyledInput = styled.input`
   -webkit-appearance: none;
@@ -23,6 +44,16 @@ const StyledInput = styled.input`
   transition: box-shadow .2s, color .2s;
   width: 100%;
 `;
+
+const ButtonGroup = styled.div`
+  @media only screen and (min-width: 768px) {
+    margin-left: 12px;
+    margin-top: 0;
+    width: auto;
+  }
+  width: 100%;
+  margin-top: 12px;
+`
 
 const StyledErrorMessage = styled.div`
   font-size: 12px;
@@ -93,18 +124,18 @@ const EmailForm = () => {
         </>
       ) : (
       <Form>
-        <Row type="flex" justify="center" align="middle">
-          <Col xs={24} md={12}>
+        <SignupGroup>
+          <InputGroup>
             <MyTextInput
               name="email"
               type="email"
               placeholder="Votre addresse e-mail..."
             />
-          </Col>
-          <Col xs={24} md={8}>
+          </InputGroup>
+          <ButtonGroup>
             <Button type="primary" htmlType="submit" size="large" block>S'incrire à la Beta</Button>
-          </Col>
-        </Row>
+          </ButtonGroup>
+        </SignupGroup>
       </Form>
       )}
     </Formik>
