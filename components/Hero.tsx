@@ -1,6 +1,7 @@
 import { Row, Col } from 'antd';
 import styled from 'styled-components'
 import EmailForm from './EmailForm'
+import Logo from './Logo'
 
 const StyledRow = styled(Row)`
   padding: 80px 0px 40px;
@@ -30,10 +31,6 @@ const HeadingGroup = styled.div`
   .logo {
     text-align: center;
     margin-bottom: 60px;
-    
-    img {
-      height: 48px;
-    }
   }
 
   @media (min-width: 768px) { 
@@ -46,7 +43,7 @@ const Hero = () => (
     <Col xs={24} md={18}>
       <HeadingGroup>
         <div className="logo">
-          <img src="/logo-light.svg" alt="Logo Grimp"/>
+          <Logo height="48px" width="148px" />
         </div>
         <h1>Trouvez la meilleure version de votre site web</h1>
         <p>Testez les sections qui convertissent le mieux  

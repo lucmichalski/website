@@ -35,15 +35,13 @@ const NavGroup = styled.nav`
     padding: 0px 80px;
   }
 `
-const LogoTheme = styled(Logo)`
-  fill: {props => props.theme.text.primary};
-`
 
 declare global {
   interface Window {
     Calendly: any;
   }
 }
+
 
 class Header extends React.Component {
 
@@ -76,7 +74,7 @@ class Header extends React.Component {
       <HeaderGroup className={(this.state.hasScrolled) === true && 'HeaderScrolled bgMode'}>
         <NavGroup className={(this.state.hasScrolled) === false && 'HeaderHidden'}>
           <a href="/">
-            <Logo />
+            <Logo/>
           </a>
           <Button type="link" href="#" onClick={this.handleClick} >Intégration sur Demande</Button>
         </NavGroup>
