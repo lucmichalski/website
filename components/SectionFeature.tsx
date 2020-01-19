@@ -23,7 +23,7 @@ const ContentGroup = styled.div`
       font-size: 26px;
     }
     font-family: Roboto Mono;
-		color: #333;
+		color: ${props => props.theme.text.grey};
 		font-size: 24px;
 		font-weight: 400;
 		line-height: 1.4;
