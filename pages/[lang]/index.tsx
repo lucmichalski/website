@@ -1,4 +1,4 @@
-import MainLayout from '../../layouts/Main'
+import MainLayout from '../../layouts/Landing'
 import Hero from "../../components/Hero"
 import AppPreviewSection from '../../components/AppPreviewSection'
 import SectionFeature from '../../components/SectionFeature'

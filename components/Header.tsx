@@ -7,7 +7,7 @@ const HeaderGroup = styled.header`
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   background: transparent;
 
-  &.HeaderScrolled {
+  &.HeaderOn {
     position: fixed;
     width: 100%;
     height: 80px;
@@ -27,7 +27,7 @@ const NavGroup = styled.nav`
   padding: 0px 20px;
   height: 100%;
   
-  &.HeaderHidden {
+  &.HeaderOff {
     display: none;
   }
 
@@ -42,8 +42,11 @@ declare global {
   }
 }
 
+type HeaderProps = {
+  afterScroll: boolean;
+};
 
-class Header extends React.Component {
+class Header extends React.Component<HeaderProps> {
 
   state = {
     hasScrolled: false
@@ -71,8 +74,8 @@ class Header extends React.Component {
   
   render() {
     return (     
-      <HeaderGroup className={(this.state.hasScrolled) === true && 'HeaderScrolled bgMode'}>
-        <NavGroup className={(this.state.hasScrolled) === false && 'HeaderHidden'}>
+      <HeaderGroup className={(this.state.hasScrolled === true || this.props.afterScroll === false) && 'HeaderOn'}>
+        <NavGroup className={(this.state.hasScrolled === false && this.props.afterScroll === true) && 'HeaderOff'}>
           <a href="/">
             <Logo/>
           </a>

@@ -11,9 +11,9 @@ const Content = styled.main`
 
 `;
 
-const MainLayout: React.FunctionComponent = ({ children }) => (
+const Landing = ({ children }) => (
   <div>
-    <Header />
+    <Header afterScroll={true} />
     <Content>
       { children }
     </Content>
@@ -21,4 +21,4 @@ const MainLayout: React.FunctionComponent = ({ children }) => (
   </div>
 )
 
-export default MainLayout
+export default Landing

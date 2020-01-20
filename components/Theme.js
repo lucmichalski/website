@@ -51,7 +51,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 	h1 {
     @media only screen and (min-width: 768px) { 
-      text-align: left;
       font-size: 72px;
     }
     font-family: Archivo Black, sans-serif;

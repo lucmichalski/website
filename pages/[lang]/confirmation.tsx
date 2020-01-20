@@ -1,4 +1,4 @@
-import MainLayout from '../../layouts/Main'
+import MainLayout from '../../layouts/Landing'
 
 export default () => (
   <MainLayout>

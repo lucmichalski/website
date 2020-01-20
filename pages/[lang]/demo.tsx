@@ -1,5 +1,5 @@
 import { Row, Col } from 'antd';
-import MainLayout from '../../layouts/Main'
+import MainLayout from '../../layouts/Landing'
 
 export default () => (
   <MainLayout>
