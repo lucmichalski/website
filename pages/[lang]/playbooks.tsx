@@ -7,12 +7,26 @@ import PlaybookCard from '../../components/PlaybookCard';
 const { SubMenu } = Menu;
 
 const MenuCard = styled.div`
-  background: white;
+  background: ${props => props.theme.bg.matt};
   width: 256px;
   border-radius: 12px;
-  padding: 10px 0 6px;
+  padding: 14px 0 12px;
   margin: 20px 0;
   box-shadow: rgba(0,0,0,.09) 0 10px 20px 0;
+
+  
+  .ant-menu {
+    background: ${props => props.theme.bg.matt};
+    border-color: ${props => props.theme.bg.shade};
+
+    li {
+      color: ${props => props.theme.text.primary};
+    }
+
+    .ant-menu-item-selected {
+      background-color: ${props => props.theme.bg.selected};
+    }
+  }
 `
 
 class Playbooks extends React.Component {

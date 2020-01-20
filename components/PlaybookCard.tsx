@@ -3,12 +3,16 @@ import { Row, Col, Avatar, Tag } from 'antd';
 import styled from 'styled-components'
 
 const CardGroup = styled.div `
-  background: white;
+  background: ${props => props.theme.bg.matt};
   width: 100%;
   border-radius: 12px;
   padding: 50px 70px;
   margin: 20px 0;
   box-shadow: rgba(0,0,0,.09) 0 10px 20px 0;
+
+  h3, h4 {
+    color: ${props => props.theme.text.primary};
+  }
 `
 
 const CardHeader = styled.div`
