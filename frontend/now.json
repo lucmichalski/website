@@ -1,4 +1,9 @@
 {
+  "type": "docker",
+  "public": true,
+  "features": {
+    "cloud": "v2"
+  },
   "build": {
     "env": {
       "HUBSPOT_API_KEY": "@hubspot_api_key"
