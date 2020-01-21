@@ -1,7 +1,19 @@
 {
-  "type": "docker",
-  "public": true,
-  "features": {
-    "cloud": "v2"
-  }
+  "name": "grimp",
+  "builds": [
+    {
+      "src": "frontend/next.config.js",
+      "use": "@now/next",
+      "env": {
+        "HUBSPOT_API_KEY": "@hubspot_api_key"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "frontend/$1",
+      "continue": true
+    }
+  ]
 }
