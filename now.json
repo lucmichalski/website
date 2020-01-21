@@ -1,16 +1,22 @@
 {
+  "version": 2,
   "name": "grimp",
   "builds": [
     {
-      "src": "frontend/next.config.js",
-      "use": "@now/next",
+      "src": "packages/frontend/package.json",
+      "use": "@now/next"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "frontend/$1",
-      "continue": true
+      "dest": "/packages/frontend/$1",
+      "headers": {
+        "x-request-path": "$1"
+      }
     }
-  ]
+  ],
+  "env": {
+    "HUBSPOT_API_KEY": "@hubspot_api_key"
+  }
 }
