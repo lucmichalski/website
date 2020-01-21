@@ -3,14 +3,14 @@
   "name": "grimp",
   "builds": [
     {
-      "src": "packages/frontend/package.json",
+      "src": "frontend/package.json",
       "use": "@now/next"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/packages/frontend/$1",
+      "dest": "frontend/$1",
       "headers": {
         "x-request-path": "$1"
       }
