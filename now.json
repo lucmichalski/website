@@ -1,0 +1,8 @@
+{
+  "build": {
+    "env": {
+      "HUBSPOT_API_KEY": "@hubspot_api_key",
+      "BACKEND_URL": "@backend_url"
+    }
+  }
+}
