@@ -1,6 +1,6 @@
 import { Row, Col } from 'antd';
 import MainLayout from '../../layouts/Landing'
-import Nav from '../../components/nav'
+import Nav from '../../components/Nav'
 
 export default () => (
   <MainLayout>
