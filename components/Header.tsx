@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'antd'
+import { Button, Menu } from 'antd'
 import Logo from './Logo'
 import styled from 'styled-components'
 
@@ -34,6 +34,7 @@ const NavGroup = styled.nav`
   @media (min-width: 768px) { 
     padding: 0px 80px;
   }
+  
 `
 
 declare global {

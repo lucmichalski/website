@@ -36,6 +36,7 @@ module.exports = withLess({
     }
     return config
   },
+  target: 'serverless',
   env: {
     HUBSPOT_API_KEY: process.env.HUBSPOT_API_KEY
   }
