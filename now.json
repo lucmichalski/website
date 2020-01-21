@@ -12,10 +12,5 @@
       "dest": "frontend/$1",
       "continue": true
     }
-  ],
-  "build": {
-    "env": {
-      "HUBSPOT_API_KEY": "@hubspot_api_key"
-    }
-  }
+  ]
 }
