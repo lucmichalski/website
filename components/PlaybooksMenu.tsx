@@ -1,7 +1,6 @@
-import React, { Component, useContext } from 'react'
+import React, { Component } from 'react'
 import { Row, Col, Menu, Icon } from 'antd';
 import styled from 'styled-components'
-import { LocaleContext } from '../context/LocaleContext'
 
 const { SubMenu } = Menu;
 
@@ -28,9 +27,9 @@ const MenuCard = styled.div`
   }
 `
 
-const PlaybooksMenu = () => {
+type PlaybooksProps = { businessRoles: string[], areas: string[], tools: string[] }
 
-  const { locale } = useContext(LocaleContext)
+const PlaybooksMenu = ({ businessRoles, areas, tools }: PlaybooksProps) => {
 
   return (
     <>
@@ -98,7 +97,7 @@ const PlaybooksMenu = () => {
               </span>
             }
           >
-            <Menu.Item key="1">{locale}</Menu.Item>
+            <Menu.Item key="1">Zapier</Menu.Item>
             <Menu.Item key="2">Lemlist</Menu.Item>
           </SubMenu>
         </Menu>
