@@ -12,7 +12,7 @@ const PLAYBOOKS_QUERY = gql`
         name_en
         name_fr
       }
-      business_roles {
+      business_role {
         name_en
         name_fr
       }

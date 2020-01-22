@@ -6,26 +6,22 @@ import CATEGORIES_QUERY from "../apollo/queries/category/categories";
 const Nav = () => {  
   return (
     <Query query={CATEGORIES_QUERY} id={null}>
-      {({ data: { categories } }) => {
-        return (
-          <div>
-            {categories.map((category, i) => {
-              return (
-                <li key={category.id}>
-                  <Link
-                    href={{
-                      pathname: "category",
-                      query: { id: category.id }
-                    }}
-                  >
-                    <a className="uk-link-reset">{category.name}</a>
-                  </Link>
-                </li>
-              );
-            })}
-          </div>
-        );
-      }}
+      {({ data: { categories } }) => (
+        categories.map((category, i) => {
+          return (
+            <li key={category.id}>
+              <Link
+                href={{
+                  pathname: "category",
+                  query: { id: category.id }
+                }}
+              >
+                <a>{category.name}</a>
+              </Link>
+            </li>
+          );
+        })
+      )}
     </Query>
   );
 };

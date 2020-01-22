@@ -36,30 +36,39 @@ const CardContent = styled.div`
 const CardTags = styled.div`
 `
 
-class PlaybookCard extends React.Component {
+type PlaybookProps = { 
+  playbook: {
+    title_en: string,
+    title_fr: string,
+    areas: any,
+    business_role: any,
+    tools: any
+  }
+}
 
-  render () {
+const PlaybookCard = ({ playbook }: PlaybookProps) => {
     return (
       <a href="">
         <CardGroup>
           <CardHeader>
-            <h4> Marketing </h4>
+            <h4>{playbook.business_role.name_en}</h4>
             <ToolsGroup>
-              <Avatar style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>U</Avatar>
-              <Avatar style={{ color: '#000', backgroundColor: '#f9303j' }}>G</Avatar>
+              {playbook.tools.map((tool) => (
+                <Avatar src={"http://localhost:1337/" + tool.logo.url}/>
+              ))}
             </ToolsGroup>
           </CardHeader>
           <CardContent>
-            <h3>Send a real-time Slack notification when a target account is on the website </h3>
+            <h3>{playbook.title_en}</h3>
           </CardContent>
           <CardTags>
-            <Tag>Email</Tag>
-            <Tag>Onboarding</Tag>
+            {playbook.areas.map((area) => (
+              <Tag>{area.name_en}</Tag>
+            ))}
           </CardTags> 
         </CardGroup> 
       </a>
     )
-  }
   
 }
 
