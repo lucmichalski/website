@@ -15,26 +15,25 @@ const Playbooks = () => {
   const { locale } = useContext(LocaleContext)
 
   return (
-    <Page> 
-      <Row type="flex" justify="center" align="top">
-        <Col xs={0} md={7}>
-          
-          <PlaybooksMenu businessRoles={["Marketing", "Sales"]} areas={["Marketing", "Sales"]} tools={["Marketing", "Sales"]} />
-        </Col>
-        <Col xs={24} md={12}>
-          <Query query={PLAYBOOKS_QUERY} id={null}>
-            {({ data: { playbooks } }) => (
-              playbooks.map((playbook, i) => {
-                return (
-                  <li key={playbook.id}>
+    <Page>
+      <Query query={PLAYBOOKS_QUERY} id={null}>
+        {({ data: { playbooks } }) => {
+          return (
+            <Row type="flex" justify="center" align="top">
+              <Col xs={0} md={7}> 
+                <PlaybooksMenu businessRoles={["Marketing", "Sales"]} areas={["Marketing", "Sales"]} tools={["Marketing", "Sales"]} />
+              </Col>
+              <Col xs={24} md={12}>
+                {playbooks.map((playbook) => {
+                  return (
                     <PlaybookCard playbook={playbook}/>
-                  </li>
-                );
-              })
-            )}
-          </Query>
-        </Col>
-      </Row>
+                  );
+                })}
+              </Col>
+            </Row>
+          );
+        }}
+      </Query>
     </Page>
   )
   
