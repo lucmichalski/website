@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component, useContext } from 'react'
 import { Row, Col, Menu, Icon } from 'antd';
 import styled from 'styled-components'
 import Page from '../../layouts/Page'
 import PlaybookCard from '../../components/PlaybookCard';
+import { LocaleContext } from '../../context/LocaleContext'
+import withLocale from '../../hocs/withLocale'
 
 const { SubMenu } = Menu;
 
@@ -29,20 +31,16 @@ const MenuCard = styled.div`
   }
 `
 
-class Playbooks extends React.Component {
+const Playbooks = () => {
+    
+    const { locale } = useContext(LocaleContext)
 
-  handleClick = e => {
-    console.log('click ', e);
-  };
-
-  render () {
     return (
       <Page>
         <Row type="flex" justify="center" align="top">
           <Col xs={0} md={7}>
             <MenuCard>
               <Menu
-                onClick={this.handleClick}
                 style={{ width: 256 }}
                 defaultOpenKeys={['areas', 'roles', 'tools']}
                 mode="inline"
@@ -70,7 +68,6 @@ class Playbooks extends React.Component {
             </MenuCard>
             <MenuCard>
               <Menu
-                onClick={this.handleClick}
                 style={{ width: 256 }}
                 defaultOpenKeys={['areas', 'roles', 'tools']}
                 mode="inline"
@@ -92,7 +89,6 @@ class Playbooks extends React.Component {
             </MenuCard>
             <MenuCard>
               <Menu
-                onClick={this.handleClick}
                 style={{ width: 256 }}
                 defaultOpenKeys={['areas', 'roles', 'tools']}
                 mode="inline"
@@ -107,7 +103,7 @@ class Playbooks extends React.Component {
                     </span>
                   }
                 >
-                  <Menu.Item key="1">Zapier</Menu.Item>
+                  <Menu.Item key="1">{locale}</Menu.Item>
                   <Menu.Item key="2">Lemlist</Menu.Item>
                 </SubMenu>
               </Menu>
@@ -120,8 +116,7 @@ class Playbooks extends React.Component {
         </Row>
       </Page>
     )
-  }
   
 }
 
-export default Playbooks
+export default withLocale(Playbooks)
