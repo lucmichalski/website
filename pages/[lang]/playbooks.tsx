@@ -21,7 +21,7 @@ const Playbooks = () => {
           return (
             <Row type="flex" justify="center" align="top">
               <Col xs={0} md={7}> 
-                <PlaybooksMenu businessRoles={["Marketing", "Sales"]} areas={["Marketing", "Sales"]} tools={["Marketing", "Sales"]} />
+                <PlaybooksMenu playbooks={playbooks} />
               </Col>
               <Col xs={24} md={12}>
                 {playbooks.map((playbook) => {

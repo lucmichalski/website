@@ -27,9 +27,16 @@ const MenuCard = styled.div`
   }
 `
 
-type PlaybooksProps = { businessRoles: string[], areas: string[], tools: string[] }
+type PlaybooksProps = { 
+  playbooks: {
+    areas: any,
+    business_roles: any,
+    tools: any
+  }
+}
 
-const PlaybooksMenu = ({ businessRoles, areas, tools }: PlaybooksProps) => {
+const PlaybooksMenu = ({ playbooks }: PlaybooksProps) => {
+  console.log(playbooks)
 
   return (
     <>

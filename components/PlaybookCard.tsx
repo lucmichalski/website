@@ -47,7 +47,6 @@ type PlaybookProps = {
 }
 
 const PlaybookCard = ({ playbook }: PlaybookProps) => {
-    console.log(playbook)
     return (
       <a href="">
         <CardGroup>
