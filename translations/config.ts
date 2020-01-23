@@ -6,3 +6,8 @@ export const languageNames = {
   en: 'English',
   fr: 'Français'
 }
+
+export const logo = {
+  en: '🇬🇧',
+  fr: '🇫🇷'
+}

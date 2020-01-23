@@ -1,9 +1,8 @@
-import React, { Component, useContext } from 'react'
+import React from 'react'
 import { Row, Col, Menu, Icon } from 'antd';
 import styled from 'styled-components'
 import Page from '../../layouts/Page'
 import PlaybookCard from '../../components/PlaybookCard';
-import { LocaleContext } from '../../context/LocaleContext'
 import withLocale from '../../hocs/withLocale'
 import PlaybooksMenu from '../../components/PlaybooksMenu'
 import Link from "next/link"  
@@ -12,8 +11,6 @@ import PLAYBOOKS_QUERY from "../../apollo/queries/playbook/playbooks";
 import PLAYBOOK_MENU_QUERY from "../../apollo/queries/playbook/menu";
 
 const Playbooks = () => {
-    
-  const { locale } = useContext(LocaleContext)
 
   return (
     <Page>
