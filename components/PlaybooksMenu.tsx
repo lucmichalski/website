@@ -28,22 +28,18 @@ const MenuCard = styled.div`
 `
 
 type PlaybooksProps = { 
-  playbooks: {
-    areas: any,
-    business_roles: any,
-    tools: any
-  }
+  areas: any,
+  businessRoles: any,
+  tools: any
 }
 
-const PlaybooksMenu = ({ playbooks }: PlaybooksProps) => {
-  console.log(playbooks)
-
+const PlaybooksMenu = ({ areas, businessRoles, tools }: PlaybooksProps) => {
   return (
     <>
       <MenuCard>
         <Menu
           style={{ width: 256 }}
-          defaultOpenKeys={['areas', 'roles', 'tools']}
+          defaultOpenKeys={['areas']}
           mode="inline"
           multiple={true}
         >
@@ -55,27 +51,22 @@ const PlaybooksMenu = ({ playbooks }: PlaybooksProps) => {
                 <span>Areas</span>
               </span>
             }
-          >
-            <Menu.Item key="1">Analytics</Menu.Item>
-            <Menu.Item key="2">Email</Menu.Item>
-            <Menu.Item key="3">Enrichment</Menu.Item>
-            <Menu.Item key="4">Lead qualification</Menu.Item>
-            <Menu.Item key="5">Notifications</Menu.Item>
-            <Menu.Item key="6">Onboarding</Menu.Item>
-            <Menu.Item key="7">Personalisation</Menu.Item>
-            <Menu.Item key="8">Product & Growth</Menu.Item>
+          > 
+            {areas.map((area) => (
+              <Menu.Item key={area.id}>{area.name_en}</Menu.Item>
+            ))}
           </SubMenu>
         </Menu>
       </MenuCard>
       <MenuCard>
         <Menu
           style={{ width: 256 }}
-          defaultOpenKeys={['areas', 'roles', 'tools']}
+          defaultOpenKeys={['businessRoles']}
           mode="inline"
           multiple={true}
         >
           <SubMenu
-            key="roles"
+            key="businessRoles"
             title={
               <span>
                 <Icon type="mail" />
@@ -83,15 +74,16 @@ const PlaybooksMenu = ({ playbooks }: PlaybooksProps) => {
               </span>
             }
           >
-            <Menu.Item key="1">Marketing</Menu.Item>
-            <Menu.Item key="2">Sales</Menu.Item>
+            {businessRoles.map((businessRole) => (
+              <Menu.Item key={businessRole.id}>{businessRole.name_en}</Menu.Item>
+            ))}
           </SubMenu>
         </Menu>
       </MenuCard>
       <MenuCard>
         <Menu
           style={{ width: 256 }}
-          defaultOpenKeys={['areas', 'roles', 'tools']}
+          defaultOpenKeys={['tools']}
           mode="inline"
           multiple={true}
         >
@@ -104,8 +96,9 @@ const PlaybooksMenu = ({ playbooks }: PlaybooksProps) => {
               </span>
             }
           >
-            <Menu.Item key="1">Zapier</Menu.Item>
-            <Menu.Item key="2">Lemlist</Menu.Item>
+            {tools.map((tool) => (
+              <Menu.Item key={tool.id}>{tool.name}</Menu.Item>
+            ))}
           </SubMenu>
         </Menu>
       </MenuCard>

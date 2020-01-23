@@ -9,6 +9,7 @@ import PlaybooksMenu from '../../components/PlaybooksMenu'
 import Link from "next/link"  
 import Query from "../../components/query"; 
 import PLAYBOOKS_QUERY from "../../apollo/queries/playbook/playbooks";
+import PLAYBOOK_MENU_QUERY from "../../apollo/queries/playbook/menu";
 
 const Playbooks = () => {
     
@@ -21,14 +22,16 @@ const Playbooks = () => {
           return (
             <Row type="flex" justify="center" align="top">
               <Col xs={0} md={7}> 
-                <PlaybooksMenu playbooks={playbooks} />
+                <Query query={PLAYBOOK_MENU_QUERY} id={null}>
+                  {({ data: { areas, tools, businessRoles }}) => (
+                    <PlaybooksMenu areas={areas} businessRoles={businessRoles} tools={tools} />
+                  )}
+                </Query>
               </Col>
               <Col xs={24} md={12}>
-                {playbooks.map((playbook) => {
-                  return (
-                    <PlaybookCard playbook={playbook}/>
-                  );
-                })}
+                {playbooks.map((playbook) => (
+                  <PlaybookCard key={playbook.id} playbook={playbook}/>
+                ))}
               </Col>
             </Row>
           );
