@@ -50,6 +50,7 @@ type PlaybookProps = {
 const PlaybookCard = ({ playbook }: PlaybookProps) => {
 
   const { locale } = useContext(LocaleContext)
+  const IMAGE_URL = process.env.BACKEND_URL || "http://localhost:1337";
 
   return (
     <a href="">
@@ -58,7 +59,7 @@ const PlaybookCard = ({ playbook }: PlaybookProps) => {
           <h4>{playbook.business_role[`name_${locale}`]}</h4>
           <ToolsGroup>
             {playbook.tools.map((tool) => (
-              <Avatar src={process.env.BACKEND_URL + tool.logo.url}/>
+              <Avatar src={IMAGE_URL + tool.logo.url}/>
             ))}
           </ToolsGroup>
         </CardHeader>
