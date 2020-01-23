@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { useContext } from 'react'
+import { LocaleContext } from '../context/LocaleContext'
 import { Row, Col, Avatar, Tag } from 'antd';
 import styled from 'styled-components'
 
@@ -47,29 +48,31 @@ type PlaybookProps = {
 }
 
 const PlaybookCard = ({ playbook }: PlaybookProps) => {
-    return (
-      <a href="">
-        <CardGroup>
-          <CardHeader>
-            <h4>{playbook.business_role.name_en}</h4>
-            <ToolsGroup>
-              {playbook.tools.map((tool) => (
-                <Avatar src={"http://localhost:1337/" + tool.logo.url}/>
-              ))}
-            </ToolsGroup>
-          </CardHeader>
-          <CardContent>
-            <h3>{playbook.title_en}</h3>
-          </CardContent>
-          <CardTags>
-            {playbook.areas.map((area) => (
-              <Tag>{area.name_en}</Tag>
+
+  const { locale } = useContext(LocaleContext)
+
+  return (
+    <a href="">
+      <CardGroup>
+        <CardHeader>
+          <h4>{playbook.business_role[`name_${locale}`]}</h4>
+          <ToolsGroup>
+            {playbook.tools.map((tool) => (
+              <Avatar src={process.env.BACKEND_URL + tool.logo.url}/>
             ))}
-          </CardTags> 
-        </CardGroup> 
-      </a>
-    )
-  
+          </ToolsGroup>
+        </CardHeader>
+        <CardContent>
+            <h3>{playbook[`title_${locale}`]}</h3>
+        </CardContent>
+        <CardTags>
+          {playbook.areas.map((area) => (
+            <Tag>{area[`name_${locale}`]}</Tag>
+          ))}
+        </CardTags> 
+      </CardGroup> 
+    </a>
+  )
 }
 
 export default PlaybookCard
