@@ -5,34 +5,21 @@ import AppPreviewSection from '../../components/AppPreviewSection'
 import SectionFeature from '../../components/SectionFeature'
 import withLocale from '../../hocs/withLocale'
 import { LocaleContext } from '../../context/LocaleContext'
-import Query from "../../components/query"; 
+import { Query } from 'react-apollo';
 import HOMEPAGE_QUERY from "../../apollo/queries/page/homepage";
 
-const IndexPage: React.FC = () => {
+const IndexPage = () => {
 
   const { locale } = useContext(LocaleContext)
 
   return (
     <MainLayout>
-      <Query query={HOMEPAGE_QUERY} id={null}>
+      <Query query={HOMEPAGE_QUERY}>
+        
         {({ data: { page } }) => {
           return (
             <>
-              {page.Section.map((section) => {
-                switch (section.__typename) {
-                  case "ComponentSectionsHero": return(
-                    <Hero />
-                  );
-                  case "ComponentSectionsSectionFeature": return (
-                    <SectionFeature 
-                      visualOrder={2}
-                      contentOrder={1}
-                      title={section[`title_${locale}`]}
-                      content={section[`description_${locale}`]}
-                    />
-                  );
-                }
-              })}
+              {console.log(page)}
               <AppPreviewSection />
               <SectionFeature 
                 visualOrder={1} 

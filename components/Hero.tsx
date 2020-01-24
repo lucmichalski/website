@@ -38,20 +38,29 @@ const HeadingGroup = styled.div`
   }
 `;
 
-const Hero = () => (
-  <StyledRow type="flex" justify="center" align="middle">
-    <Col xs={24} md={18}>
-      <HeadingGroup>
-        <div className="logo">
-          <Logo height="48px" width="148px" />
-        </div>
-        <h1>Trouvez la meilleure version de votre site web</h1>
-        <p>Testez les sections qui convertissent le mieux  
-        grâce à une incroyable librairie de widgets marketing</p>
-        <EmailForm />
-      </HeadingGroup>
-    </Col>
-  </StyledRow>
-)
+
+type HeroProps = { 
+  title: string,
+  description: string,
+  email_placeholder: string
+  button: any
+}
+
+const Hero = ({ title, description, email_placeholder, button }: HeroProps) => {
+  return (
+    <StyledRow type="flex" justify="center" align="middle">
+      <Col xs={24} md={18}>
+        <HeadingGroup>
+          <div className="logo">
+            <Logo height="48px" width="148px" />
+          </div>
+          <h1>{title}</h1>
+          <p>{description}</p>
+          <EmailForm email_placeholder={email_placeholder} button={button}/>
+        </HeadingGroup>
+      </Col>
+    </StyledRow>
+  )
+}
 
 export default Hero;

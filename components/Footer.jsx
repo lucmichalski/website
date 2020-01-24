@@ -5,7 +5,7 @@ import LocaleSwitcher from './LocaleSwitcher'
 
 const FooterGroup = styled.footer`
   background: #131313;
-  padding: 40px 0;
+  padding: 140px 0 40px;
   text-align: center;
 `
 

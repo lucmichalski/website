@@ -89,8 +89,7 @@ const MyTextInput = ({ label, ...props }) => {
   );
 };
 
-// And now we can use these
-const EmailForm = () => {
+const EmailForm = ({ email_placeholder, button }) => {
   return (
     <Formik
       initialValues={{
@@ -129,11 +128,11 @@ const EmailForm = () => {
             <MyTextInput
               name="email"
               type="email"
-              placeholder="Votre addresse e-mail..."
+              placeholder={email_placeholder}
             />
           </InputGroup>
           <ButtonGroup>
-            <Button type="primary" htmlType="submit" size="large" block>S'incrire à la Beta</Button>
+            <Button type={button.type} htmlType="submit" size="large" block>{button.text}</Button>
           </ButtonGroup>
         </SignupGroup>
       </Form>
