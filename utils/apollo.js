@@ -20,8 +20,6 @@ export default withApollo(
   ({ initialState }) =>
     new ApolloClient({
       link: link,
-      cache: new InMemoryCache()
-        //  rehydrate the cache using the initial data passed from the server:
-        .restore(initialState || {})
+      cache: new InMemoryCache().restore(initialState || {})
     })
 );

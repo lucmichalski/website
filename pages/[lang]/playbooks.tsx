@@ -1,6 +1,5 @@
 import React from 'react'
 import { Row, Col, Menu, Icon } from 'antd';
-import styled from 'styled-components'
 import Page from '../../layouts/Page'
 import PlaybookCard from '../../components/PlaybookCard';
 import withLocale from '../../hocs/withLocale'

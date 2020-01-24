@@ -6,8 +6,8 @@ const Query = ({ children, query, id }) => {
     variables: { id: parseInt(id) }
   });
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {JSON.stringify(error)}</p>;
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
   return children({ data });
 };
 
