@@ -18,20 +18,20 @@ const IndexPage = () => {
       <SectionFeature 
         visualOrder={1} 
         contentOrder={2}
-        title="Bien plus que de l'AB testing : Grimp Optimize"
+        title="Bien plus que de l'AB testing"
         content="Testez en toute simplicité les éléments de votre site web afin de les rendre plus efficace pour vos visiteurs"
       />
       <SectionFeature 
         visualOrder={2} 
         contentOrder={1}
-        title="Data driven website optimisation."
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        title="Pilotez grâce à la donnée"
+        content="Découvrez comment les visiteurs intéragissent avec votre site et identifiez sur les éléments les plus pertinent pour votre audience."
       />
       <SectionFeature 
         visualOrder={1} 
         contentOrder={2}
-        title="Focus on what matters."
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        title="Utilisez nos widgets et augmentez vos conversions"
+        content="Découvrez notre suite de Widgets qui vous aide à convertir, engager et retenir les visiteurs de votre site web."
       />
       <CTA
         title="Ready to get started?"
