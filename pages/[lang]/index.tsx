@@ -18,8 +18,8 @@ const IndexPage = () => {
       <SectionFeature 
         visualOrder={1} 
         contentOrder={2}
-        title="Much more than an AB testing tool."
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        title="Bien plus que de l'AB testing : Grimp Optimize"
+        content="Testez en toute simplicité les éléments de votre site web afin de les rendre plus efficace pour vos visiteurs"
       />
       <SectionFeature 
         visualOrder={2} 

@@ -9,14 +9,9 @@ const SignupGroup = styled.div`
   @media only screen and (min-width: 768px) {
     flex-direction: row;
   }
-  position: relative;
   display: flex;
   flex-direction: column;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  align-items: center;
-  min-height: 60px;
   margin: 0px auto 15px;
 `
 const InputGroup = styled.div`
@@ -35,11 +30,10 @@ const StyledInput = styled.input`
   color: #000;
   font-family: Colfax,"Neue Helvetica W02","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 18px;
-  height: 100%;
   letter-spacing: -.3px;
   margin: 0;
   outline: 0;
-  padding: 19px 18px 18px;
+  padding: 16px;
   text-align: left;
   transition: box-shadow .2s, color .2s;
   width: 100%;
@@ -59,7 +53,7 @@ const StyledErrorMessage = styled.div`
   font-size: 12px;
   width: 200px;
   margin-top: 0.25rem;
-  color: #FFF;
+  color: ${props => props.theme.text.primary};
   &:before {
     content: "❌ ";
     font-size: 10px;
