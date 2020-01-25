@@ -1,3 +1,4 @@
+import React from 'react'
 import { Row, Col, Button } from 'antd';
 import styled from 'styled-components'
 import Logo from './Logo'
@@ -57,28 +58,37 @@ type HeroProps = {
   contentOrder: number,
 }
 
-const HeroSide = ({ title, description, button, visualOrder, contentOrder }: HeroProps) => {
-  return (
-    <HeroGroup>
-      <div className="logo">
-        <Logo height="39px" width="122px" />
-      </div>
-      <Row type="flex" justify="center" align="middle">
-        <Col xs={{span: 24}} md={{span: 12, order: visualOrder}}>
-          <HeadingGroup>
-            <h1>{title}</h1>
-            <p>{description}</p>
-            <StyledButton type={button.type} size="large">{button.text}</StyledButton>
-          </HeadingGroup>
-        </Col>
-        <Col xs={{span: 0}} md={{span: 10, order: contentOrder, offset: 2}}>
-          <VisualGroup>
-            <img src="/screen-optimize.png" width="100%"/>
-          </VisualGroup>
-        </Col>
-      </Row>
-    </HeroGroup>
-  )
+class HeroSide extends React.Component<HeroProps> {
+
+  handleClick(e) {
+    e.preventDefault();
+    window.Calendly.initPopupWidget({url: 'https://calendly.com/grimp/demo'});
+    return false;
+  }
+
+  render() {
+    return (
+      <HeroGroup>
+        <div className="logo">
+          <Logo height="39px" width="122px" />
+        </div>
+        <Row type="flex" justify="center" align="middle">
+          <Col xs={{span: 24}} md={{span: 12, order: this.props.visualOrder}}>
+            <HeadingGroup>
+              <h1>{this.props.title}</h1>
+              <p>{this.props.description}</p>
+              <StyledButton type={this.props.button.type} size="large" onClick={this.handleClick} >{this.props.button.text}</StyledButton>
+            </HeadingGroup>
+          </Col>
+          <Col xs={{span: 0}} md={{span: 10, order: this.props.contentOrder, offset: 2}}>
+            <VisualGroup>
+              <img src="/screen-optimize.png" width="100%"/>
+            </VisualGroup>
+          </Col>
+        </Row>
+      </HeroGroup>
+    )
+  }
 }
 
 export default HeroSide;
