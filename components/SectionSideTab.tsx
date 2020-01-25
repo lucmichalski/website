@@ -72,7 +72,7 @@ const HeroSide = ({ title, description, visualOrder, contentOrder }: HeroProps) 
             <p>{description}</p>
           </HeadingGroup>
         </Col>
-        <Col xs={{span: 24, order:1}} md={{span: 8, order: contentOrder, offset: 4}}>
+        <Col xs={{span: 24, order:1}} md={{span: 10, order: contentOrder, offset: 2}}>
           <VisualGroup>
             <img src="/screen-optimize.png" width="100%" />
           </VisualGroup>

@@ -3,15 +3,9 @@ import styled from 'styled-components'
 import Logo from './Logo'
 
 const HeroGroup = styled.div`
-  margin-bottom: 40px;
-
   .logo {
     text-align: center;
-    margin-bottom: 60px;
-  }
-
-  @media (min-width: 768px) { 
-    margin-top: 80px;
+    margin-top: 40px;
   }
 `
 
@@ -67,7 +61,7 @@ const HeroSide = ({ title, description, button, visualOrder, contentOrder }: Her
   return (
     <HeroGroup>
       <div className="logo">
-        <Logo height="48px" width="148px" />
+        <Logo height="39px" width="122px" />
       </div>
       <Row type="flex" justify="center" align="middle">
         <Col xs={{span: 24}} md={{span: 12, order: visualOrder}}>
@@ -81,7 +75,7 @@ const HeroSide = ({ title, description, button, visualOrder, contentOrder }: Her
         </Col>
         <Col xs={{span: 0}} md={{span: 10, order: contentOrder, offset: 2}}>
           <VisualGroup>
-            <img src="/screen-optimize.png" width="100%" />
+            <img src="/screen-optimize.png" width="100%"/>
           </VisualGroup>
         </Col>
       </Row>
