@@ -10,15 +10,15 @@ const IndexPage = () => {
       <HeroSide 
         title="L’AB testing devient plus simple avec Optimize" 
         description="Chez Grimp, nous sommes des experts de l’AB testing avec Google Optimize. On conçoit, teste, évalue en accord direct avec nos clients."
-        button={{"text": "Cliquer ici", "type": "primary"}}
+        button={{"text": "Prendre un RDV", "type": "primary"}}
         visualOrder={1} 
         contentOrder={2}
       />
-      <CTA
+      {/* <CTA
         title="Ready to get started?"
         description="The best way to understand the power of Grimp is to see it for yourself. Get your website dynamic in minutes."
         button={{"text": "Join priority list", "type": "primary"}}
-      />
+      /> */}
     </MainLayout> 
   )
 }

@@ -16,7 +16,7 @@ export const lightTheme = {
     secondary: '#2f3037',
     tertiary: '#525560',
     quarternary: '#9194a1',
-    grey: '#333333',
+    grey: '#546581',
     placeholder: 'rgba(82,85,96,0.5)',
     onPrimary: '#ffffff'
   },
@@ -69,7 +69,8 @@ export const GlobalStyle = createGlobalStyle`
 		font-size: 42px;
 		letter-spacing: -.25px;
 		line-height: 1;
-		text-align: center;
+    text-align: center;
+    margin-bottom: 2rem;
   }
   h2 {
     @media only screen and (min-width: 1024px) {
@@ -84,7 +85,7 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 48px;
       letter-spacing: -2px;
     }
-    font-family: Archivo Black, sans-serif;
+    font-family: Galano-Grotesque;
     margin-top: 0px;
     margin-bottom: 20px;
     font-weight: 600;

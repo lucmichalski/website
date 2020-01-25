@@ -16,30 +16,30 @@ const HeadingGroup = styled.div`
     }
     text-align: center;
     font-size: 42px;
+    margin-top: 40px;
   }
 
   p {
     @media only screen and (min-width: 768px) { 
-      font-size: 26px;
+      text-align: left;
     }
     font-family: Roboto Mono;
 		color: ${props => props.theme.text.grey};
-		font-size: 24px;
+		font-size: 20px;
 		font-weight: 400;
-		line-height: 1.4;
-		margin-bottom: 40px;
+		line-height: 32px;
+    margin-bottom: 1rem;
+    text-align: center;
+    max-width: 90%;
 	}
 `;
 
-const ButtonGroup = styled.div`
-  margin-top: 12px;
-
-  button {
-    @media only screen and (min-width: 768px) {
-      width: auto;
-    }
-    width: 100%;
+const StyledButton = styled(Button)`
+  @media only screen and (min-width: 768px) {
+    width: auto;
   }
+  width: 100%;
+  margin-top: 12px;
 `
 
 const VisualGroup = styled.div`
@@ -68,9 +68,7 @@ const HeroSide = ({ title, description, button, visualOrder, contentOrder }: Her
           <HeadingGroup>
             <h1>{title}</h1>
             <p>{description}</p>
-            <ButtonGroup>
-              <Button type={button.type} size="large">{button.text}</Button>
-            </ButtonGroup>
+            <StyledButton type={button.type} size="large">{button.text}</StyledButton>
           </HeadingGroup>
         </Col>
         <Col xs={{span: 0}} md={{span: 10, order: contentOrder, offset: 2}}>
