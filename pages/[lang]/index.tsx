@@ -1,6 +1,7 @@
 import MainLayout from '../../layouts/Landing'
 import HeroSide from "../../components/HeroSide"
 import CTA from '../../components/CTA'
+import SectionSideTab from '../../components/SectionSideTab'
 import withLocale from '../../hocs/withLocale'
 
 const IndexPage = () => {

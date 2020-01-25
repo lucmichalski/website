@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Logo from './Logo'
 
 const HeroGroup = styled.div`
-  margin-top: 40px;
   margin-bottom: 40px;
 
   .logo {

@@ -4,7 +4,7 @@ import EmailForm from './EmailForm'
 import Logo from './Logo'
 
 const StyledRow = styled(Row)`
-  padding: 40px 0px 40px;
+  margin-bottom: 40px;
 `
 
 const HeadingGroup = styled.div`
