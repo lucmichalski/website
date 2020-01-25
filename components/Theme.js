@@ -4,6 +4,7 @@ export const lightTheme = {
   bg: {
     primary: '#FFF',
     matt: '#FAFAFA',
+    secondaryLightOnly: '#14143C',
     selected: '#fffce6',
     shade: '#e8e8e8',
     shadowLightOnly: 'rgba(0,0,0,.09) 0 10px 20px 0',
@@ -11,7 +12,7 @@ export const lightTheme = {
     borderDarkOnly: 'none'
   },
   text: {
-    primary: '#050505',
+    primary: '#1A3066',
     secondary: '#2f3037',
     tertiary: '#525560',
     quarternary: '#9194a1',
@@ -26,6 +27,7 @@ export const darkTheme = {
   bg: {
     primary: '#050505',
     matt: '#121212',
+    secondaryLightOnly: '#050505',
     selected: '#FFBB00',
     shade: '#393939',
     shadowLightOnly: 'none',
@@ -33,7 +35,7 @@ export const darkTheme = {
     borderDarkOnly: "#333333"
   },
   text: {
-    primary: '#fbfbfc',
+    primary: '#FBFBFC',
     secondary: '#e3e4e8',
     tertiary: '#a9abb6',
     quarternary: '#6c6f7e',
@@ -59,13 +61,13 @@ export const GlobalStyle = createGlobalStyle`
   }
 	h1 {
     @media only screen and (min-width: 768px) { 
-      font-size: 72px;
+      font-size: 54px;
     }
     font-family: Galano-Grotesque;
 		color: ${props => props.theme.text.primary};
 		font-weight: 600;
-		font-size: 48px;
-		letter-spacing: -4px;
+		font-size: 42px;
+		letter-spacing: -.25px;
 		line-height: 1;
 		text-align: center;
   }

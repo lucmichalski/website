@@ -8,7 +8,7 @@ const VisualGroup = styled.div`
 
 type Props = { visualOrder: number, contentOrder: number, title: string, content: string }
 
-const FeatureSection = ({visualOrder, contentOrder, title, content}: Props) => (
+const SectionCenter = ({visualOrder, contentOrder, title, content}: Props) => (
 
   <Row type="flex" justify="center" align="middle">
     <Col xs={{span: 24, order: 1}} md={{span: 10, order: visualOrder, offset: 2}}>
@@ -19,4 +19,4 @@ const FeatureSection = ({visualOrder, contentOrder, title, content}: Props) => (
   </Row>
   
 )
-export default FeatureSection
+export default SectionCenter

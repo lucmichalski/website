@@ -14,7 +14,7 @@ const ContentCard = styled.div`
   margin-top: 80px;
   padding: 60px 0;
   text-align: center;
-  background: ${props => props.theme.bg.primary};
+  background: ${props => props.theme.bg.secondaryLightOnly};
   border: 1px solid ${props => props.theme.bg.borderDarkOnly};
   box-shadow: ${props => props.theme.bg.shadowLightOnly};
   border-radius: 12px;
@@ -25,13 +25,13 @@ const ContentCard = styled.div`
     font-size: 14px;
     font-weight: bold;
     line-height: 1.5;
-    color: ${props => props.theme.text.primary};
+    color: white;
   }
   p {
     font-size: 20px;
     font-weight: 500;
     line-height: 1.5;
-    color: ${props => props.theme.text.primary};
+    color: white;
     margin: 12px 0 24px;
   }
 `

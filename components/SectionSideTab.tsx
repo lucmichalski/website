@@ -33,7 +33,7 @@ const ContentGroup = styled.div`
 
 type Props = { visualOrder: number, contentOrder: number, title: string, content: string }
 
-const FeatureSection = ({visualOrder, contentOrder, title, content}: Props) => (
+const SectionSideTab = ({visualOrder, contentOrder, title, content}: Props) => (
 
   
   <StyledRow type="flex" justify="center" align="middle">
@@ -51,4 +51,4 @@ const FeatureSection = ({visualOrder, contentOrder, title, content}: Props) => (
   </StyledRow>
   
 )
-export default FeatureSection
+export default SectionSideTab
