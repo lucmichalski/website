@@ -23,6 +23,7 @@ const HeadingGroup = styled.div`
   p {
     @media only screen and (min-width: 768px) { 
       text-align: left;
+      max-width: 90%;
     }
     font-family: Roboto Mono;
 		color: ${props => props.theme.text.grey};
@@ -31,7 +32,6 @@ const HeadingGroup = styled.div`
 		line-height: 32px;
     margin-bottom: 1rem;
     text-align: center;
-    max-width: 90%;
 	}
 `;
 

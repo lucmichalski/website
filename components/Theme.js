@@ -68,7 +68,7 @@ export const GlobalStyle = createGlobalStyle`
 		font-weight: 600;
 		font-size: 42px;
 		letter-spacing: -.25px;
-		line-height: 1;
+		line-height: 58px;
     text-align: center;
     margin-bottom: 2rem;
   }
