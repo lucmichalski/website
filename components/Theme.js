@@ -2,13 +2,13 @@ import { createGlobalStyle } from 'styled-components'
 
 export const lightTheme = {
   bg: {
-    primary: '#FAFAFA',
-    secondary: '#FFF',
-    matt: '#FFF',
+    primary: '#FFF',
+    matt: '#FAFAFA',
     selected: '#fffce6',
     shade: '#e8e8e8',
-    inset: '#e2e4e8',
-    input: 'rgba(65,67,78,0.12)'
+    shadowLightOnly: 'rgba(0,0,0,.09) 0 10px 20px 0',
+    border: '#EAEAEA',
+    borderDarkOnly: 'none'
   },
   text: {
     primary: '#050505',
@@ -25,12 +25,12 @@ export const lightTheme = {
 export const darkTheme = {
   bg: {
     primary: '#050505',
-    secondary: '#111111',
     matt: '#121212',
     selected: '#FFBB00',
     shade: '#393939',
-    inset: '#111111',
-    input: 'rgba(191,193,201,0.12)'
+    shadowLightOnly: 'none',
+    border: '#333333',
+    borderDarkOnly: "#333333"
   },
   text: {
     primary: '#fbfbfc',

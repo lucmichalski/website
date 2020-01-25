@@ -26,7 +26,7 @@ const StyledInput = styled.input`
   background-color: #fff;
   border-radius: 12px;
   border-style: none;
-  box-shadow: rgba(0,0,0,.09) 0 10px 20px 0;
+  box-shadow: ${props => props.theme.bg.shadowLightOnly};
   color: #000;
   font-family: Colfax,"Neue Helvetica W02","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 18px;

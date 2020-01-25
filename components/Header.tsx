@@ -14,6 +14,7 @@ const HeaderGroup = styled.header`
     z-index: 100;
     backdrop-filter: blur(20px);
     background: ${props => props.theme.bg.matt};
+    border-bottom: 1px solid ${props => props.theme.bg.border};
   }
 `
 
