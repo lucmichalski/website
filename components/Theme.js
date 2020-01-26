@@ -49,11 +49,11 @@ export const darkTheme = {
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
   @font-face {
-    font-family: Galano-Grotesque;
-    src: url(/fonts/Galano-Grotesque-Bold.otf);
+    font-family: CircularStd;
+    src: url(/fonts/CircularStd-Medium.otf);
   }
   body {
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: CircularStd, Helvetica Neue, Helvetica, Arial, sans-serif;
 		-webkit-font-smoothing: antialiased;
 		text-rendering: optimizelegibility;
 		line-height: 1.3;
@@ -63,7 +63,6 @@ export const GlobalStyle = createGlobalStyle`
     @media only screen and (min-width: 768px) { 
       font-size: 54px;
     }
-    font-family: Galano-Grotesque;
 		color: ${props => props.theme.text.primary};
 		font-weight: 600;
 		font-size: 42px;
@@ -85,7 +84,6 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 48px;
       letter-spacing: -2px;
     }
-    font-family: Galano-Grotesque;
     margin-top: 0px;
     margin-bottom: 20px;
     font-weight: 600;
@@ -96,7 +94,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 	
 	p {
-    font-family: Colfax, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-weight: 400;
     margin-top: 0px;
     margin-bottom: 20px;

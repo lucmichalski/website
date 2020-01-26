@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Menu } from 'antd'
-import Logo from './Logo'
+import Logo from '../assets/Logo'
 import styled from 'styled-components'
 
 const HeaderGroup = styled.header`

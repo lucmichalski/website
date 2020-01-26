@@ -1,85 +1,97 @@
-import { Row, Col, Button } from 'antd';
+import React from 'react'
+import { Row, Col, Collapse, Icon } from 'antd';
 import styled from 'styled-components'
+import { MenuIcon, ValidIcon, InfiniteIcon } from '../assets/Icons'
 
-const HeroGroup = styled.div`
-  margin-top: 40px;
-  margin-bottom: 40px;
+const { Panel } = Collapse;
 
-  .logo {
-    text-align: center;
-    margin-bottom: 60px;
+const SectionGroup = styled.div`
+
+`
+const StyledCollapse = styled(Collapse)`
+  &.ant-collapse {
+    background-color: transparent;
   }
-
-  @media (min-width: 768px) { 
-    margin-top: 80px;
+  .ant-collapse-header {
+    font-size: 20px;
+    color: ${props => props.theme.text.primary} !important;
   }
 `
 
-const HeadingGroup = styled.div`
-  h1 {
-    @media only screen and (min-width: 768px) { 
-      text-align: left;
-    }
-    text-align: center;
-    font-size: 42px;
-  }
+const HeaderPanel = styled.div`
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 
-  p {
-    @media only screen and (min-width: 768px) { 
-      font-size: 26px;
-    }
-    font-family: Roboto Mono;
-		color: ${props => props.theme.text.grey};
-		font-size: 24px;
-		font-weight: 400;
-		line-height: 1.4;
-		margin-bottom: 40px;
-	}
-`;
-
-const ButtonGroup = styled.div`
-  margin-top: 12px;
-
-  button {
-    @media only screen and (min-width: 768px) {
-      width: auto;
-    }
-    width: 100%;
-  }
-`
-
-const VisualGroup = styled.div`
-  @media only screen and (min-width: 768px) {
-    margin-right: -80px;
+  h4 {
+    margin-left: 16px;
+    margin-bottom: 0;
   }
 `
 
 
-type HeroProps = { 
+type SectionSideTabProps = { 
   title: string,
   description: string,
   visualOrder: number, 
   contentOrder: number,
 }
 
-const HeroSide = ({ title, description, visualOrder, contentOrder }: HeroProps) => {
-  return (
-    <HeroGroup>
-      <h1>{title}</h1>
-      <Row type="flex" justify="center" align="middle">
-        <Col xs={{span: 24, order: 2}} md={{span: 12, order: visualOrder}}>
-          <HeadingGroup>
-            <p>{description}</p>
-          </HeadingGroup>
-        </Col>
-        <Col xs={{span: 24, order:1}} md={{span: 10, order: contentOrder, offset: 2}}>
-          <VisualGroup>
-            <img src="/screen-optimize.png" width="100%" />
-          </VisualGroup>
-        </Col>
-      </Row>
-    </HeroGroup>
-  )
+const headerOne = () => (
+  <HeaderPanel>
+    <MenuIcon />
+    <h4>Allez plus loin que l’existant</h4>
+  </HeaderPanel>
+  
+);
+
+const headerTwo = () => (
+  <HeaderPanel>
+    <ValidIcon />
+    <h4>Comprenez ce qui fonctionne vraiment</h4>
+  </HeaderPanel>
+);
+
+const headerTree = () => (
+  <HeaderPanel>
+    <InfiniteIcon />
+    <h4>Votre site devient agile & modulable</h4>
+  </HeaderPanel>
+
+);
+
+
+class SectionSideTab extends React.Component<SectionSideTabProps> {
+  render() {
+    return (
+      <SectionGroup>
+        <h2>{this.props.title}</h2>
+        <Row type="flex" justify="center" align="middle">
+          <Col xs={{span: 24, order: 1}} md={{span: 12, order: this.props.visualOrder}}>
+            <img src="/screen-optimize2.png" width="100%"/>
+          </Col>
+          <Col xs={{span: 24, order: 2}} md={{span: 10, order: this.props.contentOrder, offset: 2}}>
+            <StyledCollapse accordion bordered={false} defaultActiveKey={['1']}>
+              <Panel header={headerOne()} showArrow={false} key="1">
+                <p>Chez Grimp, nous sommes des experts de l’AB testing avec Google Optimize. On conçoit, teste, évalue en accord direct avec nos clients.</p>
+              </Panel>
+              <Panel header={headerTwo()} showArrow={false} key="2">
+                <p>Ne vous ennuyez pas à comprendre les données de votre site, nous le faisons pour vous et apportons des modifications subséquentielles sur votre site internet.</p>
+              </Panel>
+              <Panel header={headerTree()} showArrow={false} key="3">
+                <p>Ne vous ennuyez pas à comprendre les données de votre site, nous le faisons pour vous et apportons des modifications subséquentielles sur votre site internet.</p>
+              </Panel>
+            </StyledCollapse>
+          </Col>
+        </Row>
+      </SectionGroup>
+    )
+  }
 }
 
-export default HeroSide;
+export default SectionSideTab;

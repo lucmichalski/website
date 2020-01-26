@@ -1,6 +1,6 @@
 import { Row, Col, Button, Icon } from 'antd'
 import styled from 'styled-components'
-import Logo from './Logo'
+import Logo from '../assets/Logo'
 import DarkModeToggle from './DarkModeToggle'
 import LocaleSwitcher from './LocaleSwitcher'
 
@@ -90,16 +90,16 @@ const Footer = () => {
         <Col xs={24} md={12}>
           <RightGroup>
             <IconsGroup>
-              <Button type="link" size="large" href="https://linkedin.com" target="_blank" rel="noopener">
+              <Button type="link" size="large" href="https://linkedin.com/company/grimphq" target="_blank" rel="noopener">
                 <Icon type="linkedin" theme="filled"/>
               </Button>
-              <Button type="link" size="large" href="https://twitter.com" target="_blank" rel="noopener">
+              <Button type="link" size="large" href="https://twitter.com/grimphq" target="_blank" rel="noopener">
                 <Icon type="twitter"/>
               </Button>
-              <Button type="link" size="large" href="https://facebook.com" target="_blank" rel="noopener">
+              <Button type="link" size="large" href="https://www.facebook.com/grimphq/" target="_blank" rel="noopener">
                 <Icon type="facebook" theme="filled"/>
               </Button>
-              <Button type="link" size="large" href="https://instagram.com/" target="_blank" rel="noopener">
+              <Button type="link" size="large" href="https://instagram.com/grimphq" target="_blank" rel="noopener">
                 <Icon type="instagram" theme="filled"/>
               </Button>
             </IconsGroup>

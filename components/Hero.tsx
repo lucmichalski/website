@@ -1,7 +1,7 @@
 import { Row, Col } from 'antd';
 import styled from 'styled-components'
 import EmailForm from './EmailForm'
-import Logo from './Logo'
+import Logo from '../assets/Logo'
 
 const StyledRow = styled(Row)`
   margin-bottom: 40px;

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Row, Col, Button } from 'antd';
 import styled from 'styled-components'
-import Logo from './Logo'
+import Logo from '../assets/Logo'
 
 const HeroGroup = styled.div`
+  margin-top: 40px;
   .logo {
     text-align: center;
-    margin-top: 40px;
   }
 `
 
@@ -77,7 +77,7 @@ class HeroSide extends React.Component<HeroProps> {
             <HeadingGroup>
               <h1>{this.props.title}</h1>
               <p>{this.props.description}</p>
-              <StyledButton type={this.props.button.type} size="large" onClick={this.handleClick} >{this.props.button.text}</StyledButton>
+              <StyledButton type={this.props.button.type} size="large" onClick={this.handleClick}>{this.props.button.text}</StyledButton>
             </HeadingGroup>
           </Col>
           <Col xs={{span: 0}} md={{span: 10, order: this.props.contentOrder, offset: 2}}>
