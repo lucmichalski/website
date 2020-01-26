@@ -1,4 +1,4 @@
-import MainLayout from '../../layouts/Landing'
+import LandingLayout from '../../layouts/Landing'
 import Hero from "../../components/Hero"
 import CTA from '../../components/CTA'
 import AppPreviewSection from '../../components/AppPreviewSection'
@@ -7,7 +7,7 @@ import withLocale from '../../hocs/withLocale'
 
 const BetaPage = () => {
   return (
-    <MainLayout>
+    <LandingLayout>
       <Hero 
         title="L’AB testing devient plus simple avec Optimize" 
         description="Testez les sections qui convertissent le mieux grâce à une incroyable librairie de widgets marketing"
@@ -38,7 +38,7 @@ const BetaPage = () => {
         description="The best way to understand the power of Grimp is to see it for yourself. Get your website dynamic in minutes."
         button={{"text": "Join priority list", "type": "primary"}}
       />
-    </MainLayout>
+    </LandingLayout>
   )
 }
 export default withLocale(BetaPage)

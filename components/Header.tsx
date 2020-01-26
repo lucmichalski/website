@@ -57,7 +57,7 @@ class Header extends React.Component<HeaderProps> {
   handleScroll = (event) => {
     const scrollTop = window.pageYOffset
   
-    if (scrollTop > 1000) {
+    if (scrollTop > 800) {
       this.setState({ hasScrolled: true })
     } else {
       this.setState({ hasScrolled: false })

@@ -32,7 +32,7 @@ const ContentCard = styled.div`
     font-weight: 500;
     line-height: 1.5;
     color: white;
-    margin: 12px 0 24px;
+    margin: 12px 0 40px;
   }
 `
 

@@ -6,16 +6,21 @@ import { MenuIcon, ValidIcon, InfiniteIcon } from '../assets/Icons'
 const { Panel } = Collapse;
 
 const SectionGroup = styled.div`
+  padding: 100px 0;
 
+  h2 {
+    padding-bottom: 20px;
+  }
 `
 const StyledCollapse = styled(Collapse)`
   &.ant-collapse {
     background-color: transparent;
   }
-  .ant-collapse-header {
-    font-size: 20px;
-    color: ${props => props.theme.text.primary} !important;
+
+  .ant-collapse-item {
+    border-bottom: 1px solid #333;
   }
+
 `
 
 const HeaderPanel = styled.div`
@@ -29,6 +34,8 @@ const HeaderPanel = styled.div`
   align-items: center;
 
   h4 {
+    color: ${props => props.theme.text.primary};
+    font-size: 20px;
     margin-left: 16px;
     margin-bottom: 0;
   }

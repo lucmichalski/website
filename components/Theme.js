@@ -49,13 +49,12 @@ export const darkTheme = {
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
   @font-face {
-    font-family: CircularStd;
-    src: url(/fonts/CircularStd-Medium.otf);
+    font-family: Colfax;
+    src: url(/fonts/Colfax-Bold.woff);
   }
   body {
-    font-family: CircularStd, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Colfax;
 		-webkit-font-smoothing: antialiased;
-		text-rendering: optimizelegibility;
 		line-height: 1.3;
 		background-color: ${props => props.theme.bg.primary};
   }
@@ -65,40 +64,29 @@ export const GlobalStyle = createGlobalStyle`
     }
 		color: ${props => props.theme.text.primary};
 		font-weight: 600;
-		font-size: 42px;
-		letter-spacing: -.25px;
-		line-height: 58px;
+    font-size: 42px;
+		line-height: 1.4;
     text-align: center;
     margin-bottom: 2rem;
   }
   h2 {
-    @media only screen and (min-width: 1024px) {
-      font-weight: 600;
-      line-height: 1.1;
-      font-size: 58px;
-      letter-spacing: -3px;
-    }
     media only screen and (min-width: 768px) {
-      font-weight: 600;
-      line-height: 1.1;
-      font-size: 48px;
-      letter-spacing: -2px;
+      font-size: 42px;
     }
-    margin-top: 0px;
     margin-bottom: 20px;
     font-weight: 600;
-    line-height: 1.1;
+    line-height: 1.4;
     font-size: 36px;
-    letter-spacing: -1.5px;
     color: ${props => props.theme.text.primary};
   }
 	
 	p {
-    font-weight: 400;
-    margin-top: 0px;
-    margin-bottom: 20px;
-    font-size: 18px;
-    line-height: 1.7;
+    font-family: Roboto Mono;
+		color: ${props => props.theme.text.grey};
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 1.4;
+    margin-bottom: 1rem;
 	}
 	
 	*:focus {

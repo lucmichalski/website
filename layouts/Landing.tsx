@@ -11,7 +11,7 @@ const Content = styled.main`
 
 `;
 
-const Landing = ({ children }) => (
+const LandingLayout = ({ children }) => (
   <div>
     <Header afterScroll={true} />
     <Content>
@@ -21,4 +21,4 @@ const Landing = ({ children }) => (
   </div>
 )
 
-export default Landing
+export default LandingLayout

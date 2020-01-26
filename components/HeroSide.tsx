@@ -4,7 +4,14 @@ import styled from 'styled-components'
 import Logo from '../assets/Logo'
 
 const HeroGroup = styled.div`
-  margin-top: 40px;
+  background: ${props => props.theme.bg.matt};
+  padding: 60px 0;
+  
+  @media (min-width: 768px) { 
+    margin: 0 -80px;
+    padding: 60px 0 80px 80px;
+  }
+
   .logo {
     text-align: center;
   }
@@ -25,12 +32,7 @@ const HeadingGroup = styled.div`
       text-align: left;
       max-width: 90%;
     }
-    font-family: Roboto Mono;
-		color: ${props => props.theme.text.grey};
-		font-size: 20px;
-		font-weight: 400;
-		line-height: 32px;
-    margin-bottom: 1rem;
+    font-size: 22px;
     text-align: center;
 	}
 `;
@@ -41,12 +43,6 @@ const StyledButton = styled(Button)`
   }
   width: 100%;
   margin-top: 12px;
-`
-
-const VisualGroup = styled.div`
-  @media only screen and (min-width: 768px) {
-    margin-right: -80px;
-  }
 `
 
 
@@ -81,9 +77,7 @@ class HeroSide extends React.Component<HeroProps> {
             </HeadingGroup>
           </Col>
           <Col xs={{span: 0}} md={{span: 10, order: this.props.contentOrder, offset: 2}}>
-            <VisualGroup>
-              <img src="/screen-optimize.png" width="100%"/>
-            </VisualGroup>
+            <img src="/screen-optimize.png" width="100%"/>
           </Col>
         </Row>
       </HeroGroup>
