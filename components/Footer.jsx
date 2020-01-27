@@ -1,6 +1,5 @@
 import { Row, Col, Button, Icon } from 'antd'
 import styled from 'styled-components'
-import Logo from '../assets/Logo'
 import DarkModeToggle from './DarkModeToggle'
 import LocaleSwitcher from './LocaleSwitcher'
 
@@ -41,19 +40,15 @@ const RightGroup = styled.div`
   flex-direction: column;
 `
 
-const LogoGroup = styled.div`
-  margin-right: 12px;
-`
-
 const IconsGroup = styled.div`
-  margin-right: 20px;
-
+  text-align: center;
+  
   .ant-btn {
-    padding: 0 10px;
+    padding: 0 6px;
   }
   
   a {
-    color: #333; 
+    color: ${props => props.theme.bg.greyDark};
   }
   
 
@@ -63,10 +58,8 @@ const CopyrightGroup = styled.div`
   p, a {
     text-align: center;
     font-weight: 400;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 0;
-    margin-right: 5px;
+    font-size: 12px;
+    color: ${props => props.theme.bg.greyDark};
   }
 
   a:hover {
@@ -79,33 +72,32 @@ const Footer = () => {
   return (
     <FooterGroup>
       <Row type="flex" justify="center" align="middle">
-        <Col xs={24} md={12}>
+        <Col xs={24} md={8}>
           <LeftGroup>
-            <LogoGroup>
-              <Logo />
-            </LogoGroup>
             <DarkModeToggle />
           </LeftGroup>
         </Col>
-        <Col xs={24} md={12}>
+        <Col xs={24} md={8}>
+          <IconsGroup>
+            <Button type="link" size="large" href="https://linkedin.com/company/grimphq" target="_blank" rel="noopener">
+              <Icon type="linkedin" theme="filled"/>
+            </Button>
+            <Button type="link" size="large" href="https://twitter.com/grimphq" target="_blank" rel="noopener">
+              <Icon type="twitter"/>
+            </Button>
+            <Button type="link" size="large" href="https://www.facebook.com/grimphq/" target="_blank" rel="noopener">
+              <Icon type="facebook" theme="filled"/>
+            </Button>
+            <Button type="link" size="large" href="https://instagram.com/grimphq" target="_blank" rel="noopener">
+              <Icon type="instagram" theme="filled"/>
+            </Button>
+          </IconsGroup>
+          <CopyrightGroup>
+            <p>Copyright © 2020 <a href="https://angulaire.io" target="_blank" rel="noopener">Angulaire</a></p>
+          </CopyrightGroup>
+        </Col>
+        <Col xs={24} md={8}>
           <RightGroup>
-            <IconsGroup>
-              <Button type="link" size="large" href="https://linkedin.com/company/grimphq" target="_blank" rel="noopener">
-                <Icon type="linkedin" theme="filled"/>
-              </Button>
-              <Button type="link" size="large" href="https://twitter.com/grimphq" target="_blank" rel="noopener">
-                <Icon type="twitter"/>
-              </Button>
-              <Button type="link" size="large" href="https://www.facebook.com/grimphq/" target="_blank" rel="noopener">
-                <Icon type="facebook" theme="filled"/>
-              </Button>
-              <Button type="link" size="large" href="https://instagram.com/grimphq" target="_blank" rel="noopener">
-                <Icon type="instagram" theme="filled"/>
-              </Button>
-            </IconsGroup>
-            <CopyrightGroup>
-              <p>Copyright © 2020 <a href="https://angulaire.io" target="_blank" rel="noopener">Angulaire</a></p>
-            </CopyrightGroup>
             <LocaleSwitcher />
           </RightGroup>
         </Col>

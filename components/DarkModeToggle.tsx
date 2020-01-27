@@ -4,12 +4,11 @@ import { Switch } from 'antd';
 import styled from 'styled-components'
 
 const StyledSwitch = styled(Switch)`
-  &.ant-switch {
-    background-color: rgb(68,68,68,.8);
+  &.ant-switch {
+    background-color: ${props => props.theme.bg.greyDark};
   }
-
-
 `
+
 
 const DarkModeToggle = () => {
   const darkMode = useDarkMode(false);

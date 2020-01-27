@@ -5,16 +5,14 @@ import { locales, languageNames, logo } from '../translations/config'
 import { LocaleContext } from '../context/LocaleContext'
 
 const StyledSelect = styled.select`
-  margin-left: 12px;
-  font-size: 16px;
-  color: #121212;
+  font-size: 14px;
+  color: ${props => props.theme.bg.greyDark};
   padding: 0 .4em;
-  border-radius: .5em;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background-color: rgb(68, 68, 68, .8);
-  border-color: rgb(68, 68, 68, .8);
+  background-color: transparent;
+  border-color: transparent;
 `
 
 

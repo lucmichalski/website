@@ -8,6 +8,7 @@ export const lightTheme = {
     selected: '#fffce6',
     shade: '#e8e8e8',
     shadowLightOnly: 'rgba(0,0,0,.09) 0 10px 20px 0',
+    greyDark: '#CCC',
     border: '#EAEAEA',
     borderDarkOnly: 'none'
   },
@@ -31,7 +32,8 @@ export const darkTheme = {
     selected: '#FFBB00',
     shade: '#393939',
     shadowLightOnly: 'none',
-    border: '#333333',
+    greyDark: 'rgb(68,68,68,.8)',
+    border: '#333',
     borderDarkOnly: "#333333"
   },
   text: {
