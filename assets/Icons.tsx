@@ -2,7 +2,7 @@ import { Icon } from 'antd';
 
 const MenuSvg = () => (
   <svg width="32px" height="32px" viewBox="0 0 32 32">
-    <g id="Menu-Icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Menu-Icon" stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd">
       <g id="A" transform="translate(-729.000000, -1096.000000)" fill-rule="nonzero">
         <g id="Group-11" transform="translate(108.000000, 1076.000000)">
           <g id="Group-9" transform="translate(620.000000, 0.000000)">
@@ -32,7 +32,7 @@ export const MenuIcon = props => <Icon component={MenuSvg} {...props} />;
 
 const ValidSvg = () => (
   <svg width="35px" height="35px" viewBox="0 0 35 35">
-    <g id="AB-testing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="AB-testing" stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd">
       <g id="A" transform="translate(-729.000000, -1182.000000)" fill="#FFBB00">
         <g id="Group-11" transform="translate(108.000000, 1076.000000)">
           <g id="Group-9" transform="translate(620.000000, 0.000000)">
