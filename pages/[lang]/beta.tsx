@@ -9,7 +9,7 @@ const BetaPage = () => {
   return (
     <LandingLayout>
       <Hero 
-        title="L’AB testing devient plus simple avec Optimize" 
+        title="Trouvez la meilleure version de votre site web" 
         description="Testez les sections qui convertissent le mieux grâce à une incroyable librairie de widgets marketing"
         email_placeholder="Your email address..."
         button={{"text": "Cliquer ici", "type": "primary"}}
