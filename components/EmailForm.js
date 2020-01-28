@@ -24,7 +24,7 @@ const InputGroup = styled.div`
 const StyledInput = styled.input`
   -webkit-appearance: none;
   background-color: #fff;
-  border-radius: 12px;
+  border-radius: 4px;
   border-style: none;
   box-shadow: ${props => props.theme.bg.shadowLightOnly};
   color: #000;
@@ -33,7 +33,7 @@ const StyledInput = styled.input`
   letter-spacing: -.3px;
   margin: 0;
   outline: 0;
-  padding: 16px;
+  padding: 14px 25px;
   text-align: left;
   transition: box-shadow .2s, color .2s;
   width: 100%;

@@ -23,7 +23,6 @@ const HeadingGroup = styled.div`
       text-align: left;
     }
     text-align: center;
-    font-size: 42px;
     margin-top: 40px;
   }
 

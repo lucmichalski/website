@@ -7,13 +7,13 @@ export const lightTheme = {
     secondaryLightOnly: '#14143C',
     selected: '#fffce6',
     shade: '#e8e8e8',
-    shadowLightOnly: 'rgba(0,0,0,.09) 0 10px 20px 0',
+    shadowLightOnly: '0 5px 10px rgba(0,0,0,.12)',
     greyDark: '#CCC',
     border: '#EAEAEA',
     borderDarkOnly: 'none'
   },
   text: {
-    primary: '#1A3066',
+    primary: '#121212',
     secondary: '#2f3037',
     tertiary: '#525560',
     quarternary: '#9194a1',
@@ -51,35 +51,42 @@ export const darkTheme = {
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
   @font-face {
-    font-family: Colfax;
-    src: url(/fonts/Colfax-Bold.woff);
+    font-family: Geomanist;
+    src: url(/fonts/Geomanist-Bold.woff);
   }
   body {
-    font-family: Colfax;
+    font-family: Roboto Mono;
 		-webkit-font-smoothing: antialiased;
 		line-height: 1.3;
 		background-color: ${props => props.theme.bg.primary};
   }
 	h1 {
     @media only screen and (min-width: 768px) { 
-      font-size: 54px;
+      font-size: 4rem;
     }
-		color: ${props => props.theme.text.primary};
-		font-weight: 600;
-    font-size: 42px;
-		line-height: 1.4;
-    text-align: center;
-    margin-bottom: 2rem;
+    color: ${props => props.theme.text.primary};
+    font-family: Geomanist, -apple-system, system-ui, BlinkMacSystemFont, Helvetica Neue, sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.1em;
+    font-weight: 800;
+    letter-spacing: -.05rem;
+    margin: 50px 0;
   }
   h2 {
-    media only screen and (min-width: 768px) {
-      font-size: 42px;
+    @media only screen and (min-width: 768px) {
+      font-size: 3.5rem;
     }
-    margin-bottom: 20px;
-    font-weight: 600;
-    line-height: 1.4;
-    font-size: 36px;
     color: ${props => props.theme.text.primary};
+    font-family: Geomanist, -apple-system, system-ui, BlinkMacSystemFont, Helvetica Neue, sans-serif;
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -.05rem;
+    margin: 50px 0;
+  }
+
+  h3, h4, h5, h6 {
+    font-family: Geomanist, -apple-system, system-ui, BlinkMacSystemFont, Helvetica Neue, sans-serif;
   }
 	
 	p {
@@ -93,6 +100,10 @@ export const GlobalStyle = createGlobalStyle`
 	
 	*:focus {
 		outline:none
+  }
+
+  .ant-btn-lg {
+    padding: 0 25px;
   }
   
 `

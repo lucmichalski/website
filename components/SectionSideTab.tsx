@@ -9,7 +9,7 @@ const SectionGroup = styled.div`
   padding: 100px 0;
 
   h2 {
-    padding-bottom: 20px;
+    text-align: center;
   }
 `
 const StyledCollapse = styled(Collapse)`
@@ -77,7 +77,11 @@ class SectionSideTab extends React.Component<SectionSideTabProps> {
   render() {
     return (
       <SectionGroup>
-        <h2>{this.props.title}</h2>
+        <Row type="flex" justify="center" align="middle">
+          <Col xs={{span: 24}} md={{span: 14 }}>
+            <h2>{this.props.title}</h2>
+          </Col>
+        </Row>
         <Row type="flex" justify="center" align="middle">
           <Col xs={{span: 24, order: 1}} md={{span: 12, order: this.props.visualOrder}}>
             <img src="/screen-optimize2.png" width="100%"/>

@@ -15,7 +15,7 @@ const IndexPage = () => {
         
         {({ data: { page } }) => {
           return (
-            <p>{page}</p>
+            <p>Page id is {page.id} and slug is {page.slug}</p>
           );
         }}
       </Query>
