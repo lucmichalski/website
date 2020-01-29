@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { DefaultSeo } from 'next-seo';
 import SEO from '../next-seo.config'
 import { ApolloProvider } from "@apollo/react-hooks";  
-import withData from "../utils/apollo";
+import withApollo from "../lib/apollo";
 import TagManager from 'react-gtm-module'
 import Providers from '../components/Providers';
 
@@ -34,4 +34,4 @@ class MyApp extends App {
   }
 }
 
-export default withData(MyApp)
+export default withApollo(MyApp)

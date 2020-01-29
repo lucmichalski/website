@@ -1,0 +1,6 @@
+schema: https://ws-admin.grimp.io/graphql
+overwrite: true
+generates:
+  ./lib/fragmentTypes.json:
+    plugins:
+      - fragment-matcher

@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 const HOMEPAGE_QUERY = gql`  
-  query Pages {
-    page(id: 11) {
+  query Page($id: ID!) {
+    page(id: $id) {
       id
       slug
       Section {
