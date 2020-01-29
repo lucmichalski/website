@@ -33,10 +33,10 @@ const IndexPage = () => {
               if (section.__typename === "ComponentSectionsSideCollapseTab") {
                 return (
                   <SectionSideTab 
-                    title="Dynamiser son site devient un jeu d’enfant" 
-                    description="Chez Grimp, nous sommes des experts de l’AB testing avec Google Optimize. On conçoit, teste, évalue en accord direct avec nos clients."
-                    visualOrder={1} 
-                    contentOrder={2}
+                    title={section[`title_${locale}`]} 
+                    tabs={section.Tab}
+                    visualOrder={section.visual_order} 
+                    contentOrder={section.content_order}
                   />
                 )
               }
