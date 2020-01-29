@@ -1,16 +1,20 @@
+const nextEnv = require('next-env');
+const dotenvLoad = require('dotenv-load');
+const withFonts = require('next-fonts');
 const withLess = require('@zeit/next-less')
 const lessToJS = require('less-vars-to-js')
 const fs = require('fs')
 const path = require('path')
-const withFonts = require('next-fonts');
-require('dotenv').config()
+
+dotenvLoad();
+const withNextEnv = nextEnv();
 
 // Where your antd-custom.less file lives
 const themeVariables = lessToJS(
   fs.readFileSync(path.resolve(__dirname, './assets/antd-custom.less'), 'utf8')
 )
 
-module.exports = withLess(withFonts({
+module.exports = withNextEnv(withLess(withFonts({
   lessLoaderOptions: {
     javascriptEnabled: true,
     modifyVars: themeVariables, // make your antd custom effective
@@ -37,9 +41,5 @@ module.exports = withLess(withFonts({
       })
     }
     return config
-  },
-  env: {
-    HUBSPOT_API_KEY: process.env.HUBSPOT_API_KEY,
-    BACKEND_URL: process.env.BACKEND_URL
   }
-}))
+})))
