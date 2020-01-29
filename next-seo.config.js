@@ -10,7 +10,7 @@ export default {
     description: "Upgrade your website or app with Grimp's powerful site testing. Try our services today and register for our coming soon tool.",
     images: [
       {
-        url: 'url(/og-image.png)',
+        url: '${url(/og-image.png)}',
         width: 1232,
         height: 632,
         alt: 'Grimp Card',
