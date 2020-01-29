@@ -10,7 +10,7 @@ const IndexPage = () => {
       <HeroSide 
         title="L’AB testing devient plus simple avec Optimize" 
         description="Chez Grimp, nous sommes des experts de l’AB testing avec Google Optimize. On conçoit, teste, évalue en accord direct avec nos clients."
-        button={{"text": "Demander un accompagnement", "type": "primary"}}
+        buttons={{"text": "Demander un accompagnement", "type": "primary"}}
         visualOrder={1} 
         contentOrder={2}
       /> 

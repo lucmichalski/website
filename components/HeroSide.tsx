@@ -36,6 +36,10 @@ const HeadingGroup = styled.div`
 	}
 `;
 
+const ButtonsGroup = styled.div`
+
+`
+
 const StyledButton = styled(Button)`
   @media only screen and (min-width: 768px) {
     width: auto;
@@ -48,7 +52,7 @@ const StyledButton = styled(Button)`
 type HeroProps = { 
   title: string,
   description: string,
-  button: any,
+  buttons: any,
   visualOrder: number, 
   contentOrder: number,
 }
@@ -62,6 +66,9 @@ class HeroSide extends React.Component<HeroProps> {
   }
 
   render() {
+
+    const { buttons } = this.props
+
     return (
       <HeroGroup>
         <div className="logo">
@@ -72,7 +79,11 @@ class HeroSide extends React.Component<HeroProps> {
             <HeadingGroup>
               <h1>{this.props.title}</h1>
               <p>{this.props.description}</p>
-              <StyledButton type={this.props.button.type} size="large" onClick={this.handleClick}>{this.props.button.text}</StyledButton>
+              <ButtonsGroup>
+                {buttons.map((button) => (
+                  <StyledButton type={button.type} size="large" onClick={this.handleClick}>{button[`text_fr`]}</StyledButton>
+                ))}
+              </ButtonsGroup>
             </HeadingGroup>
           </Col>
           <Col xs={{span: 0}} md={{span: 10, order: this.props.contentOrder, offset: 2}}>
