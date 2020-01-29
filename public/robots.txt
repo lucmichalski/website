@@ -1,2 +1,9 @@
 User-agent: *
+
+Allow: /en/*
+Allow: /fr/*
+Disallow: /
+Disallow: /en/playbooks
+Disallow: /fr/playbooks
+
 Sitemap: https://grimp.io/sitemap.xml

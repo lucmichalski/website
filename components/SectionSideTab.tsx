@@ -42,6 +42,7 @@ const HeaderPanel = styled.div`
 `
 
 
+
 type SectionSideTabProps = { 
   title: string,
   description: string,
@@ -69,12 +70,26 @@ const headerTree = () => (
     <InfiniteIcon />
     <h4>Votre site devient agile & modulable</h4>
   </HeaderPanel>
-
 );
 
 
 class SectionSideTab extends React.Component<SectionSideTabProps> {
+
+  state = {
+    showTab: 1
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      showTab: parseInt(e)
+    });
+  }
+
+
   render() {
+
+    const { showTab } = this.state;
+
     return (
       <SectionGroup>
         <Row type="flex" justify="center" align="middle">
@@ -84,10 +99,17 @@ class SectionSideTab extends React.Component<SectionSideTabProps> {
         </Row>
         <Row type="flex" justify="center" align="middle">
           <Col xs={{span: 24, order: 1}} md={{span: 12, order: this.props.visualOrder}}>
-            <img src="/screen-optimize2.png" width="100%"/>
+            {(showTab === 1) && <img src="/screen-optimize2.png" width="100%"/>}    
+            {(showTab === 2) && <img src="/screen-optimize3.png" width="100%"/>} 
+            {(showTab === 3) && <img src="/screen-optimize4.png" width="100%"/>} 
           </Col>
           <Col xs={{span: 24, order: 2}} md={{span: 10, order: this.props.contentOrder, offset: 2}}>
-            <StyledCollapse accordion bordered={false} defaultActiveKey={['1']}>
+            <StyledCollapse 
+              accordion 
+              bordered={false} 
+              defaultActiveKey={['1']}
+              onChange={this.handleChange}
+            >
               <Panel header={headerOne()} showArrow={false} key="1">
                 <p>Chez Grimp, nous sommes des experts de l’AB testing avec Google Optimize. On conçoit, teste, évalue en accord direct avec nos clients.</p>
               </Panel>

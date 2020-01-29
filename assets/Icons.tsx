@@ -2,8 +2,8 @@ import { Icon } from 'antd';
 
 const MenuSvg = () => (
   <svg width="32px" height="32px" viewBox="0 0 32 32">
-    <g id="Menu-Icon" stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd">
-      <g id="A" transform="translate(-729.000000, -1096.000000)" fill-rule="nonzero">
+    <g id="Menu-Icon" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+      <g id="A" transform="translate(-729.000000, -1096.000000)" fillRule="nonzero">
         <g id="Group-11" transform="translate(108.000000, 1076.000000)">
           <g id="Group-9" transform="translate(620.000000, 0.000000)">
             <g id="qr">
@@ -32,7 +32,7 @@ export const MenuIcon = props => <Icon component={MenuSvg} {...props} />;
 
 const ValidSvg = () => (
   <svg width="35px" height="35px" viewBox="0 0 35 35">
-    <g id="AB-testing" stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd">
+    <g id="AB-testing" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g id="A" transform="translate(-729.000000, -1182.000000)" fill="#FFBB00">
         <g id="Group-11" transform="translate(108.000000, 1076.000000)">
           <g id="Group-9" transform="translate(620.000000, 0.000000)">
@@ -40,7 +40,7 @@ const ValidSvg = () => (
               <g id="Group-8">
                 <g id="Group-13" transform="translate(1.000000, 106.000000)">
                   <path d="M17.5,35 C27.1649875,35 35,27.1649875 35,17.5 C35,7.8350125 27.1649875,0 17.5,0 C7.8350125,0 0,7.8350125 0,17.5 C0,27.1649875 7.8350125,35 17.5,35 Z" id="Path" opacity="0.089969308"></path>
-                  <path d="M25.8456625,10.180975 C26.50515,9.4744125 27.61255,9.436175 28.3191125,10.0956625 C29.025675,10.75515 29.063825,11.8624625 28.404425,12.569025 L16.1543375,25.694025 C15.5145375,26.3795875 14.4480875,26.439 13.7361875,25.8286875 L7.6111875,20.5786875 C6.877325,19.9497375 6.7923625,18.8449625 7.4213125,18.1111 C8.05035,17.377325 9.155125,17.292275 9.8889,17.9213125 L14.74025,22.079575 L25.8456625,10.180975 Z" id="Path" fill-rule="nonzero" opacity="0.9"></path>
+                  <path d="M25.8456625,10.180975 C26.50515,9.4744125 27.61255,9.436175 28.3191125,10.0956625 C29.025675,10.75515 29.063825,11.8624625 28.404425,12.569025 L16.1543375,25.694025 C15.5145375,26.3795875 14.4480875,26.439 13.7361875,25.8286875 L7.6111875,20.5786875 C6.877325,19.9497375 6.7923625,18.8449625 7.4213125,18.1111 C8.05035,17.377325 9.155125,17.292275 9.8889,17.9213125 L14.74025,22.079575 L25.8456625,10.180975 Z" id="Path" fillRule="nonzero" opacity="0.9"></path>
                 </g>
               </g>
             </g>
@@ -55,7 +55,7 @@ export const ValidIcon = props => <Icon component={ValidSvg} {...props} />;
 
 const InfiniteSvg = () => (   
   <svg width="38px" height="26px" viewBox="0 0 38 26">
-    <g id="AB-testing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="AB-testing" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g id="A" transform="translate(-736.000000, -1287.000000)" fill="#F0ACAC">
         <g id="Group-11" transform="translate(108.000000, 1076.000000)">
           <g id="Group-9" transform="translate(620.000000, 0.000000)">

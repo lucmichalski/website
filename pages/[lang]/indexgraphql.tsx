@@ -11,7 +11,7 @@ const IndexPage = () => {
 
   return (
     <MainLayout>
-      <Query query={HOMEPAGE_QUERY} id={10}>
+      <Query query={HOMEPAGE_QUERY} id={11}>
         
         {({ data: { page } }) => {
           return (

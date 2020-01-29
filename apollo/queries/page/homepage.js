@@ -1,19 +1,20 @@
 import gql from "graphql-tag";
 
 const HOMEPAGE_QUERY = gql`  
-  query Pages($id: ID!) {
-    page(id: $id) {
+  query Pages {
+    page(id: 11) {
       id
       slug
-    	Section {
+      Section {
         __typename
         ... on ComponentSectionsSideVisual {
-          id
           title_en
           title_fr
-          content_en
+          description_en
+          description_fr
+          
         }
-        ... on ComponentSectionsCenterTab {
+        ... on ComponentSectionsSideCollapseTab {
           id
           title_en
           title_fr
