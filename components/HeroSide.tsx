@@ -67,8 +67,8 @@ class HeroSide extends React.Component<HeroProps> {
 
   render() {
 
-    const { buttons } = this.props
-
+    const { title, description, buttons } = this.props
+    console.log(buttons)
     return (
       <HeroGroup>
         <div className="logo">
@@ -77,8 +77,8 @@ class HeroSide extends React.Component<HeroProps> {
         <Row type="flex" justify="center" align="middle">
           <Col xs={{span: 24}} md={{span: 12, order: this.props.visualOrder}}>
             <HeadingGroup>
-              <h1>{this.props.title}</h1>
-              <p>{this.props.description}</p>
+              <h1>{title}</h1>
+              <p>{description}</p>
               <ButtonsGroup>
                 {buttons.map((button) => (
                   <StyledButton type={button.type} size="large" onClick={this.handleClick}>{button[`text_fr`]}</StyledButton>
