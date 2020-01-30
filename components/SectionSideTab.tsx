@@ -50,46 +50,27 @@ type SectionSideTabProps = {
   contentOrder: number,
 }
 
-const headerOne = () => (
-  <HeaderPanel>
-    <MenuIcon />
-    <h4>Allez plus loin que l’existant</h4>
-  </HeaderPanel>
-  
-);
-
-const headerTwo = () => (
-  <HeaderPanel>
-    <ValidIcon />
-    <h4>Comprenez ce qui fonctionne vraiment</h4>
-  </HeaderPanel>
-);
-
-const headerTree = () => (
-  <HeaderPanel>
-    <InfiniteIcon />
-    <h4>Votre site devient agile & modulable</h4>
-  </HeaderPanel>
-);
-
-
 class SectionSideTab extends React.Component<SectionSideTabProps> {
 
   state = {
-    showTab: 1
+    showTab: this.props.tabs[0].id
   }
 
   handleChange = (e) => {
-    this.setState({
-      showTab: parseInt(e)
-    });
+    if (e !== undefined) {
+      this.setState({
+        showTab: e
+      });
+    }
   }
 
 
   render() {
 
     const { showTab } = this.state;
+    console.log(showTab)
     const { title, tabs, visualOrder, contentOrder } = this.props;
+    const showImageTab = tabs.filter(tab => tab.id === showTab);
 
     return (
       <SectionGroup>
@@ -100,26 +81,28 @@ class SectionSideTab extends React.Component<SectionSideTabProps> {
         </Row>
         <Row type="flex" justify="center" align="middle">
           <Col xs={{span: 24, order: 1}} md={{span: 12, order: visualOrder}}>
-            {(showTab === 1) && <img src="/screen-optimize2.png" width="100%"/>}    
-            {(showTab === 2) && <img src="/screen-optimize3.png" width="100%"/>} 
-            {(showTab === 3) && <img src="/screen-optimize4.png" width="100%"/>} 
+            <img src={showImageTab[0].Image.url} width="100%"/>
           </Col>
           <Col xs={{span: 24, order: 2}} md={{span: 10, order: contentOrder, offset: 2}}>
             <StyledCollapse 
               accordion 
               bordered={false} 
-              defaultActiveKey={['1']}
+              defaultActiveKey={tabs[0].id}
               onChange={this.handleChange}
-            >
-              <Panel header={headerOne()} showArrow={false} key="1">
-                <p>Chez Grimp, nous sommes des experts de l’AB testing avec Google Optimize. On conçoit, teste, évalue en accord direct avec nos clients.</p>
-              </Panel>
-              <Panel header={headerTwo()} showArrow={false} key="2">
-                <p>Ne vous ennuyez pas à comprendre les données de votre site, nous le faisons pour vous et apportons des modifications subséquentielles sur votre site internet.</p>
-              </Panel>
-              <Panel header={headerTree()} showArrow={false} key="3">
-                <p>Ne vous ennuyez pas à comprendre les données de votre site, nous le faisons pour vous et apportons des modifications subséquentielles sur votre site internet.</p>
-              </Panel>
+            > 
+              {tabs.map((tab) => (
+                <Panel 
+                  header={
+                    <HeaderPanel>
+                      <img src={tab.Icon.url}/>
+                      <h4>{tab[`title_fr`]}</h4>
+                    </HeaderPanel>
+                  }
+                  showArrow={false}
+                  key={tab.id}>
+                    <p>{tab.content_fr}</p>
+                </Panel>
+              ))}
             </StyledCollapse>
           </Col>
         </Row>

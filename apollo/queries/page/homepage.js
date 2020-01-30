@@ -31,11 +31,16 @@ const HOMEPAGE_QUERY = gql`
           title_en
           title_fr
           Tab {
+            id
             title_en
             title_fr
             content_en
             content_fr
             Image {
+              name
+              url
+            }
+            Icon {
               name
               url
             }
