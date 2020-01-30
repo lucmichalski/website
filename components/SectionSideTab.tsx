@@ -48,6 +48,7 @@ type SectionSideTabProps = {
   tabs: any,
   visualOrder: number, 
   contentOrder: number,
+  locale: any
 }
 
 class SectionSideTab extends React.Component<SectionSideTabProps> {
@@ -66,10 +67,8 @@ class SectionSideTab extends React.Component<SectionSideTabProps> {
 
 
   render() {
-
     const { showTab } = this.state;
-    console.log(showTab)
-    const { title, tabs, visualOrder, contentOrder } = this.props;
+    const { title, tabs, visualOrder, contentOrder, locale } = this.props;
     const showImageTab = tabs.filter(tab => tab.id === showTab);
 
     return (
@@ -95,12 +94,12 @@ class SectionSideTab extends React.Component<SectionSideTabProps> {
                   header={
                     <HeaderPanel>
                       <img src={tab.Icon.url}/>
-                      <h4>{tab[`title_fr`]}</h4>
+                      <h4>{tab[`title_${locale}`]}</h4>
                     </HeaderPanel>
                   }
                   showArrow={false}
                   key={tab.id}>
-                    <p>{tab.content_fr}</p>
+                    <p>{tab[`content_${locale}`]}</p>
                 </Panel>
               ))}
             </StyledCollapse>

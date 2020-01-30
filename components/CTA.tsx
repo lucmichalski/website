@@ -1,3 +1,5 @@
+import React, { useContext } from 'react'
+import { LocaleContext } from '../context/LocaleContext'
 import { Row, Col, Button } from 'antd';
 import styled from 'styled-components'
 
@@ -43,6 +45,9 @@ type CTAProps = {
 }
 
 const CTA = ({ title, description, button }: CTAProps) => {
+
+  const { locale } = useContext(LocaleContext)
+
   return (
     <ContentGroup type="flex" justify="center" align="middle">
       <ContentCard>
@@ -50,7 +55,7 @@ const CTA = ({ title, description, button }: CTAProps) => {
           <Col xs={18} md={16}>
             <h3>{title}</h3>
             <p>{description}</p>
-            <Button type={button.type} htmlType="submit" size="large">{button.text}</Button>
+            <Button type={button.type} htmlType="submit" size="large">{button[`text_${locale}`]}</Button>
           </Col>
         </Row>
       </ContentCard>

@@ -46,6 +46,19 @@ const HOMEPAGE_QUERY = gql`
             }
           }
         }
+        ... on ComponentSectionsCta {
+          id
+          title_en
+          title_fr
+          content_en
+          content_fr
+          button {
+            text_en
+            text_fr
+            type
+            url
+          }
+        }
       }
     }
   }
