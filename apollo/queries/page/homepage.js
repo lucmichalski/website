@@ -30,6 +30,8 @@ const HOMEPAGE_QUERY = gql`
           id
           title_en
           title_fr
+          visual_order
+          content_order
           Tab {
             id
             title_en

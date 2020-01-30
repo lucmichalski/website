@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import { LocaleContext } from '../context/LocaleContext'
+import React from 'react'
 import { Row, Col, Button } from 'antd';
 import styled from 'styled-components'
 
@@ -41,12 +40,11 @@ const ContentCard = styled.div`
 type CTAProps = { 
   title: string,
   description: string,
-  button: any
+  button: any,
+  locale: any
 }
 
-const CTA = ({ title, description, button }: CTAProps) => {
-
-  const { locale } = useContext(LocaleContext)
+const CTA = ({ title, description, button, locale }: CTAProps) => {
 
   return (
     <ContentGroup type="flex" justify="center" align="middle">

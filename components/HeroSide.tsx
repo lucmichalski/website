@@ -52,9 +52,11 @@ const StyledButton = styled(Button)`
 type HeroProps = { 
   title: string,
   description: string,
+  imageUrl: string,
   buttons: any,
   visualOrder: number, 
   contentOrder: number,
+  locale: any
 }
 
 class HeroSide extends React.Component<HeroProps> {
@@ -67,27 +69,27 @@ class HeroSide extends React.Component<HeroProps> {
 
   render() {
 
-    const { title, description, buttons } = this.props
-    console.log(buttons)
+    const { title, description, imageUrl, buttons, visualOrder, contentOrder, locale } = this.props
+    
     return (
       <HeroGroup>
         <div className="logo">
           <Logo height="39px" width="122px" />
         </div>
         <Row type="flex" justify="center" align="middle">
-          <Col xs={{span: 24}} md={{span: 12, order: this.props.visualOrder}}>
+          <Col xs={{span: 24}} md={{span: 12, order: contentOrder}}>
             <HeadingGroup>
               <h1>{title}</h1>
               <p>{description}</p>
               <ButtonsGroup>
                 {buttons.map((button) => (
-                  <StyledButton type={button.type} size="large" onClick={this.handleClick}>{button[`text_fr`]}</StyledButton>
+                  <StyledButton type={button.type} size="large" onClick={this.handleClick}>{button[`text_${locale}`]}</StyledButton>
                 ))}
               </ButtonsGroup>
             </HeadingGroup>
           </Col>
-          <Col xs={{span: 0}} md={{span: 10, order: this.props.contentOrder, offset: 2}}>
-            <img src="/screen-optimize.png" width="100%"/>
+          <Col xs={{span: 0}} md={{span: 10, order: visualOrder, offset: 2}}>
+            <img src={imageUrl} width="100%"/>
           </Col>
         </Row>
       </HeroGroup>

@@ -18,15 +18,16 @@ const IndexPage = () => {
         return (
           <LandingLayout>  
             {page.Section.map((section) => {
-              {console.log(section)}
               if ( section.__typename === "ComponentSectionsSideVisual") {
                 return (
                   <HeroSide 
                     title={section[`title_${locale}`]} 
-                    description={section[`description_${locale}`]} 
+                    description={section[`description_${locale}`]}
+                    imageUrl={section.Media.url}
                     buttons={section.Button}
-                    visualOrder={1} 
-                    contentOrder={2}
+                    visualOrder={section.visual_order} 
+                    contentOrder={section.content_order}
+                    locale={locale}
                   /> 
                 )
               }
@@ -47,6 +48,7 @@ const IndexPage = () => {
                     title={section[`title_${locale}`]}
                     description={section[`content_${locale}`]}
                     button={section.button}
+                    locale={locale}
                   />
                 )
               }
