@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import { LocaleContext } from '../context/LocaleContext'
+import React from 'react'
 import { Row, Col, Avatar, Tag } from 'antd';
 import styled from 'styled-components'
 
@@ -37,42 +36,48 @@ const CardContent = styled.div`
 const CardTags = styled.div`
 `
 
-type PlaybookProps = { 
-  playbook: {
-    title_en: string,
-    title_fr: string,
-    areas: any,
-    business_role: any,
-    tools: any
+type OfferProps = { 
+  offer: {
+    offer_keyid: number,
+    posting_date: number,
+    updating_date: number,
+    job_reference: string,
+    job_title: string,
+    company_name: string,
+    id_agence: number,
+    company_description: string,
+    SecteurMetierInterim: string,
+    job_description: string,
+    applicant_profile: string,
+    job_function: string,
+    job_industry: string,
+    location_administrativearea: string,
+    location_subadministrativearea: string,
+    location_town: string,
+    job_type: string,
+    job_statute: string,
+    job_contract: string,
+    application_email: string
   }
 }
 
-const PlaybookCard = ({ playbook }: PlaybookProps) => {
-
-  const { locale } = useContext(LocaleContext)
+const OfferCard = ({ offer }: OfferProps) => {
 
   return (
     <a href="">
       <CardGroup>
         <CardHeader>
-          <h4>{playbook.business_role[`name_${locale}`]}</h4>
+          <h3>{offer.job_title}</h3>
           <ToolsGroup>
-            {playbook.tools.map((tool) => (
-              <Avatar src={tool.logo.url}/>
-            ))}
+            {offer.job_contract}
           </ToolsGroup>
         </CardHeader>
         <CardContent>
-            <h3>{playbook[`title_${locale}`]}</h3>
+          <p>{offer.company_name}</p>
         </CardContent>
-        <CardTags>
-          {playbook.areas.map((area) => (
-            <Tag>{area[`name_${locale}`]}</Tag>
-          ))}
-        </CardTags> 
       </CardGroup> 
     </a>
   )
 }
 
-export default PlaybookCard
+export default OfferCard
