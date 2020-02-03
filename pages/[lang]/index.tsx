@@ -1,62 +1,30 @@
-import React, { useContext } from 'react'
-import LandingLayout from '../../layouts/Landing'
-import withLocale from '../../hocs/withLocale'
-import { LocaleContext } from '../../context/LocaleContext'
-import Query from "../../components/query"; 
-import HOMEPAGE_QUERY from "../../apollo/queries/page/homepage";
-import HeroSide from '../../components/HeroSide'
-import SectionSideTab from '../../components/SectionSideTab'
-import CTA from '../../components/CTA'
+import React from 'react'
+import fetch from 'isomorphic-unfetch';
+import parser from 'fast-xml-parser'
 
-const IndexPage = () => {
-
-  const { locale } = useContext(LocaleContext)
+const Index = props => {
 
   return (
-    <Query query={HOMEPAGE_QUERY} id={11}>
-      {({ data: { page } }) => {
-        return (
-          <LandingLayout>  
-            {page.Section.map((section) => {
-              if ( section.__typename === "ComponentSectionsSideVisual") {
-                return (
-                  <HeroSide 
-                    title={section[`title_${locale}`]} 
-                    description={section[`description_${locale}`]}
-                    imageUrl={section.Media.url}
-                    buttons={section.Button}
-                    visualOrder={section.visual_order} 
-                    contentOrder={section.content_order}
-                    locale={locale}
-                  /> 
-                )
-              }
-              if (section.__typename === "ComponentSectionsSideCollapseTab") {
-                return (
-                  <SectionSideTab 
-                    title={section[`title_${locale}`]} 
-                    tabs={section.Tab}
-                    visualOrder={section.visual_order} 
-                    contentOrder={section.content_order}
-                    locale={locale}
-                  />
-                )
-              }
-              if (section.__typename === "ComponentSectionsCta") {
-                return (
-                  <CTA
-                    title={section[`title_${locale}`]}
-                    description={section[`content_${locale}`]}
-                    button={section.button}
-                    locale={locale}
-                  />
-                )
-              }
-            })}
-          </LandingLayout>
-        );
-      }}
-    </Query>
+    <ul>
+      {props.offers.map(offer => (
+        <li>{offer.job_title}</li>
+      ))}
+    </ul>
   )
+
+  
 }
-export default withLocale(IndexPage)
+
+Index.getInitialProps = async function() {
+  const res = await fetch('http://www.mytalentplug.com/xml.aspx?jbID=u/S3BRjmcl8=')
+  const xml = await res.text()
+  const json = await parser.parse(xml).offers.offer;
+
+  return {
+    offers: json
+  }
+
+
+};
+
+export default Index
