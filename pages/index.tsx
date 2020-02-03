@@ -1,31 +1,48 @@
 import React from 'react'
-import { ReactiveBase } from '@appbaseio/reactivesearch';
+import { ReactiveBase, DataSearch, ResultCard, ReactiveList } from '@appbaseio/reactivesearch';
 import Appbase from 'appbase-js'
 import { Row, Col, Menu, Icon } from 'antd';
 import fetch from 'isomorphic-unfetch';
 import parser from 'fast-xml-parser'
 import OfferCard from '../components/OfferCard'
 
-const Index = props => {
+const Index = () => {
 
   return (
     <Row type="flex" justify="center" align="top">
       <ReactiveBase
         app="metierinterim"
         credentials="0nJWCHXeL:d82e4323-1236-4946-90c2-b6ec4205e8de"
-        >
-        Hello from ReactiveSearch!
-      </ReactiveBase>
-      <Col xs={24} md={12}>
-        {props.offers.map(offer => (
-          <OfferCard
-            offer={offer}
+      >
+        <DataSearch
+          componentId="mainSearch"
+          dataField={["job_title"]}
+          queryFormat="and"
+          placeholder="Votre job de rêve?"
+        />
+        <Col xs={24} md={12}>
+          <ReactiveList
+            componentId="results"
+            dataField="offer"
+            pagination={true}
+            react={{
+              and: ['mainSearch'],
+            }}
+            render={({ data }) => (
+              <ReactiveList.ResultCardsWrapper>
+                {data.map(offer => (
+                  <OfferCard
+                    key={offer.id}
+                    offer={offer}
+                  />
+                ))}
+              </ReactiveList.ResultCardsWrapper>
+            )}
           />
-        ))}
-      </Col>
+        </Col>
+      </ReactiveBase>
     </Row>
   )
-
   
 }
 
@@ -80,6 +97,8 @@ Index.getInitialProps = async function() {
   
     console.log(json)
 
+
+  // To display props.offers inside index without Appbase.io
   return {
     offers: json
   }
