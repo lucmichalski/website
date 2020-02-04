@@ -91,7 +91,7 @@ const Index = () => {
               <ReactiveList.ResultCardsWrapper>
                 {data.map(offer => (
                   <OfferCard
-                    key={offer.id}
+                    key={offer._id}
                     offer={offer}
                   />
                 ))}
@@ -153,8 +153,6 @@ Index.getInitialProps = async function() {
   //   .catch(err => {
   //     console.log('indexing error: ', err);
   //   });
-  
-  console.log(json)
 
 
   // To display props.offers inside index without Appbase.io

@@ -1,5 +1,7 @@
 import React from 'react'
-import { Row, Col, Avatar, Tag } from 'antd';
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import { Row, Col } from 'antd';
 import styled from 'styled-components'
 
 const CardGroup = styled.div `
@@ -52,9 +54,10 @@ const DetailsGroup = styled.ul`
   }
 `
 
-type OfferProps = { 
+type OfferProps = {
+  key: number,
   offer: {
-    offer_keyid: number,
+    _id: number,
     posting_date: number,
     updating_date: number,
     job_reference: string,
@@ -79,6 +82,9 @@ type OfferProps = {
 
 const OfferCard = ({ offer }: OfferProps) => {
 
+  const router = useRouter()
+  const { id } = router.query
+
   function IndustryImage(props) {
     const industry = props.industry;
     if (industry === "Tertiaire") {
@@ -91,37 +97,39 @@ const OfferCard = ({ offer }: OfferProps) => {
 
 
   return (
-    <a href="">
-      <CardGroup>
-        <Row type="flex" justify="center" align="top">
-          <Col xs={24} md={8}>
-            <CardImage>
-              <IndustryImage industry={offer.SecteurMetierInterim} />
-            </CardImage>
-          </Col>
-          <Col xs={24} md={16}>
-            <CardContent>
-              <h4>{offer.company_name}</h4>
-              <h3>{offer.job_title}</h3>
-              <DetailsGroup>
-                <li>
-                  {offer.job_contract}
-                </li>
-                <li>
-                  {offer.job_type}
-                </li>
-                <li>
-                  {offer.location_town}
-                </li>
-                <li>
-                  {offer.posting_date}
-                </li>
-              </DetailsGroup>
-            </CardContent>
-          </Col>
-        </Row>
-      </CardGroup> 
-    </a>
+    <Link href="/offers/[id]" as={`/offers/${offer._id}`}>
+      <a>
+        <CardGroup>
+          <Row type="flex" justify="center" align="top">
+            <Col xs={24} md={8}>
+              <CardImage>
+                <IndustryImage industry={offer.SecteurMetierInterim} />
+              </CardImage>
+            </Col>
+            <Col xs={24} md={16}>
+              <CardContent>
+                <h4>{offer.company_name}</h4>
+                <h3>{offer.job_title}</h3>
+                <DetailsGroup>
+                  <li>
+                    {offer.job_contract}
+                  </li>
+                  <li>
+                    {offer.job_type}
+                  </li>
+                  <li>
+                    {offer.location_town}
+                  </li>
+                  <li>
+                    {offer.posting_date}
+                  </li>
+                </DetailsGroup>
+              </CardContent>
+            </Col>
+          </Row>
+        </CardGroup> 
+      </a>
+    </Link>
   )
 }
 
