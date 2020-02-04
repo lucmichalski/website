@@ -110,49 +110,49 @@ Index.getInitialProps = async function() {
   const xml = await res.text()
   const json = await parser.parse(xml).offers.offer;
 
-  var bulkBody = []
-  json.map((offer) => {
-    var index = { index: { _id: offer.offer_keyid } }
-    var body = { 
-      posting_date: offer.posting_date,
-      updating_date: offer.updating_date,
-      job_reference: offer.job_reference,
-      job_title: offer.job_title,
-      company_name: offer.company_name,
-      id_agence: offer.id_agence,
-      company_description: offer.company_description,
-      SecteurMetierInterim: offer.SecteurMetierInterim,
-      job_description: offer.job_description,
-      applicant_profile: offer.applicant_profile,
-      job_function: offer.job_function,
-      job_industry: offer.job_industry,
-      location_administrativearea: offer.location_administrativearea,
-      location_subadministrativearea: offer.location_subadministrativearea,
-      location_town: offer.location_town,
-      job_type: offer.job_type,
-      job_statute: offer.job_statute,
-      job_contract: offer.job_contract,
-      application_email: offer.application_email 
-    }
-    bulkBody.push(index, body)
-  })
+  // var bulkBody = []
+  // json.map((offer) => {
+  //   var index = { index: { _id: offer.offer_keyid } }
+  //   var body = { 
+  //     posting_date: offer.posting_date,
+  //     updating_date: offer.updating_date,
+  //     job_reference: offer.job_reference,
+  //     job_title: offer.job_title,
+  //     company_name: offer.company_name,
+  //     id_agence: offer.id_agence,
+  //     company_description: offer.company_description,
+  //     SecteurMetierInterim: offer.SecteurMetierInterim,
+  //     job_description: offer.job_description,
+  //     applicant_profile: offer.applicant_profile,
+  //     job_function: offer.job_function,
+  //     job_industry: offer.job_industry,
+  //     location_administrativearea: offer.location_administrativearea,
+  //     location_subadministrativearea: offer.location_subadministrativearea,
+  //     location_town: offer.location_town,
+  //     job_type: offer.job_type,
+  //     job_statute: offer.job_statute,
+  //     job_contract: offer.job_contract,
+  //     application_email: offer.application_email 
+  //   }
+  //   bulkBody.push(index, body)
+  // })
 
-  var appbase = Appbase({
-    "url": process.env.APPBASE_API_URL,
-    "app": process.env.APPBASE_APP_ID,
-    "credentials": process.env.APPBASE_API_KEY
-  })
-  appbase
-    .bulk({
-      type: "_doc",
-      body: bulkBody
-    })
-    .then(res => {
-      console.log('successfully indexed: ', res);
-    })
-    .catch(err => {
-      console.log('indexing error: ', err);
-    });
+  // var appbase = Appbase({
+  //   "url": process.env.APPBASE_API_URL,
+  //   "app": process.env.APPBASE_APP_ID,
+  //   "credentials": process.env.APPBASE_API_KEY
+  // })
+  // appbase
+  //   .bulk({
+  //     type: "_doc",
+  //     body: bulkBody
+  //   })
+  //   .then(res => {
+  //     console.log('successfully indexed: ', res);
+  //   })
+  //   .catch(err => {
+  //     console.log('indexing error: ', err);
+  //   });
   
   console.log(json)
 

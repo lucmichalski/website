@@ -14,10 +14,9 @@ const CardGroup = styled.div `
   }
 `
 const CardImage = styled.div`
-  height: 100%;
   img {
     border-radius: 12px 0 0 12px;
-    height: 100%; 
+    height: 140px; 
     width: 100%; 
     object-fit: cover;
   }
