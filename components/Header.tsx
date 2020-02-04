@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Button, Menu } from 'antd'
+import React from 'react';
+import { Button } from 'antd'
 import Logo from '../assets/Logo'
 import styled from 'styled-components'
 
@@ -38,12 +38,6 @@ const NavGroup = styled.nav`
   
 `
 
-declare global {
-  interface Window {
-    Calendly: any;
-  }
-}
-
 type HeaderProps = {
   afterScroll: boolean;
 };
@@ -63,12 +57,6 @@ class Header extends React.Component<HeaderProps> {
       this.setState({ hasScrolled: false })
     }
   }
-
-  handleClick(e) {
-    e.preventDefault();
-    window.Calendly.initPopupWidget({url: 'https://calendly.com/grimp/demo'});
-    return false;
-  }
   
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
@@ -81,7 +69,6 @@ class Header extends React.Component<HeaderProps> {
           <a href="/">
             <Logo/>
           </a>
-          <Button type="link" href="#" onClick={this.handleClick} >Intégration sur Demande</Button>
         </NavGroup>
       </HeaderGroup>
     )

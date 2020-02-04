@@ -1,7 +1,6 @@
 import { Row, Col, Button, Icon } from 'antd'
 import styled from 'styled-components'
 import DarkModeToggle from './DarkModeToggle'
-import LocaleSwitcher from './LocaleSwitcher'
 
 const FooterGroup = styled.footer`
   background: ${props => props.theme.bg.matt};
@@ -40,20 +39,6 @@ const RightGroup = styled.div`
   flex-direction: column;
 `
 
-const IconsGroup = styled.div`
-  text-align: center;
-  
-  .ant-btn {
-    padding: 0 6px;
-  }
-  
-  a {
-    color: ${props => props.theme.bg.greyDark};
-  }
-  
-
-`
-
 const CopyrightGroup = styled.div`
   p, a {
     text-align: center;
@@ -78,27 +63,12 @@ const Footer = () => {
           </LeftGroup>
         </Col>
         <Col xs={24} md={8}>
-          <IconsGroup>
-            <Button type="link" size="large" href="https://linkedin.com/company/grimphq" target="_blank" rel="noopener">
-              <Icon type="linkedin" theme="filled"/>
-            </Button>
-            <Button type="link" size="large" href="https://twitter.com/grimphq" target="_blank" rel="noopener">
-              <Icon type="twitter"/>
-            </Button>
-            <Button type="link" size="large" href="https://www.facebook.com/grimphq/" target="_blank" rel="noopener">
-              <Icon type="facebook" theme="filled"/>
-            </Button>
-            <Button type="link" size="large" href="https://instagram.com/grimphq" target="_blank" rel="noopener">
-              <Icon type="instagram" theme="filled"/>
-            </Button>
-          </IconsGroup>
           <CopyrightGroup>
-            <p>Copyright © 2020 <a href="https://angulaire.io" target="_blank" rel="noopener">Angulaire</a></p>
+            <p>Made with ❤️ by <a href="https://angulaire.io" target="_blank" rel="noopener">Angulaire</a></p>
           </CopyrightGroup>
         </Col>
         <Col xs={24} md={8}>
           <RightGroup>
-            <LocaleSwitcher />
           </RightGroup>
         </Col>
       </Row>

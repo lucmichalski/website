@@ -91,7 +91,7 @@ const Index = () => {
               <ReactiveList.ResultCardsWrapper>
                 {data.map(offer => (
                   <OfferCard
-                    key={offer._id}
+                    key={offer.id}
                     offer={offer}
                   />
                 ))}
