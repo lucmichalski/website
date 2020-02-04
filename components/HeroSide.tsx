@@ -61,12 +61,6 @@ type HeroProps = {
 
 class HeroSide extends React.Component<HeroProps> {
 
-  handleClick(e) {
-    e.preventDefault();
-    window.Calendly.initPopupWidget({url: 'https://calendly.com/grimp/demo'});
-    return false;
-  }
-
   render() {
 
     const { title, description, imageUrl, buttons, visualOrder, contentOrder, locale } = this.props
@@ -83,7 +77,7 @@ class HeroSide extends React.Component<HeroProps> {
               <p>{description}</p>
               <ButtonsGroup>
                 {buttons.map((button) => (
-                  <StyledButton type={button.type} size="large" onClick={this.handleClick}>{button[`text_${locale}`]}</StyledButton>
+                  <StyledButton type={button.type} size="large">{button[`text_${locale}`]}</StyledButton>
                 ))}
               </ButtonsGroup>
             </HeadingGroup>
