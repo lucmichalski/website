@@ -6,7 +6,6 @@ const CardGroup = styled.div `
   background: ${props => props.theme.bg.matt};
   width: 100%;
   border-radius: 12px;
-  padding: 50px 70px;
   margin: 20px 0;
   box-shadow: rgba(0,0,0,.09) 0 10px 20px 0;
 
@@ -14,26 +13,44 @@ const CardGroup = styled.div `
     color: ${props => props.theme.text.primary};
   }
 `
-
-const CardHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: .5rem;
-`
-
-const ToolsGroup = styled.div`
-  .ant-avatar {
-    margin-left: -0.5rem;
-    border: solid 2px #fafafa;
+const CardImage = styled.div`
+  height: 100%;
+  img {
+    border-radius: 12px 0 0 12px;
+    height: 100%; 
+    width: 100%; 
+    object-fit: cover;
   }
 `
 
 const CardContent = styled.div`
-  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+
+  h4 {
+    font-size: 0.625rem;
+    color: rgb(151, 153, 157);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
 `
 
-const CardTags = styled.div`
+const DetailsGroup = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  color: rgb(151, 153, 157);
+  list-style: none;
+  padding-inline-start: 0;
+
+  li {
+    margin: 0px 0.8125rem 0.3rem 0px;
+  }
 `
 
 type OfferProps = { 
@@ -63,18 +80,47 @@ type OfferProps = {
 
 const OfferCard = ({ offer }: OfferProps) => {
 
+  function IndustryImage(props) {
+    const industry = props.industry;
+    if (industry === "Tertiaire") {
+      return <img src="/tertiary.jpg"/>
+    } else if (industry === "Industrie") {
+      return <img src="/industry.jpg"/>
+    }
+    return <img src="/building.jpg"/>
+  }
+
+
   return (
     <a href="">
       <CardGroup>
-        <CardHeader>
-          <h3>{offer.job_title}</h3>
-          <ToolsGroup>
-            {offer.job_contract}
-          </ToolsGroup>
-        </CardHeader>
-        <CardContent>
-          <p>{offer.company_name}</p>
-        </CardContent>
+        <Row type="flex" justify="center" align="top">
+          <Col xs={24} md={8}>
+            <CardImage>
+              <IndustryImage industry={offer.SecteurMetierInterim} />
+            </CardImage>
+          </Col>
+          <Col xs={24} md={16}>
+            <CardContent>
+              <h4>{offer.company_name}</h4>
+              <h3>{offer.job_title}</h3>
+              <DetailsGroup>
+                <li>
+                  {offer.job_contract}
+                </li>
+                <li>
+                  {offer.job_type}
+                </li>
+                <li>
+                  {offer.location_town}
+                </li>
+                <li>
+                  {offer.posting_date}
+                </li>
+              </DetailsGroup>
+            </CardContent>
+          </Col>
+        </Row>
       </CardGroup> 
     </a>
   )
