@@ -12,17 +12,18 @@ const OfferGroup = styled.div`
   }
 `
 
-const Offer = props => {
+const Offer = ( {offers} ) => {
+
   const router = useRouter()
   const { id } = router.query
-  const offer = props.offers.find(offer => offer.offer_keyid === Number(id))
+  const offer = offers.find(offer => offer.offer_keyid === Number(id))
 
 
   return (
     <PageLayout title={offer.job_title}>
       <Row type="flex" justify="center" align="top">
         <Col xs={24} md={6}>
-          <Link href="/offers/[id]/apply" as={`/offers/${offer.offer_keyid}/apply`}>
+          <Link href={`/offers/${offer.offer_keyid}/apply`}>
             <a>Button</a>
           </Link>
         </Col>
@@ -42,15 +43,10 @@ const Offer = props => {
 
 Offer.getInitialProps = async function() {
  
-  const res = await fetch('https://www.mytalentplug.com/xml.aspx?jbID=u/S3BRjmcl8=', {
-    mode: 'no-cors' // 'cors' by default
-  })
+  const res = await fetch('https://www.mytalentplug.com/xml.aspx?jbID=u/S3BRjmcl8=')
   const xml = await res.text()
-  const json = await parser.parse(xml).offers.offer;
-
-  return {
-    offers: json
-  }
+  const offers = await parser.parse(xml).offers.offer;
+  return { offers }
 
 };
   
