@@ -1,10 +1,10 @@
 import {Row, Col } from 'antd'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import fetch from 'isomorphic-unfetch';
 import parser from 'fast-xml-parser'
 import PageLayout from '../../../layouts/Page'
+import ApplyForm from '../../../components/ApplyForm'
 
 
 const Apply = ( {offers} ) => {
@@ -17,7 +17,7 @@ const Apply = ( {offers} ) => {
     <PageLayout title={offer.job_title}>
       <Row type="flex" justify="center" align="top">
         <Col xs={24} md={12}>
-          {offer.job_title}
+          <ApplyForm />
         </Col>
       </Row>
     </PageLayout>
