@@ -26,7 +26,7 @@ const Apply = props => {
 
 Apply.getInitialProps = async function() {
  
-  const res = await fetch('http://www.mytalentplug.com/xml.aspx?jbID=u/S3BRjmcl8=')
+  const res = await fetch('https://www.mytalentplug.com/xml.aspx?jbID=u/S3BRjmcl8=')
   const xml = await res.text()
   const json = await parser.parse(xml).offers.offer;
 

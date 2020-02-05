@@ -17,6 +17,7 @@ const Offer = props => {
   const { id } = router.query
   const offer = props.offers.find(offer => offer.offer_keyid === Number(id))
 
+
   return (
     <PageLayout title={offer.job_title}>
       <Row type="flex" justify="center" align="top">
@@ -41,7 +42,7 @@ const Offer = props => {
 
 Offer.getInitialProps = async function() {
  
-  const res = await fetch('http://www.mytalentplug.com/xml.aspx?jbID=u/S3BRjmcl8=')
+  const res = await fetch('https://www.mytalentplug.com/xml.aspx?jbID=u/S3BRjmcl8=')
   const xml = await res.text()
   const json = await parser.parse(xml).offers.offer;
 
