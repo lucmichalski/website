@@ -17,7 +17,7 @@ const Offer = () => {
   const router = useRouter()
 
   return (
-    <Query query={ OFFRE_QUERY } id={67}>
+    <Query query={ OFFRE_QUERY } id={router.query.id}>
       {({ data: { offre } }) => {
         return (
           <PageLayout title={offre.job_title}>

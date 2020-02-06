@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 const OFFRE_QUERY = gql`  
   query Offre($id: ID!) {
-    offre(id: $id) {
+    offres(where: { offer_keyid: $id} ) {
       id
       offer_keyid
       posting_date
