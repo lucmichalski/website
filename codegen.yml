@@ -1,6 +1,6 @@
-schema: https://ws-admin.grimp.io/graphql
+schema: https://angulaire-jobs-backend.herokuapp.com/graphql
 overwrite: true
 generates:
-  ./lib/fragmentTypes.json:
+  ./utils/fragmentTypes.json:
     plugins:
       - fragment-matcher
