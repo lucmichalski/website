@@ -18,7 +18,8 @@ const Offer = () => {
 
   return (
     <Query query={ OFFRE_QUERY } id={router.query.id}>
-      {({ data: { offre } }) => {
+      {({ data: { offres } }) => {
+        const offre = offres[0]
         return (
           <PageLayout title={offre.job_title}>
             <Row type="flex" justify="center" align="top">
