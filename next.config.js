@@ -39,7 +39,9 @@ module.exports = withLess(withFonts({
     }
     return config
   },
-  // env: {
-  //   EXAMPLE: process.env.EXAMPLE
-  // }
+  env: {
+    APPBASE_APP_ID: process.env.APPBASE_APP_ID,
+    APPBASE_API_URL: process.env.APPBASE_API_URL,
+    APPBASE_API_KEY: process.env.APPBASE_API_KEY
+  }
 }))
