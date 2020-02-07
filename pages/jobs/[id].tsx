@@ -24,7 +24,7 @@ const Offer = () => {
           <PageLayout title={offre.job_title}>
             <Row type="flex" justify="center" align="top">
               <Col xs={24} md={6}>
-                <Link href={'/offres/[id]/postuler'} as={`/offres/${offre.offer_keyid}/postuler`}>
+                <Link href={'/jobs/[id]/postuler'} as={`/jobs/${offre.offer_keyid}/postuler`}>
                   <a>Button</a>
                 </Link>
               </Col>

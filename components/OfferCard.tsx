@@ -97,7 +97,7 @@ const OfferCard = ({ offer }: OfferProps) => {
 
 
   return (
-    <Link href={'/offres/[id]'} as={`/offres/${offer._id}`}>
+    <Link href={'/jobs/[id]'} as={`/jobs/${offer._id}`}>
       <a>
         <CardGroup>
           <Row type="flex" justify="center" align="top">

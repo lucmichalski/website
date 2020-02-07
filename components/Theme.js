@@ -13,11 +13,11 @@ export const lightTheme = {
     borderDarkOnly: 'none'
   },
   text: {
-    primary: '#121212',
+    primary: '#242B4F',
     secondary: '#2f3037',
     tertiary: '#525560',
     quarternary: '#9194a1',
-    grey: '#546581',
+    grey: '#8F95A6',
     placeholder: 'rgba(82,85,96,0.5)',
     onPrimary: '#ffffff'
   },
@@ -49,51 +49,51 @@ export const darkTheme = {
 }
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
   @font-face {
     font-family: Geomanist;
     src: url(/fonts/Geomanist-Bold.woff);
+    font-weight: bold;
+    font-style: normal;
   }
+  @font-face {
+    font-family: Geomanist;
+    src: url(/fonts/Geomanist-Regular.woff);
+    font-weight: normal;
+    font-style: normal;
+  }
+  
   body {
-    font-family: Roboto Mono;
+    font-family: Geomanist, -apple-system, system-ui, BlinkMacSystemFont, Helvetica Neue, sans-serif;
 		-webkit-font-smoothing: antialiased;
-		line-height: 1.3;
 		background-color: ${props => props.theme.bg.primary};
   }
 	h1 {
     @media only screen and (min-width: 768px) { 
       font-size: 4rem;
     }
-    color: ${props => props.theme.text.primary};
-    font-family: Geomanist, -apple-system, system-ui, BlinkMacSystemFont, Helvetica Neue, sans-serif;
     font-size: 2.5rem;
     line-height: 1.1em;
-    font-weight: 800;
-    letter-spacing: -.05rem;
     margin: 50px 0;
   }
   h2 {
     @media only screen and (min-width: 768px) {
       font-size: 3.5rem;
     }
-    color: ${props => props.theme.text.primary};
-    font-family: Geomanist, -apple-system, system-ui, BlinkMacSystemFont, Helvetica Neue, sans-serif;
     font-size: 2rem;
     line-height: 1.1;
-    font-weight: 700;
-    letter-spacing: -.05rem;
     margin: 50px 0;
   }
 
-  h3, h4, h5, h6 {
-    font-family: Geomanist, -apple-system, system-ui, BlinkMacSystemFont, Helvetica Neue, sans-serif;
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -.05rem;
+    color: ${props => props.theme.text.primary};
+    font-weight: bold;
   }
 	
 	p {
-    font-family: Roboto Mono;
 		color: ${props => props.theme.text.grey};
 		font-size: 18px;
-		font-weight: 400;
+		font-weight: normal;
 		line-height: 1.4;
     margin-bottom: 1rem;
 	}
@@ -104,6 +104,9 @@ export const GlobalStyle = createGlobalStyle`
 
   .ant-btn-lg {
     padding: 0 25px;
+  }
+  .ant-btn-link {
+    color: ${props => props.theme.text.primary};
   }
   
 `
