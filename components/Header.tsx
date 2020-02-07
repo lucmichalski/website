@@ -39,6 +39,14 @@ const NavGroup = styled.nav`
   
 `
 
+const ButtonsGroup = styled.div`
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+`
+
 type HeaderProps = {
   afterScroll: boolean;
 };
@@ -73,7 +81,14 @@ class Header extends React.Component<HeaderProps> {
           <Link href={'/jobs/index'} as="/jobs">
             <Button type="link">Trouver un Job</Button>
           </Link>
-          <Button type="primary">Se connecter</Button>
+          <ButtonsGroup>
+            <Link href="/signup" as="/signup">
+              <Button type="link">S'inscrire</Button>
+            </Link>
+            <Link href="/signin" as="/signin">
+              <Button type="primary">Se connecter</Button>
+            </Link>
+          </ButtonsGroup>
         </NavGroup>
       </HeaderGroup>
     )
