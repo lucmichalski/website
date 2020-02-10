@@ -2,6 +2,7 @@ import React from 'react'
 import LandingLayout from '../layouts/Landing'
 import Hero from '../components/Hero'
 import HeroSearch from '../components/HeroSearch'
+import defaultPage from "../hocs/defaultPage";
 
 const IndexPage = () => {
 
@@ -15,4 +16,4 @@ const IndexPage = () => {
     </LandingLayout>
   )
 }
-export default IndexPage
+export default defaultPage(IndexPage)

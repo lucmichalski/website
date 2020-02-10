@@ -7,7 +7,7 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import withData from "../utils/apollo";
 
 class MyApp extends App {
-
+  
   render() {
     const { Component, pageProps, apollo } = this.props
     return (
