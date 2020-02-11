@@ -56,9 +56,7 @@ class HeroSearch extends React.Component{
     location: []
   };
 
-  handleSubmit(event) {
-    console.log(this.state.location)
-    event.preventDefault();
+  handleSubmit() {
     Router.push(`/jobs?search=${this.state.search}?location=${this.state.location}`)
   }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import { ReactiveBase, DataSearch, ReactiveList, MultiDropdownList } from '@appbaseio/reactivesearch';
 import { Row, Col, Menu, Icon } from 'antd';
 import OfferCard from '../../components/OfferCard'
@@ -56,6 +57,8 @@ const SearchGroup = styled.div`
 
 const JobsIndex = () => {
 
+  const router = useRouter()
+
   return (
     <>
     <StyledRow type="flex" justify="center" align="middle">
@@ -74,7 +77,8 @@ const JobsIndex = () => {
               componentId="search"
               dataField={["job_title"]}
               queryFormat="and"
-              placeholder="Mots-clés"
+              placeholder="Intitulé ou mots-clés"
+              defaultValue={(router.query.search !== undefined) && `${router.query.search}`}
               className="block"
             />
             <MultiDropdownList
@@ -108,7 +112,7 @@ const JobsIndex = () => {
               )
             }}
             react={{
-              and: ['jobs', 'jobContract', 'locationSubadministrativeArea', 'secteur'],
+              and: ['search', 'jobContract', 'locationSubadministrativeArea', 'secteur'],
             }}
             render={({ data }) => (
               <ReactiveList.ResultCardsWrapper>
