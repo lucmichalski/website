@@ -102,6 +102,10 @@ export const GlobalStyle = createGlobalStyle`
 		outline:none
   }
 
+  .ant-btn-primary {
+    border-radius: 22px;
+  }
+
   .ant-btn-lg {
     padding: 0 25px;
   }

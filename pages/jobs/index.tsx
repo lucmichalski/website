@@ -2,13 +2,26 @@ import React from 'react'
 import { ReactiveBase, DataSearch, ReactiveList, MultiDropdownList } from '@appbaseio/reactivesearch';
 import { Row, Col, Menu, Icon } from 'antd';
 import OfferCard from '../../components/OfferCard'
+import Logo from '../../assets/Logo'
 import styled from 'styled-components'
+
+const StyledRow = styled(Row)`
+  height: 200px;
+  text-align: center;
+  background: url(https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+`
 
 const StyledReactiveBase = styled(ReactiveBase)`
 
   .css-1sk3exe {
     justify-content: center;
-    margin: 2rem 0;
+    h4 {
+      margin-top: 4rem;
+    }
   }
 
   .css-1i2ldnt {
@@ -28,6 +41,13 @@ const SearchGroup = styled.div`
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
+  background: white;
+  padding: 20px;
+  margin-top: -40px;
+  position: absolute;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 10px;
+  width: 100%;
 
   .block {
     width: 100%;
@@ -37,6 +57,12 @@ const SearchGroup = styled.div`
 const JobsIndex = () => {
 
   return (
+    <>
+    <StyledRow type="flex" justify="center" align="middle">
+      <Col xs={24} md={12}>
+        <Logo />
+      </Col>
+    </StyledRow>
     <Row type="flex" justify="center" align="top">
       <Col xs={24} md={14}>
         <StyledReactiveBase
@@ -45,7 +71,7 @@ const JobsIndex = () => {
         >
           <SearchGroup>
             <DataSearch
-              componentId="mainSearch"
+              componentId="search"
               dataField={["job_title"]}
               queryFormat="and"
               placeholder="Mots-clés"
@@ -78,11 +104,11 @@ const JobsIndex = () => {
             pages={3}
             renderResultStats={function(stats) {
               return (
-                <h4>{`${stats.displayedResults} job sur un total de ${stats.numberOfResults} en ${stats.time} ms`}</h4>
+                <h4>{`${stats.numberOfResults} jobs trouvés en ${stats.time} ms`}</h4>
               )
             }}
             react={{
-              and: ['mainSearch', 'jobContract', 'locationSubadministrativeArea', 'secteur'],
+              and: ['jobs', 'jobContract', 'locationSubadministrativeArea', 'secteur'],
             }}
             render={({ data }) => (
               <ReactiveList.ResultCardsWrapper>
@@ -98,6 +124,7 @@ const JobsIndex = () => {
         </StyledReactiveBase>
       </Col>
     </Row>
+    </>
   )
   
 }

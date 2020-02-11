@@ -1,4 +1,6 @@
-import { Row, Col } from 'antd';
+import React from 'react'
+import Router from 'next/router'
+import { Row, Col, Button } from 'antd';
 import styled from 'styled-components'
 import { ReactiveBase, DataSearch, ReactiveList, MultiDropdownList } from '@appbaseio/reactivesearch';
 
@@ -47,37 +49,65 @@ const SearchGroup = styled.div`
   }
 `
 
-const HeroSearch = () => {
-  return (
-    <Row type="flex" justify="center" align="middle">
-      <Col xs={24} md={24}>
-        <HeroSearchGroup>
-          <ReactiveBase
-            app={process.env.APPBASE_APP_ID}
-            credentials={process.env.APPBASE_API_KEY}
-          >
-            <SearchGroup>
-              <DataSearch
-                componentId="mainSearch"
-                dataField={["job_title"]}
-                queryFormat="and"
-                placeholder="Le job de tes rêves?"
-                className="block"
-                showClear={true}
-              />
-              <MultiDropdownList
-                componentId="locationSubadministrativeArea"
-                dataField="location_subadministrativearea.keyword"
-                placeholder="Où ?"
-                className="block"
-              />
-            </SearchGroup>
-          </ReactiveBase>
-          <ImageCard />
-        </HeroSearchGroup>
-      </Col>
-    </Row>
-  )
+class HeroSearch extends React.Component{
+
+  state = {
+    search: "",
+    location: []
+  };
+
+  handleSubmit(event) {
+    console.log(this.state.location)
+    event.preventDefault();
+    Router.push(`/jobs?search=${this.state.search}?location=${this.state.location}`)
+  }
+
+  render() {
+    return (
+      <Row type="flex" justify="center" align="middle">
+        <Col xs={24} md={24}>
+          <HeroSearchGroup>
+            <ReactiveBase
+              app={process.env.APPBASE_APP_ID}
+              credentials={process.env.APPBASE_API_KEY}
+            >
+              <SearchGroup>
+                <DataSearch
+                  componentId="search"
+                  dataField={["job_title"]}
+                  queryFormat="and"
+                  placeholder="Le job de tes rêves?"
+                  className="block"
+                  showClear
+                  onValueChange={(value) => {
+                    this.setState({
+                      search: value
+                    });
+                  }}
+                  onValueSelected={this.handleSubmit.bind(this)} 
+                />
+                <MultiDropdownList
+                  componentId="locationSubadministrativeArea"
+                  dataField="location_subadministrativearea.keyword"
+                  placeholder="Où ?"
+                  showSearch
+                  searchPlaceholder="Chercher par région ou ville"
+                  className="block"
+                  onValueChange={(value) => {
+                    this.setState({
+                      location: value
+                    });
+                  }}
+                />
+                <Button type="danger" size="large" onClick={this.handleSubmit.bind(this)} style={{marginLeft: "12px"}}>Rechercher</Button>
+              </SearchGroup>
+            </ReactiveBase>
+            <ImageCard />
+          </HeroSearchGroup>
+        </Col>
+      </Row>
+    )
+  }
 }
 
 export default HeroSearch
