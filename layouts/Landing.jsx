@@ -2,7 +2,6 @@ import React from "react";
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import styled from 'styled-components'
-import defaultPage from "../hocs/defaultPage";
 
 const Content = styled.main`
   padding: 0 20px 20px;
@@ -15,20 +14,8 @@ const Content = styled.main`
 
 class Layout extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-  static async getInitialProps({ req }) {
-    let pageProps = {};
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-    return { pageProps, isAuthenticated };
-  }
-
   render() {
-    const { isAuthenticated, children } = this.props;
-    console.log(isAuthenticated)
+    const { children } = this.props;
     return (
       <div>
         <Header afterScroll={true} />
@@ -41,4 +28,4 @@ class Layout extends React.Component {
   }
 }
 
-export default defaultPage(Layout);
+export default Layout;

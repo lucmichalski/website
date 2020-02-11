@@ -2,7 +2,6 @@ import React from 'react'
 import LandingLayout from '../layouts/Landing'
 import Hero from '../components/Hero'
 import HeroSearch from '../components/HeroSearch'
-import defaultPage from "../hocs/defaultPage";
 
 class IndexPage extends React.Component {
 
@@ -20,4 +19,4 @@ class IndexPage extends React.Component {
 
   
 }
-export default defaultPage(IndexPage)
+export default IndexPage
