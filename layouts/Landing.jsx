@@ -14,11 +14,11 @@ const Content = styled.main`
 `;
 
 class Layout extends React.Component {
+
   constructor(props) {
     super(props);
   }
-
-  static async getInitialProps({ Component, router, ctx }) {
+  static async getInitialProps({ req }) {
     let pageProps = {};
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
@@ -27,7 +27,7 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { children, isAuthenticated } = this.props;
+    const { isAuthenticated, children } = this.props;
     console.log(isAuthenticated)
     return (
       <div>
