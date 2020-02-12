@@ -92,6 +92,13 @@ const JobsIndex = () => {
               dataField="location_subadministrativearea.keyword"
               placeholder="Où ?"
               className="block"
+              defaultValue={router.query.search !== undefined && (
+                typeof router.query.location === "object" ? (
+                  router.query.location
+                ) : (
+                  [router.query.location]
+                )
+              )}
             />
             <MultiDropdownList
               componentId="secteur"

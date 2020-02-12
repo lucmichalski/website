@@ -57,7 +57,10 @@ class HeroSearch extends React.Component{
   };
 
   handleSubmit() {
-    Router.push(`/jobs?search=${this.state.search}?location=${this.state.location}`)
+    Router.push({
+      pathname: '/jobs', 
+      query: { search: this.state.search, location: this.state.location }
+    })
   }
 
   render() {
