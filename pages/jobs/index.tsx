@@ -35,10 +35,11 @@ const HeadingGroup = styled.div`
   z-index: 2;
   min-width: 0px;
   width: 100%;
-  max-width: 56rem;
+  max-width: 30rem;
   margin-left: auto;
   margin-right: auto;
   padding: 0px 1.5rem;
+
 `
 
 const StyledReactiveBase = styled(ReactiveBase)`
@@ -67,8 +68,9 @@ const SearchGroup = styled.div`
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
+
   background: white;
-  margin-top: -40px;
+  margin-top: -30px;
   position: absolute;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 10px;
@@ -125,6 +127,7 @@ const JobsIndex = () => {
               dataField={["job_title"]}
               queryFormat="and"
               autosuggest={false}
+              URLParams
               placeholder="Intitulé ou mots-clés"
               defaultValue={(router.query.search !== undefined) && `${router.query.search}`}
               className="block"

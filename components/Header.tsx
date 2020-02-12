@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'antd'
 import Link from 'next/link'
 import Logo from '../assets/Logo'
+import Nav from '../components/Nav'
 import styled from 'styled-components'
 
 const HeaderGroup = styled.header`
@@ -10,33 +11,25 @@ const HeaderGroup = styled.header`
   position: fixed;
   width: 100%;
   height: 80px;
+  padding: 0px 20px;
   z-index: 100;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
 
   &.HeaderOn {
     backdrop-filter: blur(20px);
     background: ${props => props.theme.bg.matt};
     border-bottom: 1px solid ${props => props.theme.bg.border};
   }
-`
-
-
-const NavGroup = styled.nav`
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0px 20px;
-  height: 100%;
-  
-  &.HeaderOff {
-    display: none;
-  }
-
-  @media (min-width: 768px) { 
-    padding: 0px 80px;
-  }
-  
 `
 
 const ButtonsGroup = styled.div`
@@ -74,22 +67,18 @@ class Header extends React.Component<HeaderProps> {
   render() {
     return (     
       <HeaderGroup className={(this.state.hasScrolled === true || this.props.afterScroll === false) && 'HeaderOn'}>
-        <NavGroup>
-          <a href="/">
-            <Logo/>
-          </a>
-          <Link href={'/jobs/index'} as="/jobs">
-            <Button type="link">Trouver un Job</Button>
+        <a href="/">
+          <Logo/>
+        </a>
+        <Nav />
+        <ButtonsGroup>
+          <Link href="/signup" as="/signup">
+            <Button type="link">S'inscrire</Button>
           </Link>
-          <ButtonsGroup>
-            <Link href="/signup" as="/signup">
-              <Button type="link">S'inscrire</Button>
-            </Link>
-            <Link href="/signin" as="/signin">
-              <Button type="primary">Se connecter</Button>
-            </Link>
-          </ButtonsGroup>
-        </NavGroup>
+          <Link href="/signin" as="/signin">
+            <Button type="primary">Se connecter</Button>
+          </Link>
+        </ButtonsGroup>
       </HeaderGroup>
     )
   }
