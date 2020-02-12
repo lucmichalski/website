@@ -15,6 +15,30 @@
             "name": "UsersPermissionsLoginPayload"
           },
           {
+            "name": "Article"
+          },
+          {
+            "name": "createArticlePayload"
+          },
+          {
+            "name": "updateArticlePayload"
+          },
+          {
+            "name": "deleteArticlePayload"
+          },
+          {
+            "name": "Category"
+          },
+          {
+            "name": "createCategoryPayload"
+          },
+          {
+            "name": "updateCategoryPayload"
+          },
+          {
+            "name": "deleteCategoryPayload"
+          },
+          {
             "name": "Offre"
           },
           {

@@ -1,4 +1,4 @@
-schema: https://angulaire-jobs-backend.herokuapp.com/graphql
+schema: https://kernn.herokuapp.com/graphql
 overwrite: true
 generates:
   ./utils/fragmentTypes.json:
