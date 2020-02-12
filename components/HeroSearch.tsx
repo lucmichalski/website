@@ -80,6 +80,7 @@ class HeroSearch extends React.Component{
                   placeholder="Le job de tes rêves?"
                   className="block"
                   showClear
+                  autosuggest={false}
                   onValueChange={(value) => {
                     this.setState({
                       search: value

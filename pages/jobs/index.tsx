@@ -6,14 +6,39 @@ import OfferCard from '../../components/OfferCard'
 import Logo from '../../assets/Logo'
 import styled from 'styled-components'
 
-const StyledRow = styled(Row)`
-  height: 200px;
-  text-align: center;
-  background: url(https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+const Hero = styled.section`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 14rem;
+  background: url(https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1526&q=80) no-repeat center center;
   background-size: cover;
+  text-align: center;
+
+  &::after {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    content: " ";
+  }
+`
+
+const HeadingGroup = styled.div`
+  position: relative;
+  z-index: 2;
+  min-width: 0px;
+  width: 100%;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 1.5rem;
 `
 
 const StyledReactiveBase = styled(ReactiveBase)`
@@ -43,16 +68,38 @@ const SearchGroup = styled.div`
   justify-content: flex-start;
   flex-direction: row;
   background: white;
-  padding: 20px;
   margin-top: -40px;
   position: absolute;
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 10px;
   width: 100%;
 
   .block {
     width: 100%;
+    max-width: 240px;
+
+    input {
+      height: 55px;
+      border-radius: 8px 0 0 8px;
+      background: transparent;
+    }
+
+    button {
+      border-left: none;
+      height: 55px;
+    }
+
+    .css-x6igpv {
+      top: 55px;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .last-select {
+      border-radius: 0 8px 8px 0;
+    }
+    
   }
+
 `
 
 const JobsIndex = () => {
@@ -61,11 +108,11 @@ const JobsIndex = () => {
 
   return (
     <>
-    <StyledRow type="flex" justify="center" align="middle">
-      <Col xs={24} md={12}>
+    <Hero>
+      <HeadingGroup>
         <Logo />
-      </Col>
-    </StyledRow>
+      </HeadingGroup>
+    </Hero>
     <Row type="flex" justify="center" align="top">
       <Col xs={24} md={14}>
         <StyledReactiveBase
@@ -77,6 +124,7 @@ const JobsIndex = () => {
               componentId="search"
               dataField={["job_title"]}
               queryFormat="and"
+              autosuggest={false}
               placeholder="Intitulé ou mots-clés"
               defaultValue={(router.query.search !== undefined) && `${router.query.search}`}
               className="block"
@@ -92,7 +140,7 @@ const JobsIndex = () => {
               dataField="location_subadministrativearea.keyword"
               placeholder="Où ?"
               className="block"
-              defaultValue={router.query.search !== undefined && (
+              defaultValue={router.query.location !== undefined && (
                 typeof router.query.location === "object" ? (
                   router.query.location
                 ) : (
@@ -105,6 +153,9 @@ const JobsIndex = () => {
               dataField="SecteurMetierInterim.keyword"
               placeholder="Secteur"
               className="block"
+              innerClass={{
+                select: 'last-select'
+              }}
             />
           </SearchGroup>  
           <ReactiveList
