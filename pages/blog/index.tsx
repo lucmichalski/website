@@ -55,7 +55,7 @@ const BlogIndex = () => {
         const otherArticles = articles.slice(1, articles.length);
         return (
           <>
-            <Header afterScroll initialColor="white"/>
+            <Header afterScroll/>
             <StyledRow type="flex" justify="start" align="middle">
               <Col xs={0} md={8}>
                 <ImageGroup>
