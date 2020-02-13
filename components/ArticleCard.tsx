@@ -3,6 +3,7 @@ import { Row, Col, Tag } from 'antd'
 import styled from 'styled-components'
 import ArticleAuthor from './ArticleAuthor'
 import Link from 'next/link'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const CardGroup = styled.article`
   margin: 2rem;
@@ -39,7 +40,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
       <Link href={'/blog/[id]'} as={`/blog/${article.slug}`}>
         <a>
           <ImageGroup>
-            <img src={article.image.url} />
+          <LazyLoadImage src={article.image.url} alt="SEO to do" effect="blur"/>
           </ImageGroup>
           <Tag color="red">{article.category.name}</Tag>
           <h2>{article.title}</h2>
