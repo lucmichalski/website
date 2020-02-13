@@ -37,19 +37,19 @@ const Article = () => {
                 },
                 images: [
                   {
-                    url: article.image.url,
-                    alt: 'Photo of text',
+                    url: article.image.media.url,
+                    alt: article.image.alt,
                   },
                 ],
               }}
             />
             <CentralLayout>
-              <Tag color="red">{article.category.name}</Tag>
+              <Tag color={article.category.color}>{article.category.name}</Tag>
               <h1>{article.title}</h1>
               <p>{article.description}</p>
               <ArticleAuthor article={article} />
             </CentralLayout>
-            <img src={article.image.url} width="100%"/>
+            <img src={article.image.url} alt={article.alt} width="100%"/>
             <CentralLayout>
               <ReactMarkdown source={article.content} />
             </CentralLayout>

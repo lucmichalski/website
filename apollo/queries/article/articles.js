@@ -9,12 +9,16 @@ const ARTICLES_QUERY = gql`
       description
       published_at
       image {
-        name
-        url
+        alt
+        media {
+          size
+          url
+        }
       }
       content
       category {
         name
+        color
       }
       user {
         username

@@ -11,7 +11,7 @@ const HeaderGroup = styled.header`
   position: fixed;
   width: 100%;
   height: 80px;
-  padding: 0px 20px;
+  padding: 0px 80px;
   z-index: 100;
 
   display: -webkit-box;
@@ -38,14 +38,20 @@ const ButtonsGroup = styled.div`
   align-items: center;
   -ms-flex-pack: justify;
   justify-content: space-between;
+
+  button {
+
+  }
 `
 
 type HeaderProps = {
   afterScroll: boolean;
+  initialColor: string;
 };
 
-class Header extends React.Component<HeaderProps> {
 
+class Header extends React.Component<HeaderProps> {
+  
   state = {
     hasScrolled: false
   }

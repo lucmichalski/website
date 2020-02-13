@@ -64,7 +64,7 @@ const Footer = () => {
         </Col>
         <Col xs={24} md={8}>
           <CopyrightGroup>
-            <p>Made with ❤️ by <a href="https://angulaire.io" target="_blank" rel="noopener">Angulaire</a></p>
+            <p>Made with ❤️ in Paris</p>
           </CopyrightGroup>
         </Col>
         <Col xs={24} md={8}>

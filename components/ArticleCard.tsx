@@ -40,9 +40,9 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
       <Link href={'/blog/[id]'} as={`/blog/${article.slug}`}>
         <a>
           <ImageGroup>
-            <LazyLoadImage src={article.image.url} alt="SEO to do" effect="blur"/>
+            <LazyLoadImage src={article.image.media.url} alt={article.image.alt} effect="blur"/>
           </ImageGroup>
-          <Tag color="red">{article.category.name}</Tag>
+          <Tag color={article.category.color}>{article.category.name}</Tag>
           <h2>{article.title}</h2>
           <p>{article.description}</p>
           <ArticleAuthor article={article} />

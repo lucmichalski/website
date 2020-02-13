@@ -36,7 +36,7 @@ const AvatarDetails = styled.div`
 `
 
 type ArticleAuthorProps = { 
-  article: any
+  article: any;
 }
 
 const ArticleAuthor = ({ article }: ArticleAuthorProps) => { 

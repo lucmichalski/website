@@ -1,66 +1,91 @@
 import React from "react";
-import { Row, Col, Button } from 'antd'
-import Link from "next/link"
+import { Row, Col, Tag } from 'antd'
 import styled from 'styled-components'
-import Logo from '../../assets/Logo'
 import ArticleCard from '../../components/ArticleCard'
 import Query from '../../components/Query'
 import ARTICLES_QUERY from "../../apollo/queries/article/articles";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import ArticleAuthor from '../../components/ArticleAuthor'
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
-const Hero = styled.section`
+const StyledRow = styled(Row)`
+  background-color: #242b4f;
+  padding: 200px 0;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  align-items: center;
-  height: 14rem;
-  background: url(https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1526&q=80) no-repeat center center;
-  background-size: cover;
-  text-align: center;
+`
 
-  &::after {
-    position: absolute;
-    left: 0px;
-    top: 0px;
+const OverDiv = styled.div`
+  height: 34rem
+`
+
+const OverGroup = styled.div`
+  margin-top: -100px;
+  position: absolute;
+`
+
+const ImageGroup = styled.div`
+  margin-bottom: 12px;
+  img {
+    height: 26rem;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    content: " ";
+    object-fit: cover;
+  }
+`
+const LastArticleContentGroup = styled.div`
+  h2 {
+    color: white;
+    font-size: 2.8rem;
+    margin: 18px 0;
+  }
+
+  p {
+    font-size: 1.4rem;
   }
 `
 
-const HeadingGroup = styled.div`
-  position: relative;
-  z-index: 2;
-  min-width: 0px;
-  width: 100%;
-  max-width: 30rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0px 1.5rem;
-
+const LargeArticleAuthor = styled(ArticleAuthor)`
+  p {
+    font-size: 5px;
+  }
+  
 `
 
 const BlogIndex = () => {  
   return (
     <Query query={ARTICLES_QUERY}>
       {({ data: { articles } }) => {
+        const lastArticle = articles.slice(0, 1)[0];
+        const otherArticles = articles.slice(1, articles.length);
         return (
           <>
-            <Hero>
-              <HeadingGroup>
-                <Logo />
-              </HeadingGroup>
-            </Hero>
+            <Header afterScroll initialColor="white"/>
+            <StyledRow type="flex" justify="start" align="middle">
+              <Col xs={24} md={8}>
+                <ImageGroup>
+                  <LazyLoadImage src={lastArticle.image.media.url} alt={lastArticle.image.alt} effect="blur"/>
+                </ImageGroup>
+              </Col>
+              <Col xs={24} md={{span: 10, offset: 1}}>
+                <LastArticleContentGroup>
+                  <Tag color={lastArticle.category.color}>{lastArticle.category.name}</Tag>
+                  <h2>{lastArticle.title}</h2>
+                  <p>{lastArticle.description}</p>
+                  <LargeArticleAuthor article={lastArticle}/>
+                </LastArticleContentGroup>
+              </Col>
+            </StyledRow>
             <Row type="flex" justify="start" align="top">
-              {articles.map(article => (
-                <Col xs={24} md={8}>
-                  <ArticleCard article={article}/>
-                </Col>
-              ))}
+              <OverDiv/>
+              <OverGroup>
+                {otherArticles.map(article => (
+                  <Col xs={24} md={8}>
+                    <ArticleCard article={article}/>
+                  </Col>
+                ))}
+              </OverGroup>
             </Row>
+            <Footer/>
           </>
         );
       }}
