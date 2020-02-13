@@ -10,18 +10,25 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 const StyledRow = styled(Row)`
-  background-color: #242b4f;
-  padding: 200px 0;
-  position: relative;
+  padding-top: 50px;
+  @media only screen and (min-width: 768px) {
+    background-color: #242b4f;
+    padding: 200px 0;
+    position: relative;
+  }
 `
 
 const OverDiv = styled.div`
-  height: 34rem
+  @media only screen and (min-width: 768px) {
+    height: 34rem
+  }
 `
 
 const OverGroup = styled.div`
-  margin-top: -100px;
-  position: absolute;
+  @media only screen and (min-width: 768px) {
+    margin-top: -100px;
+    position: absolute;
+  }
 `
 
 const ImageGroup = styled.div`
@@ -38,17 +45,6 @@ const LastArticleContentGroup = styled.div`
     font-size: 2.8rem;
     margin: 18px 0;
   }
-
-  p {
-    font-size: 1.4rem;
-  }
-`
-
-const LargeArticleAuthor = styled(ArticleAuthor)`
-  p {
-    font-size: 5px;
-  }
-  
 `
 
 const BlogIndex = () => {  
@@ -61,18 +57,21 @@ const BlogIndex = () => {
           <>
             <Header afterScroll initialColor="white"/>
             <StyledRow type="flex" justify="start" align="middle">
-              <Col xs={24} md={8}>
+              <Col xs={0} md={8}>
                 <ImageGroup>
                   <LazyLoadImage src={lastArticle.image.media.url} alt={lastArticle.image.alt} effect="blur"/>
                 </ImageGroup>
               </Col>
-              <Col xs={24} md={{span: 10, offset: 1}}>
+              <Col xs={0} md={{span: 10, offset: 1}}>
                 <LastArticleContentGroup>
                   <Tag color={lastArticle.category.color}>{lastArticle.category.name}</Tag>
                   <h2>{lastArticle.title}</h2>
-                  <p>{lastArticle.description}</p>
-                  <LargeArticleAuthor article={lastArticle}/>
+                  <p style={{fontSize: "1.4rem"}}>{lastArticle.description}</p>
+                  <ArticleAuthor article={lastArticle}/>
                 </LastArticleContentGroup>
+                <Col xs={24} md={0}>
+                  <ArticleCard article={lastArticle}/>
+                </Col>
               </Col>
             </StyledRow>
             <Row type="flex" justify="start" align="top">
