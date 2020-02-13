@@ -1,28 +1,20 @@
 export default {
-  title: 'Grimp - A Better Version Of Your Website',
-  description: "Upgrade your website or app with Grimp's powerful site testing. Try our services today and register for our coming soon tool.",
+  title: "Kernn - Recherche d'Emploi, Orientation de Carrière & Ressources pour le Recrutement",
+  description: "Kernn est votre source pour la recherche d'emploi et les opportunités de carrière. Recherchez des jobs, lisez des conseils de carrière et trouvez des ressources pour l'embauche",
   openGraph: {
     type: 'website',
-    locale: 'en_US',
-    url: 'https://grimp.io/en',
-    site_name: 'Grimp',
-    title: 'Grimp - A Better Version Of Your Website',
-    description: "Upgrade your website or app with Grimp's powerful site testing. Try our services today and register for our coming soon tool.",
+    locale: 'fr_FR',
+    url: 'https://kernn.io',
+    site_name: 'Kernn',
+    title: "Kernn - Recherche d'Emploi, Orientation de Carrière & Ressources pour le Recrutement",
+    description: "Kernn est votre source pour la recherche d'emploi et les opportunités de carrière. Recherchez des jobs, lisez des conseils de carrière et trouvez des ressources pour l'embauche",
     images: [
       {
-        url: '${url(/og-image.png)}',
+        url: "url('/og-image.png')",
         width: 1232,
         height: 632,
-        alt: 'Grimp Card',
+        alt: 'Kernn Meta',
       }
     ]
-  },
-  twitter: {
-    handle: '@grimphq',
-    cardType: 'summary_large_image',
-  },
-  languageAlternate: {
-    hrefLang: 'fr_FR',
-    href: 'https://grimp.io/fr'
   }
 };

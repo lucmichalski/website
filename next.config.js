@@ -3,6 +3,7 @@ const withLess = require('@zeit/next-less')
 const lessToJS = require('less-vars-to-js')
 const fs = require('fs')
 const path = require('path')
+const withImages = require('next-images')
 
 require('dotenv').config()
 
@@ -11,7 +12,7 @@ const themeVariables = lessToJS(
   fs.readFileSync(path.resolve(__dirname, './assets/antd-custom.less'), 'utf8')
 )
 
-module.exports = withLess(withFonts({
+module.exports = withLess(withFonts(withImages({
   lessLoaderOptions: {
     javascriptEnabled: true,
     modifyVars: themeVariables, // make your antd custom effective
@@ -45,4 +46,4 @@ module.exports = withLess(withFonts({
     APPBASE_API_KEY: process.env.APPBASE_API_KEY,
     BACKEND_URL: process.env.BACKEND_URL
   }
-}))
+})))

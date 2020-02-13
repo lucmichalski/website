@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from "next/router";
+import { NextSeo } from 'next-seo';
 import { Row, Col, Button, Tag, Avatar} from 'antd';
 import styled from 'styled-components';
 import Query from "../../components/Query"; 
@@ -16,6 +17,31 @@ const Article = () => {
         const article = articles[0]
         return (
           <>
+            <NextSeo
+              openGraph={{
+                title: article.title,
+                description: article.description,
+                url: `https://kernn.io/blog/${article.slug}`,
+                type: 'article',
+                article: {
+                  publishedTime: article.published_at,
+                  modifiedTime: '2018-01-21T18:04:43Z',
+                  expirationTime: '2022-12-21T22:04:11Z',
+                  authors: [
+                    `https://www.kernn.io/authors/${article.user.username}`,
+                  ],
+                  tags: [article.category.name],
+                },
+                images: [
+                  {
+                    url: article.image.url,
+                    width: 850,
+                    height: 650,
+                    alt: 'Photo of text',
+                  },
+                ],
+              }}
+            />
             <CentralLayout>
               <Tag color="red">{article.category.name}</Tag>
               <h1>{article.title}</h1>
