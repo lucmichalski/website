@@ -46,7 +46,6 @@ const ButtonsGroup = styled.div`
 
 type HeaderProps = {
   afterScroll: boolean;
-  initialColor: string;
 };
 
 
