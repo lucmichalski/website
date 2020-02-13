@@ -38,8 +38,6 @@ const Article = () => {
                 images: [
                   {
                     url: article.image.url,
-                    width: 850,
-                    height: 650,
                     alt: 'Photo of text',
                   },
                 ],

@@ -1,4 +1,4 @@
-import Document, { DocumentContext } from 'next/document'
+import Document, { Html, Head, DocumentContext } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -26,4 +26,15 @@ export default class MyDocument extends Document {
       sheet.seal()
     }
   }
+
+  public render() {
+    return (
+      <Html lang="fr">
+        <Head>
+        </Head>
+      </Html>
+  
+    )
+  }
+  
 }
