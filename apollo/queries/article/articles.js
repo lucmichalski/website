@@ -4,10 +4,10 @@ const ARTICLES_QUERY = gql`
   query Articles {
     articles {
       id
+      slug
       title
       description
       published_at
-      reading_time
       image {
         name
         url

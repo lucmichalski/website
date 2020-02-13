@@ -45,9 +45,8 @@ const HeadingGroup = styled.div`
 
 const BlogIndex = () => {  
   return (
-    <Query query={ARTICLES_QUERY} id={null}>
+    <Query query={ARTICLES_QUERY}>
       {({ data: { articles } }) => {
-        console.log(articles)
         return (
           <>
             <Hero>
@@ -55,7 +54,7 @@ const BlogIndex = () => {
                 <Logo />
               </HeadingGroup>
             </Hero>
-            <Row type="flex" justify="start" align="middle">
+            <Row type="flex" justify="start" align="top">
               {articles.map(article => (
                 <Col xs={24} md={8}>
                   <ArticleCard article={article}/>

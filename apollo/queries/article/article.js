@@ -1,9 +1,10 @@
 import gql from "graphql-tag";
 
 const ARTICLE_QUERY = gql`  
-  query Article($id: ID!) {
-    article(id: $id) {
+  query Article($slug: String!) {
+    articles(where: {slug: $slug}) {
       id
+      slug
       title
       description
       published_at

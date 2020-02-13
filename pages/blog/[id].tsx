@@ -11,8 +11,9 @@ import ArticleAuthor from '../../components/ArticleAuthor';
 const Article = () => {
   const router = useRouter();
   return (
-    <Query query={ARTICLE_QUERY} id={router.query.id}>
-      {({ data: { article } }) => {
+    <Query query={ARTICLE_QUERY} slug={router.query.id} >
+      {({ data: { articles } }) => {
+        const article = articles[0]
         return (
           <>
             <CentralLayout>
