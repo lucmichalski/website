@@ -18,6 +18,9 @@ const Article = () => {
         return (
           <>
             <NextSeo
+              title={article.title}
+              description={article.description}
+              canonical={`https://kernn.io/blog/${article.slug}`}
               openGraph={{
                 title: article.title,
                 description: article.description,
