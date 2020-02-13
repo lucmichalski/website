@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import PageLayout from '../../layouts/Page'
-import Query from "../../components/query";  
+import Query from "../../components/Query";  
 import OFFRE_QUERY from '../../apollo/queries/offre/offre'
 
 const OfferGroup = styled.div`

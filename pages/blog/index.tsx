@@ -4,7 +4,7 @@ import Link from "next/link"
 import styled from 'styled-components'
 import Logo from '../../assets/Logo'
 import ArticleCard from '../../components/ArticleCard'
-import Query from "../../components/query"; 
+import Query from "../../components/Query"; 
 import ARTICLES_QUERY from "../../apollo/queries/article/articles";
 
 const Hero = styled.section`

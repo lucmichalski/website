@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from "next/router";
 import { Row, Col, Button, Tag, Avatar} from 'antd';
 import styled from 'styled-components';
-import Query from "../../components/query"; 
+import Query from "../../components/Query"; 
 import ARTICLE_QUERY from "../../apollo/queries/article/article";
 import CentralLayout from '../../layouts/Central';
 import ReactMarkdown from "react-markdown";
