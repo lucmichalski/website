@@ -38,14 +38,11 @@ const ButtonsGroup = styled.div`
   align-items: center;
   -ms-flex-pack: justify;
   justify-content: space-between;
-
-  button {
-
-  }
 `
 
 type HeaderProps = {
   afterScroll: boolean;
+  initialColor: string;
 };
 
 
