@@ -9,8 +9,8 @@ class IndexPage extends React.Component {
     return (
       <LandingLayout >
         <Hero
-          title={"Trouvez le job que vous meritez"} 
-          description={"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}
+          title="Trouvez le job que vous meritez" 
+          description="Bienvenue sur la démonstration des sites carrières que nous construisons pour nos clients. C'est l'occasion pour vous de tester le moteur en direct, et de découvrir le blog avec les landings."
         />
         <HeroSearch />
       </LandingLayout>

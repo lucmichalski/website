@@ -91,7 +91,7 @@ class HeroSearch extends React.Component{
                 <MultiDropdownList
                   componentId="locationSubadministrativeArea"
                   dataField="location_subadministrativearea.keyword"
-                  placeholder="Où ?"
+                  placeholder="Lieu"
                   showSearch
                   searchPlaceholder="Chercher par région ou ville"
                   className="block"
@@ -101,7 +101,7 @@ class HeroSearch extends React.Component{
                     });
                   }}
                 />
-                <Button type="danger" size="large" onClick={this.handleSubmit.bind(this)} style={{marginLeft: "12px"}}>Rechercher</Button>
+                <Button type="primary" size="large" onClick={this.handleSubmit.bind(this)} style={{marginLeft: "12px"}}>Rechercher</Button>
               </SearchGroup>
             </ReactiveBase>
             <ImageCard />

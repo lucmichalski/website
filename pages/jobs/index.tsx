@@ -5,6 +5,7 @@ import { Row, Col, Menu, Icon } from 'antd';
 import OfferCard from '../../components/OfferCard'
 import Logo from '../../assets/Logo'
 import styled from 'styled-components'
+import Header from '../../components/Header';
 
 const Hero = styled.section`
   position: relative;
@@ -39,6 +40,11 @@ const HeadingGroup = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: 0px 1.5rem;
+
+  h1 {
+    font-size: 24px;
+    color: white;
+  }
 
 `
 
@@ -110,9 +116,10 @@ const JobsIndex = () => {
 
   return (
     <>
+    <Header afterScroll defaultTheme="light"/>
     <Hero>
       <HeadingGroup>
-        <Logo />
+        <h1>Jobs</h1>
       </HeadingGroup>
     </Hero>
     <Row type="flex" justify="center" align="top">
@@ -141,7 +148,7 @@ const JobsIndex = () => {
             <MultiDropdownList
               componentId="locationSubadministrativeArea"
               dataField="location_subadministrativearea.keyword"
-              placeholder="Où ?"
+              placeholder="Lieu"
               className="block"
               defaultValue={router.query.location !== undefined && (
                 typeof router.query.location === "object" ? (

@@ -16,6 +16,7 @@ const HeadingGroup = styled.div`
 
   h1 {
     text-align: center;
+    font-size: 5.6em;
   }
 
   p {

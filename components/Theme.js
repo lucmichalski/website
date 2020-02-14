@@ -13,7 +13,7 @@ export const lightTheme = {
     borderDarkOnly: 'none'
   },
   text: {
-    primary: '#242B4F',
+    primary: '#0E2A3E',
     secondary: '#2f3037',
     tertiary: '#525560',
     quarternary: '#9194a1',
@@ -100,10 +100,6 @@ export const GlobalStyle = createGlobalStyle`
 	
 	*:focus {
 		outline:none
-  }
-
-  .ant-btn-primary {
-    border-radius: 22px;
   }
 
   .ant-btn-lg {

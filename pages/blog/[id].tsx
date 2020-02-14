@@ -53,7 +53,7 @@ const Article = () => {
                 <ArticleAuthor article={article} />
               </Col>
             </Row>
-            <img src={article.image.media.url} alt={article.alt} width="100%"/>
+            <img src={article.image.media.url} alt={article.image.alt} width="100%"/>
             <Row type="flex" justify="center" align="top">
               <Col xs={24} md={16}>
                 <ReactMarkdown source={article.content} />

@@ -44,6 +44,10 @@ const HeaderGroup = styled.header<ThemeProps>`
       color: ${props => props.theme.text.primary};
     }
 
+    .btn-rounded {
+      border-radius: 22px;
+    }
+
   }
 
   @media only screen and (min-width: 768px) {
@@ -111,7 +115,7 @@ class Header extends React.Component<HeaderProps> {
             <Button type="link" className="theme-color">S'inscrire</Button>
           </Link>
           <Link href="/signin" as="/signin">
-            <Button type="primary">Se connecter</Button>
+            <Button type="primary" className="btn-rounded">Se connecter</Button>
           </Link>
         </ButtonsGroup>
       </HeaderGroup>

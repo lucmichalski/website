@@ -1,14 +1,14 @@
 export default {
-  title: "Kernn - Recherche d'Emploi, Orientation de Carrière & Ressources pour le Recrutement",
-  description: "Kernn est votre source pour la recherche d'emploi et les opportunités de carrière. Recherchez des jobs, lisez des conseils de carrière et trouvez des ressources pour l'embauche",
+  title: "Kernn - Un site carrière focus candidats et pour marque employeur",
+  description: "Kernn est une démonstration concrète des solutions que nous proposons à nos clients afin de développer leur marque employeur et d'optimiser les performances.",
   canonical: "https://kernn.io",
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
     url: 'https://kernn.io',
     site_name: 'Kernn',
-    title: "Kernn - Recherche d'Emploi, Orientation de Carrière & Ressources pour le Recrutement",
-    description: "Kernn est votre source pour la recherche d'emploi et les opportunités de carrière. Recherchez des jobs, lisez des conseils de carrière et trouvez des ressources pour l'embauche",
+    title: "Kernn - Un site carrière focus candidats et pour marque employeur",
+    description: "Kernn est une démonstration concrète des solutions que nous proposons à nos clients afin de développer leur marque employeur et d'optimiser les performances.",
     images: [
       {
         url: "url('/og-image.png')",
