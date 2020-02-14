@@ -6,6 +6,7 @@ import Query from '../../components/Query'
 import ARTICLES_QUERY from "../../apollo/queries/article/articles";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ArticleAuthor from '../../components/ArticleAuthor'
+import Link from 'next/link'
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -55,23 +56,27 @@ const BlogIndex = () => {
         const otherArticles = articles.slice(1, articles.length);
         return (
           <>
-            <Header afterScroll/>
+            <Header afterScroll defaultTheme="light"/>
             <StyledRow type="flex" justify="start" align="middle">
-              <Col xs={0} md={8}>
-                <ImageGroup>
-                  <LazyLoadImage src={lastArticle.image.media.url} alt={lastArticle.image.alt} effect="blur"/>
-                </ImageGroup>
-              </Col>
-              <Col xs={0} md={{span: 10, offset: 1}}>
-                <LastArticleContentGroup>
-                  <Tag color={lastArticle.category.color}>{lastArticle.category.name}</Tag>
-                  <h2>{lastArticle.title}</h2>
-                  <p style={{fontSize: "1.4rem"}}>{lastArticle.description}</p>
-                  <ArticleAuthor article={lastArticle}/>
-                </LastArticleContentGroup>
-                <Col xs={24} md={0}>
-                  <ArticleCard article={lastArticle}/>
-                </Col>
+              <Link href={'/blog/[id]'} as={`/blog/${lastArticle.slug}`}>
+                <a>
+                  <Col xs={0} md={8}>
+                    <ImageGroup>
+                      <LazyLoadImage src={lastArticle.image.media.url} alt={lastArticle.image.alt} effect="blur"/>
+                    </ImageGroup>
+                  </Col>
+                  <Col xs={0} md={{span: 10, offset: 1}}>
+                    <LastArticleContentGroup>
+                      <Tag color={lastArticle.category.color}>{lastArticle.category.name}</Tag>
+                      <h2>{lastArticle.title}</h2>
+                      <p style={{fontSize: "1.4rem"}}>{lastArticle.description}</p>
+                      <ArticleAuthor article={lastArticle}/>
+                    </LastArticleContentGroup>
+                  </Col>
+                </a>
+              </Link>
+              <Col xs={24} md={0}>
+                <ArticleCard article={lastArticle}/>
               </Col>
             </StyledRow>
             <Row type="flex" justify="start" align="top">

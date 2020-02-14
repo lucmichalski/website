@@ -5,7 +5,11 @@ import Logo from '../assets/Logo'
 import Nav from '../components/Nav'
 import styled from 'styled-components'
 
-const HeaderGroup = styled.header`
+interface ThemeProps {
+  readonly defaultTheme: string;
+};
+
+const HeaderGroup = styled.header<ThemeProps>`
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   background: transparent;
   position: fixed;
@@ -29,7 +33,29 @@ const HeaderGroup = styled.header`
     backdrop-filter: blur(20px);
     background: ${props => props.theme.bg.matt};
     border-bottom: 1px solid ${props => props.theme.bg.border};
+
+    svg {
+      path {
+        fill: ${props => props.theme.text.primary};
+      }
+    }
+
+    .theme-color {
+      color: ${props => props.theme.text.primary};
+    }
+
   }
+
+  @media only screen and (min-width: 768px) {
+    path {
+      fill: ${props => (props.defaultTheme === "light") && "white"};
+    }
+
+    .theme-color {
+      color: ${props => (props.defaultTheme === "light") && "white"};
+    }
+  }
+  
 `
 
 const ButtonsGroup = styled.div`
@@ -42,10 +68,15 @@ const ButtonsGroup = styled.div`
 
 type HeaderProps = {
   afterScroll: boolean;
+  defaultTheme: string;
 };
 
 
 class Header extends React.Component<HeaderProps> {
+  static defaultProps = {
+    afterScroll: false,
+    defaultTheme: "dark"
+  };
   
   state = {
     hasScrolled: false
@@ -67,14 +98,17 @@ class Header extends React.Component<HeaderProps> {
   
   render() {
     return (     
-      <HeaderGroup className={(this.state.hasScrolled === true || this.props.afterScroll === false) && 'HeaderOn'}>
+      <HeaderGroup 
+        className={(this.state.hasScrolled === true || this.props.afterScroll === false) && 'HeaderOn'}
+        defaultTheme={this.props.defaultTheme}
+      >
         <a href="/">
           <Logo/>
         </a>
         <Nav />
         <ButtonsGroup>
           <Link href="/signup" as="/signup">
-            <Button type="link">S'inscrire</Button>
+            <Button type="link" className="theme-color">S'inscrire</Button>
           </Link>
           <Link href="/signin" as="/signin">
             <Button type="primary">Se connecter</Button>

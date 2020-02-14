@@ -29,10 +29,10 @@ const Nav = () => {
   return (
     <NavGroup>
       <Link href={'/jobs/index'} as="/jobs">
-        <Button type="link">Trouver un Job</Button>
+        <Button type="link" className="theme-color">Trouver un Job</Button>
       </Link>
       <Link href={'/blog/index'} as="/blog">
-        <Button type="link">Blog</Button>
+        <Button type="link" className="theme-color">Blog</Button>
       </Link>
     </NavGroup>
   );
