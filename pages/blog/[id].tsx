@@ -5,9 +5,10 @@ import { Row, Col, Button, Tag, Avatar} from 'antd';
 import styled from 'styled-components';
 import Query from "../../components/Query"; 
 import ARTICLE_QUERY from "../../apollo/queries/article/article";
-import CentralLayout from '../../layouts/Central';
 import ReactMarkdown from "react-markdown";
 import ArticleAuthor from '../../components/ArticleAuthor';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 const Article = () => {
   const router = useRouter();
@@ -43,16 +44,22 @@ const Article = () => {
                 ],
               }}
             />
-            <CentralLayout>
-              <Tag color={article.category.color}>{article.category.name}</Tag>
-              <h1>{article.title}</h1>
-              <p>{article.description}</p>
-              <ArticleAuthor article={article} />
-            </CentralLayout>
-            <img src={article.image.url} alt={article.alt} width="100%"/>
-            <CentralLayout>
-              <ReactMarkdown source={article.content} />
-            </CentralLayout>
+            <Header afterScroll/>
+            <Row type="flex" justify="center" align="top" style={{padding: "100px 0"}}>
+              <Col xs={24} md={16}>
+                <Tag color={article.category.color}>{article.category.name}</Tag>
+                <h1>{article.title}</h1>
+                <p>{article.description}</p>
+                <ArticleAuthor article={article} />
+              </Col>
+            </Row>
+            <img src={article.image.media.url} alt={article.alt} width="100%"/>
+            <Row type="flex" justify="center" align="top">
+              <Col xs={24} md={16}>
+                <ReactMarkdown source={article.content} />
+              </Col>
+            </Row>
+            <Footer />
           </>
         );
       }}
