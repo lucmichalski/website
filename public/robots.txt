@@ -1,9 +1,5 @@
 User-agent: *
 
-Allow: /en/*
-Allow: /fr/*
-Disallow: /
-Disallow: /en/playbooks
-Disallow: /fr/playbooks
+Disallow: /*
 
-Sitemap: https://grimp.io/sitemap.xml
+Sitemap: https://kernn.io/sitemap.xml

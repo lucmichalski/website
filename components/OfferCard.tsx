@@ -3,6 +3,9 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { Row, Col } from 'antd';
 import styled from 'styled-components'
+import TimeAgo from 'react-timeago'
+import frenchStrings from 'react-timeago/lib/language-strings/fr'
+import buildFormatter from 'react-timeago/lib/formatters/buildFormatter'
 
 const CardGroup = styled.div `
   background: ${props => props.theme.bg.matt};
@@ -84,6 +87,7 @@ const OfferCard = ({ offer }: OfferProps) => {
 
   const router = useRouter()
   const { id } = router.query
+  const formatter = buildFormatter(frenchStrings)
 
   function IndustryImage(props) {
     const industry = props.industry;
@@ -120,9 +124,9 @@ const OfferCard = ({ offer }: OfferProps) => {
                   <li>
                     {offer.location_town}
                   </li>
-                  <li>
-                    {offer.posting_date}
-                  </li>
+                  {/* <li>
+                    <TimeAgo date={offer.posting_date} formatter={formatter} />
+                  </li> */}
                 </DetailsGroup>
               </CardContent>
             </Col>
