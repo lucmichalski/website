@@ -20,6 +20,7 @@ class NormalLoginForm extends React.Component<WhitePaperFormProps> {
         })
       }
     });
+    // this.props.form.resetFields()
   };
 
   render() {

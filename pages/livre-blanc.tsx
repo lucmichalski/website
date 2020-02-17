@@ -40,18 +40,27 @@ const HeadingGroup = styled.div`
 `
 
 const FormGroup = styled.div`
-  background: white;
+  @media only screen and (min-width: 768px) {
+    right: 80px;
+  }
+  margin: 0 20px;
   margin-top: -80px;
-  right: 80px;
   padding: 24px;
-
+  background: ${props => props.theme.bg.primary};
+  border: 1px solid ${props => props.theme.bg.borderDarkOnly};
+  box-shadow: ${props => props.theme.bg.shadowLightOnly};
   position: absolute;
   border-radius: 8px;
 `
 
 const StyledRow = styled(Row)`
-  height: 50vh;
-  padding: 0 80px;
+  @media only screen and (min-width: 768px) {
+    right: 80px;
+    padding 0 80px;
+    height: 50vh;
+  }
+  height: 70vh;
+  padding: 10rem 20px 0;
 `
 
 const LivreBlanc = () => {  
