@@ -45,6 +45,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
               publicId={article.image.media.provider_metadata.public_id} 
               alt={article.image.alt}
               secure="true"
+              width="256"
             >
               <Transformation 
                 quality="auto" 

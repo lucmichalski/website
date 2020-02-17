@@ -68,6 +68,7 @@ const BlogIndex = () => {
                         publicId={lastArticle.image.media.provider_metadata.public_id} 
                         alt={lastArticle.image.alt}
                         secure="true"
+                        width="256"
                       >
                         <Transformation 
                           quality="auto" 
