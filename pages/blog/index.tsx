@@ -37,7 +37,6 @@ const ImageGroup = styled.div`
   margin-bottom: 12px;
   img {
     height: 26rem;
-    width: 100%;
     object-fit: cover;
   }
 `
@@ -64,14 +63,13 @@ const BlogIndex = () => {
                   <Col xs={0} md={8}>
                     <ImageGroup>
                       <Image 
-                        cloudName="angulaire" 
+                        cloudName={process.env.CLOUDINARY_CLOUD_NAME} 
                         publicId={lastArticle.image.media.provider_metadata.public_id} 
                         alt={lastArticle.image.alt}
                         secure="true"
-                        width="256"
+                        width="100%"
                       >
                         <Transformation 
-                          quality="auto" 
                           fetchFormat="auto"
                         />
                       </Image>

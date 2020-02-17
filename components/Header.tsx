@@ -1,8 +1,7 @@
 import React from 'react';
-import { Button } from 'antd'
-import Link from 'next/link'
 import Logo from '../assets/Logo'
 import Nav from '../components/Nav'
+import HeaderActions from '../components/HeaderActions'
 import styled from 'styled-components'
 
 interface ThemeProps {
@@ -62,14 +61,6 @@ const HeaderGroup = styled.header<ThemeProps>`
   
 `
 
-const ButtonsGroup = styled.div`
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-`
-
 type HeaderProps = {
   afterScroll: boolean;
   defaultTheme: string;
@@ -110,14 +101,7 @@ class Header extends React.Component<HeaderProps> {
           <Logo/>
         </a>
         <Nav />
-        <ButtonsGroup>
-          <Link href="/signup" as="/signup">
-            <Button type="link" className="theme-color">S'inscrire</Button>
-          </Link>
-          <Link href="/signin" as="/signin">
-            <Button type="primary" className="btn-rounded">Se connecter</Button>
-          </Link>
-        </ButtonsGroup>
+        <HeaderActions />
       </HeaderGroup>
     )
   }
