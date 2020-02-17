@@ -28,11 +28,17 @@ const NavGroup = styled.nav`
 const Nav = () => {  
   return (
     <NavGroup>
-      <Link href={'/jobs/index'} as="/jobs">
-        <Button type="link" className="theme-color">Trouver un Job</Button>
+      <Link href="/">
+        <Button type="link" className="theme-color">Accueil</Button>
       </Link>
-      <Link href={'/blog/index'} as="/blog">
+      <Link href="/jobs/index" as="/jobs">
+        <Button type="link" className="theme-color">Annonces</Button>
+      </Link>
+      <Link href="/blog/index" as="/blog">
         <Button type="link" className="theme-color">Blog</Button>
+      </Link>
+      <Link href="/livre-blanc">
+        <Button type="link" className="theme-color">Livre Blanc</Button>
       </Link>
     </NavGroup>
   );

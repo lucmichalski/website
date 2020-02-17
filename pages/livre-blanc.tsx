@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row, Col, Button } from 'antd';
 import styled from 'styled-components';
-import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhitePaperForm from '../components/forms/WhitePaperForm'
 
@@ -66,7 +65,6 @@ const StyledRow = styled(Row)`
 const LivreBlanc = () => {  
   return (
     <>
-      <Header afterScroll defaultTheme="light"/>
       <Hero>
         <HeadingGroup>
           <h1>Livre Blanc</h1>
