@@ -45,7 +45,7 @@ const ArticleAuthor = ({ article }: ArticleAuthorProps) => {
 
   return (
     <AvatarGroup>
-      <Avatar src={article.user.Avatar.media.url} alt={article.user.Avatar.media.alt} size="large"/>
+      <Avatar src={article.user.Avatar.media.url} alt={article.user.Avatar.alt} size="large"/>
       <AvatarDetails>
         <p>{article.user.username}</p>
         <p>{`${new Date(article.published_at).toLocaleDateString("fr-FR")} - ${Math.ceil(readingTime(article.content).minutes)} min`}</p>
