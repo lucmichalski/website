@@ -22,8 +22,11 @@ const ARTICLES_QUERY = gql`
       }
       user {
         username
-        avatar {
-          url
+        Avatar {
+          alt
+          media {
+            url
+          }
         }
       }
     }
