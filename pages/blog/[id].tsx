@@ -67,8 +67,8 @@ const Article = () => {
               />
             </Image>
             <Row type="flex" justify="center" align="top">
-              <Col xs={24} md={16}>
-                <ReactMarkdown source={article.content} />
+              <Col xs={24} md={16} style={{padding: "80px 0"}}>
+                <ReactMarkdown source={article.content}/>
               </Col>
             </Row>
             <Footer />

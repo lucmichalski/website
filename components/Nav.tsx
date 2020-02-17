@@ -34,11 +34,11 @@ const Nav = () => {
       <Link href="/jobs/index" as="/jobs">
         <Button type="link" className="theme-color">Annonces</Button>
       </Link>
+      <Link href="/landing">
+        <Button type="link" className="theme-color">Landing</Button>
+      </Link>
       <Link href="/blog/index" as="/blog">
         <Button type="link" className="theme-color">Blog</Button>
-      </Link>
-      <Link href="/livre-blanc">
-        <Button type="link" className="theme-color">Livre Blanc</Button>
       </Link>
     </NavGroup>
   );

@@ -1,6 +1,7 @@
 import { Row, Col } from 'antd';
 import styled from 'styled-components'
 import Logo from '../assets/Logo'
+import { string } from 'prop-types';
 
 const StyledRow = styled(Row)`
   margin-bottom: 40px;
@@ -33,8 +34,8 @@ const HeadingGroup = styled.div`
 
 
 type HeroProps = { 
-  title: string,
-  description: string,
+  title: string;
+  description: string;
 }
 
 const Hero = ({ title, description }: HeroProps) => {

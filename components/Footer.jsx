@@ -40,6 +40,10 @@ const RightGroup = styled.div`
 `
 
 const CopyrightGroup = styled.div`
+  h4 {
+    text-align: center;
+  }
+
   p, a {
     text-align: center;
     font-weight: 400;
@@ -64,12 +68,13 @@ const Footer = () => {
         </Col>
         <Col xs={24} md={8}>
           <CopyrightGroup>
+            <h4>Le showroom du site carrière</h4>
+            <p>Kernn est un site démo que nous avons conçus pour vous présenter les différents aspects nécessaires pour atteindre vos objectifs aussi bien auprès des recruteurs que des candidats.</p>
             <p>Made with ❤️ in Paris</p>
           </CopyrightGroup>
         </Col>
         <Col xs={24} md={8}>
-          <RightGroup>
-          </RightGroup>
+          <RightGroup/>
         </Col>
       </Row>
       

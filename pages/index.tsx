@@ -9,7 +9,7 @@ class IndexPage extends React.Component {
     return (
       <LandingLayout >
         <Hero
-          title="Trouvez le job que vous méritez" 
+          title="Trouvez le job que vous méritez"
           description="Bienvenue sur la démonstration des sites carrières que nous construisons pour nos clients. C'est l'occasion pour vous de tester le moteur en direct, et de découvrir le blog avec les landings."
         />
         <HeroSearch />

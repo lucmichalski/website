@@ -30,6 +30,7 @@ const OverGroup = styled.div`
   @media only screen and (min-width: 768px) {
     margin-top: -100px;
     position: absolute;
+    padding: 0 60px;
   }
 `
 

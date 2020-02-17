@@ -19,7 +19,7 @@ const HeaderActions = () => {
   return (
     <ButtonsGroup>
       <Link href="/signup" as="/signup">
-        <Button type="link" className="theme-color">Se Connecter</Button>
+        <Button type="link" className="theme-color">Se connecter</Button>
       </Link>
       <Link href="/signin" as="/signin">
         <Button type="primary" className="btn-rounded">S'inscrire</Button>
