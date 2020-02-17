@@ -9,11 +9,12 @@ import ArticleAuthor from '../../components/ArticleAuthor'
 import Link from 'next/link'
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import CTA from "../../components/CTA";
 
 const StyledRow = styled(Row)`
   padding-top: 50px;
   @media only screen and (min-width: 768px) {
-    background-color: #242b4f;
+    background-color: #0E2A3E;
     padding: 200px 0;
     position: relative;
   }
@@ -89,6 +90,11 @@ const BlogIndex = () => {
                 ))}
               </OverGroup>
             </Row>
+            <CTA 
+              title="Livre blanc"
+              description="Comment optimiser son profil LinkedIn pour être visible par les recruteurs"
+              button="Recevoir le livre blanc"
+            />
             <Footer/>
           </>
         );

@@ -1,13 +1,16 @@
 import React from 'react'
 import { Row, Col, Button } from 'antd';
 import styled from 'styled-components'
+import Link from 'next/link'
 
 const ContentGroup = styled(Row)`
   @media only screen and (min-width: 768px) {
     height: 200px;
+    margin: 0 80px;
   }
   position: relative;
   height: 300px;
+  margin: 0 20px;
 `
 
 const ContentCard = styled.div`
@@ -38,13 +41,12 @@ const ContentCard = styled.div`
 `
 
 type CTAProps = { 
-  title: string,
-  description: string,
-  button: any,
-  locale: any
+  title: string;
+  description: string;
+  button: any;
 }
 
-const CTA = ({ title, description, button, locale }: CTAProps) => {
+const CTA = ({ title, description, button }: CTAProps) => {
 
   return (
     <ContentGroup type="flex" justify="center" align="middle">
@@ -53,7 +55,9 @@ const CTA = ({ title, description, button, locale }: CTAProps) => {
           <Col xs={18} md={16}>
             <h3>{title}</h3>
             <p>{description}</p>
-            <Button type={button.type} htmlType="submit" size="large">{button[`text_${locale}`]}</Button>
+            <Link href={'/livre-blanc'}>
+              <Button type="primary" size="large">{button}</Button>
+            </Link>
           </Col>
         </Row>
       </ContentCard>

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from 'styled-components'
 import Link from 'next/link'
-import { strapiRegister } from "../lib/auth";
 import { Row, Col, Form, Icon, Input, Button, Checkbox } from 'antd';
 import Logo from '../assets/Logo'
 
@@ -63,7 +62,6 @@ class SignupForm extends React.Component<SignupProps> {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        strapiRegister(values.username, values.email, values.password)
         console.log('Received values of form: ', values);
       }
     });

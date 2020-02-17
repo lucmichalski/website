@@ -4,7 +4,7 @@ export const lightTheme = {
   bg: {
     primary: '#FFF',
     matt: '#FAFAFA',
-    secondaryLightOnly: '#14143C',
+    secondaryLightOnly: '#0D293D',
     selected: '#fffce6',
     shade: '#e8e8e8',
     shadowLightOnly: '0 5px 10px rgba(0,0,0,.12)',
