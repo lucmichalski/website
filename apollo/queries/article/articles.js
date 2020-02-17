@@ -11,8 +11,8 @@ const ARTICLES_QUERY = gql`
       image {
         alt
         media {
-          size
           url
+          provider_metadata
         }
       }
       content

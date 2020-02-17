@@ -3,7 +3,7 @@ import { Row, Col, Tag } from 'antd'
 import styled from 'styled-components'
 import ArticleAuthor from './ArticleAuthor'
 import Link from 'next/link'
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Image, Transformation} from 'cloudinary-react';
 
 const CardGroup = styled.article`
   margin: 2rem;
@@ -40,7 +40,17 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
       <Link href={'/blog/[id]'} as={`/blog/${article.slug}`}>
         <a>
           <ImageGroup>
-            <LazyLoadImage src={article.image.media.url} alt={article.image.alt} effect="blur"/>
+            <Image 
+              cloudName="angulaire" 
+              publicId={article.image.media.provider_metadata.public_id} 
+              alt={article.image.alt}
+              secure="true"
+            >
+              <Transformation 
+                quality="auto" 
+                fetchFormat="auto"
+              />
+            </Image>
           </ImageGroup>
           <Tag color={article.category.color}>{article.category.name}</Tag>
           <h2>{article.title}</h2>

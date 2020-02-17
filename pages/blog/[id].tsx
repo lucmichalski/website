@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Query from "../../components/Query"; 
 import ARTICLE_QUERY from "../../apollo/queries/article/article";
 import ReactMarkdown from "react-markdown";
+import { Image, Transformation} from 'cloudinary-react';
 import ArticleAuthor from '../../components/ArticleAuthor';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -53,7 +54,18 @@ const Article = () => {
                 <ArticleAuthor article={article} />
               </Col>
             </Row>
-            <img src={article.image.media.url} alt={article.image.alt} width="100%"/>
+            <Image 
+              cloudName="angulaire" 
+              publicId={article.image.media.provider_metadata.public_id} 
+              alt={article.image.alt}
+              secure="true"
+              width="100%"
+            >
+              <Transformation 
+                quality="auto" 
+                fetchFormat="auto"
+              />
+            </Image>
             <Row type="flex" justify="center" align="top">
               <Col xs={24} md={16}>
                 <ReactMarkdown source={article.content} />

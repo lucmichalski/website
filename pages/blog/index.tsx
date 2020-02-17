@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import ArticleCard from '../../components/ArticleCard'
 import Query from '../../components/Query'
 import ARTICLES_QUERY from "../../apollo/queries/article/articles";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ArticleAuthor from '../../components/ArticleAuthor'
 import Link from 'next/link'
+import { Image, Transformation} from 'cloudinary-react';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import CTA from "../../components/CTA";
@@ -63,7 +63,17 @@ const BlogIndex = () => {
                 <StyledRow type="flex" justify="start" align="middle">
                   <Col xs={0} md={8}>
                     <ImageGroup>
-                      <img src={lastArticle.image.media.url} alt={lastArticle.image.alt}/>
+                      <Image 
+                        cloudName="angulaire" 
+                        publicId={lastArticle.image.media.provider_metadata.public_id} 
+                        alt={lastArticle.image.alt}
+                        secure="true"
+                      >
+                        <Transformation 
+                          quality="auto" 
+                          fetchFormat="auto"
+                        />
+                      </Image>
                     </ImageGroup>
                   </Col>
                   <Col xs={0} md={{span: 10, offset: 1}}>
