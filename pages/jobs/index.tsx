@@ -133,9 +133,10 @@ const JobsIndex = () => {
               componentId="search"
               dataField={["job_title"]}
               queryFormat="and"
+              showIcon={false}
               autosuggest={false}
               URLParams
-              placeholder="Intitulé ou mots-clés"
+              placeholder="Intitulé ou mots-clés..."
               defaultValue={(router.query.search !== undefined) && `${router.query.search}`}
               className="block"
             />
@@ -148,7 +149,7 @@ const JobsIndex = () => {
             <MultiDropdownList
               componentId="locationSubadministrativeArea"
               dataField="location_subadministrativearea.keyword"
-              placeholder="Lieu"
+              placeholder="Lieu..."
               className="block"
               defaultValue={router.query.location !== undefined && (
                 typeof router.query.location === "object" ? (

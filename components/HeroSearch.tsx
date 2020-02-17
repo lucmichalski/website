@@ -43,7 +43,6 @@ const SearchGroup = styled.div`
     width: 60%;
   }
 
-
   .block {
     width: 100%;
   }
@@ -77,8 +76,9 @@ class HeroSearch extends React.Component{
                   componentId="search"
                   dataField={["job_title"]}
                   queryFormat="and"
-                  placeholder="Le job de tes rêves?"
+                  placeholder="Intitulé ou mots-clés..."
                   className="block"
+                  showIcon={false}
                   showClear
                   autosuggest={false}
                   onValueChange={(value) => {
@@ -93,7 +93,7 @@ class HeroSearch extends React.Component{
                   dataField="location_subadministrativearea.keyword"
                   placeholder="Lieu"
                   showSearch
-                  searchPlaceholder="Chercher par région ou ville"
+                  searchPlaceholder="Région ou ville..."
                   className="block"
                   onValueChange={(value) => {
                     this.setState({

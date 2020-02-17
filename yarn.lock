@@ -4770,6 +4770,11 @@ form-data@~2.3.2:
     combined-stream "^1.0.6"
     mime-types "^2.1.12"
 
+formik-antd@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/formik-antd/-/formik-antd-1.8.1.tgz#a8b5a7df2ec7d4262351c5d3b7fb583842b9d1c3"
+  integrity sha512-IVsY0OkD05A9XCsBjXoNvJJTC1aVtgftA8WZskAjvc1Qyp5ERDgy0sFRfx1E7GmhwsSq+XAJWLXwe0QZwGBHyg==
+
 formik@^2.0.3:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/formik/-/formik-2.1.4.tgz#8deef07ec845ea98f75e03da4aad7aab4ac46570"

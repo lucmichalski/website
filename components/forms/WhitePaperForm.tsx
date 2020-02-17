@@ -5,7 +5,7 @@ type WhitePaperFormProps = {
   form: any
 }
 
-class NormalLoginForm extends React.Component<WhitePaperFormProps> {
+class WhitePaperForm extends React.Component<WhitePaperFormProps> {
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -81,6 +81,6 @@ class NormalLoginForm extends React.Component<WhitePaperFormProps> {
   }
 }
 
-const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(NormalLoginForm);
+const WrappedWhitePaperForm = Form.create({ name: 'white_paper' })(WhitePaperForm);
 
-export default WrappedNormalLoginForm
+export default WrappedWhitePaperForm
