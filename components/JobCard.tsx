@@ -57,33 +57,32 @@ const DetailsGroup = styled.ul`
   }
 `
 
-type OfferProps = {
+type JobProps = {
   key: number,
-  offer: {
+  job: {
     _id: number,
-    posting_date: number,
-    updating_date: number,
-    job_reference: string,
-    job_title: string,
+    published_at: number,
+    updated_at: number,
+    reference: string,
+    title: string,
     company_name: string,
-    id_agence: number,
+    agence_id_agence: number,
     company_description: string,
-    SecteurMetierInterim: string,
-    job_description: string,
+    secteur_metier_interim: string,
+    description: string,
     applicant_profile: string,
-    job_function: string,
-    job_industry: string,
+    function: string,
+    industry: string,
     location_administrativearea: string,
     location_subadministrativearea: string,
     location_town: string,
-    job_type: string,
-    job_statute: string,
-    job_contract: string,
+    type: string,
+    contract: string,
     application_email: string
   }
 }
 
-const OfferCard = ({ offer }: OfferProps) => {
+const JobCard = ({ job }: JobProps) => {
 
   const router = useRouter()
   const { id } = router.query
@@ -101,31 +100,31 @@ const OfferCard = ({ offer }: OfferProps) => {
 
 
   return (
-    <Link href={'/jobs/[id]'} as={`/jobs/${offer._id}`}>
+    <Link href={'/jobs/[id]'} as={`/jobs/${job._id}`}>
       <a>
         <CardGroup>
           <Row type="flex" justify="center" align="top">
             <Col xs={24} md={8}>
               <CardImage>
-                <IndustryImage industry={offer.SecteurMetierInterim} />
+                <IndustryImage industry={job.secteur_metier_interim} />
               </CardImage>
             </Col>
             <Col xs={24} md={16}>
               <CardContent>
-                <h4>{offer.company_name}</h4>
-                <h3>{offer.job_title}</h3>
+                <h4>{job.company_name}</h4>
+                <h3>{job.title}</h3>
                 <DetailsGroup>
                   <li>
-                    {offer.job_contract}
+                    {job.contract}
                   </li>
                   <li>
-                    {offer.job_type}
+                    {job.type}
                   </li>
                   <li>
-                    {offer.location_town}
+                    {job.location_town}
                   </li>
                   {/* <li>
-                    <TimeAgo date={offer.posting_date} formatter={formatter} />
+                    <TimeAgo date={job.published_at} formatter={formatter} />
                   </li> */}
                 </DetailsGroup>
               </CardContent>
@@ -137,4 +136,4 @@ const OfferCard = ({ offer }: OfferProps) => {
   )
 }
 
-export default OfferCard
+export default JobCard

@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import { ReactiveBase, DataSearch, ReactiveList, MultiDropdownList } from '@appbaseio/reactivesearch';
 import { Row, Col, Menu, Icon } from 'antd';
-import OfferCard from '../../components/OfferCard'
+import JobCard from '../../components/JobCard'
 import Logo from '../../assets/Logo'
 import styled from 'styled-components'
 import Header from '../../components/Header';
@@ -131,7 +131,7 @@ const JobsIndex = () => {
           <SearchGroup>
             <DataSearch
               componentId="search"
-              dataField={["job_title"]}
+              dataField={["title"]}
               queryFormat="and"
               showIcon={false}
               autosuggest={false}
@@ -142,7 +142,7 @@ const JobsIndex = () => {
             />
             <MultiDropdownList
               componentId="jobContract"
-              dataField="job_contract.keyword"
+              dataField="contract.keyword"
               placeholder="Contrat"
               className="block"
             />
@@ -161,7 +161,7 @@ const JobsIndex = () => {
             />
             <MultiDropdownList
               componentId="secteur"
-              dataField="SecteurMetierInterim.keyword"
+              dataField="secteur_metier_interim.keyword"
               placeholder="Secteur"
               className="block"
               innerClass={{
@@ -171,7 +171,7 @@ const JobsIndex = () => {
           </SearchGroup>  
           <ReactiveList
             componentId="results"
-            dataField="offer"
+            dataField="job"
             pagination={true}
             size={30}
             pages={3}
@@ -185,10 +185,10 @@ const JobsIndex = () => {
             }}
             render={({ data }) => (
               <ReactiveList.ResultCardsWrapper>
-                {data.map(offer => (
-                  <OfferCard
-                    key={offer.id}
-                    offer={offer}
+                {data.map(job => (
+                  <JobCard
+                    key={job.id}
+                    job={job}
                   />
                 ))}
               </ReactiveList.ResultCardsWrapper>

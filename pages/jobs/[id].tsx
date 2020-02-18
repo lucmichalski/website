@@ -4,37 +4,37 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import PageLayout from '../../layouts/Page'
 import Query from "../../components/Query";  
-import OFFRE_QUERY from '../../apollo/queries/offre/offre'
+import JOB_QUERY from '../../apollo/queries/job/job'
 
-const OfferGroup = styled.div`
+const JobGroup = styled.div`
   p {
     text-align: justify;
   }
 `
 
-const Offer = () => {
+const Job = () => {
 
   const router = useRouter()
 
   return (
-    <Query query={ OFFRE_QUERY } id={router.query.id}>
-      {({ data: { offres } }) => {
-        const offre = offres[0]
+    <Query query={ JOB_QUERY } id={router.query.id}>
+      {({ data: { jobs } }) => {
+        const job = jobs[0]
         return (
-          <PageLayout title={offre.job_title}>
+          <PageLayout title={job.title}>
             <Row type="flex" justify="center" align="top">
               <Col xs={24} md={6}>
-                <Link href={'/jobs/[id]/postuler'} as={`/jobs/${offre.offer_keyid}/postuler`}>
+                <Link href={'/jobs/[id]/postuler'} as={`/jobs/${job.key_id}/postuler`}>
                   <a>Button</a>
                 </Link>
               </Col>
               <Col xs={24} md={12}>
-                <OfferGroup>
+                <JobGroup>
                   <h2>À propos</h2>
-                  <p>{offre.company_description}</p>
+                  <p>{job.company_description}</p>
                   <h2>Descriptif du poste</h2>
-                  <p>{offre.job_description}</p>
-                </OfferGroup>
+                  <p>{job.description}</p>
+                </JobGroup>
               </Col>
               <Col xs={0} md={6}/>
             </Row>
@@ -45,4 +45,4 @@ const Offer = () => {
   )
 }
 
-export default Offer
+export default Job

@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from 'antd'
 import Link from "next/link"
-import styled from 'styled-components' 
+import styled from 'styled-components'
 
 const NavGroup = styled.nav`
   display: -webkit-box;
@@ -25,23 +25,29 @@ const NavGroup = styled.nav`
   
 `
 
-const Nav = () => {  
-  return (
-    <NavGroup>
-      <Link href="/">
-        <Button type="link" className="theme-color">Accueil</Button>
-      </Link>
-      <Link href="/jobs/index" as="/jobs">
-        <Button type="link" className="theme-color">Annonces</Button>
-      </Link>
-      <Link href="/landing">
-        <Button type="link" className="theme-color">Landing</Button>
-      </Link>
-      <Link href="/blog/index" as="/blog">
-        <Button type="link" className="theme-color">Blog</Button>
-      </Link>
-    </NavGroup>
-  );
+type NavProps = {
+  showNav: boolean;
+};
+
+const Nav = ({ showNav }: NavProps) => {
+  if (showNav) {
+    return (
+      <NavGroup>
+        <Link href="/">
+          <Button type="link" className="theme-color">Accueil</Button>
+        </Link>
+        <Link href="/jobs/index" as="/jobs">
+          <Button type="link" className="theme-color">Annonces</Button>
+        </Link>
+        <Link href="/landing">
+          <Button type="link" className="theme-color">Landing</Button>
+        </Link>
+        <Link href="/blog/index" as="/blog">
+          <Button type="link" className="theme-color">Blog</Button>
+        </Link>
+      </NavGroup>
+    );
+  } else return null
 };
 
 export default Nav; 

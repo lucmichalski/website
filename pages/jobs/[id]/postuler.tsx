@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import PageLayout from '../../../layouts/Page'
 import ApplyForm from '../../../components/ApplyForm'
 import Query from "../../../components/Query";  
-import OFFRE_QUERY from '../../../apollo/queries/offre/offre'
+import JOB_QUERY from '../../../apollo/queries/job/job'
 
 
 const Apply = () => {
@@ -12,11 +12,11 @@ const Apply = () => {
   const router = useRouter()
 
   return (
-    <Query query={ OFFRE_QUERY } id={router.query.id}>
-      {({ data: { offres } }) => {
-        const offre = offres[0]
+    <Query query={ JOB_QUERY } id={router.query.id}>
+      {({ data: { jobs } }) => {
+        const job = jobs[0]
         return (
-          <PageLayout title={offre.job_title}>
+          <PageLayout title={job.title}>
             <Row type="flex" justify="center" align="top">
               <Col xs={24} md={12}>
                 <ApplyForm />

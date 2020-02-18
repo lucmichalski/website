@@ -22,7 +22,7 @@ const ARTICLE_QUERY = gql`
       }
       user {
         username
-        Avatar {
+        avatar {
           alt
           media {
             url

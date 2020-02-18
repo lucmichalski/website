@@ -43,10 +43,6 @@ const HeaderGroup = styled.header<ThemeProps>`
       color: ${props => props.theme.text.primary};
     }
 
-    .btn-rounded {
-      border-radius: 22px;
-    }
-
   }
 
   @media only screen and (min-width: 768px) {
@@ -64,13 +60,19 @@ const HeaderGroup = styled.header<ThemeProps>`
 type HeaderProps = {
   afterScroll: boolean;
   defaultTheme: string;
+  showLogo: boolean;
+  showNav: boolean;
+  showActions: boolean;
 };
 
 
 class Header extends React.Component<HeaderProps> {
   static defaultProps = {
     afterScroll: false,
-    defaultTheme: "dark"
+    defaultTheme: "dark",
+    showLogo: true,
+    showNav: true,
+    showActions: true
   };
   
   state = {
@@ -100,8 +102,8 @@ class Header extends React.Component<HeaderProps> {
         <a href="/">
           <Logo/>
         </a>
-        <Nav />
-        <HeaderActions />
+        <Nav showNav={this.props.showNav}/>
+        <HeaderActions showActions={this.props.showActions} />
       </HeaderGroup>
     )
   }

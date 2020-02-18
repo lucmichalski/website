@@ -74,7 +74,7 @@ class HeroSearch extends React.Component{
               <SearchGroup>
                 <DataSearch
                   componentId="search"
-                  dataField={["job_title"]}
+                  dataField={["title"]}
                   queryFormat="and"
                   placeholder="Intitulé ou mots-clés..."
                   className="block"

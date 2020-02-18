@@ -55,7 +55,7 @@ const CTA = ({ title, description, button }: CTAProps) => {
           <Col xs={18} md={16}>
             <h3>{title}</h3>
             <p>{description}</p>
-            <Link href={'/livre-blanc'}>
+            <Link href={'/landing'}>
               <Button type="primary" size="large">{button}</Button>
             </Link>
           </Col>

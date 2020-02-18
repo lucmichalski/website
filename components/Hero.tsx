@@ -41,7 +41,7 @@ type HeroProps = {
 const Hero = ({ title, description }: HeroProps) => {
   return (
     <StyledRow type="flex" justify="center" align="middle">
-      <Col xs={24} md={16}>
+      <Col xs={24} md={14}>
         <HeadingGroup>
           <h1>{title}</h1>
           <p>{description}</p>
