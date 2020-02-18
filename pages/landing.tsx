@@ -44,7 +44,7 @@ const FormGroup = styled.div`
     right: 80px;
   }
   margin: 0 20px;
-  margin-top: -80px;
+  margin-top: -200px;
   padding: 24px;
   background: ${props => props.theme.bg.primary};
   border: 1px solid ${props => props.theme.bg.borderDarkOnly};
