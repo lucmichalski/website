@@ -35,14 +35,16 @@ const Article = () => {
                   authors: [
                     `https://www.kernn.io/authors/${article.user.username}`,
                   ],
-                  tags: [article.category.name],
+                  tags: [article.category.name]
                 },
                 images: [
                   {
-                    url: article.image.media.url,
+                    url: "https://res.cloudinary.com/angulaire/image/upload/c_scale,h_630,w_1200/sample.jpg",
                     alt: article.image.alt,
-                  },
-                ],
+                    width: 1200,
+                    height: 630,
+                  }
+                ]
               }}
             />
             <Header afterScroll/>

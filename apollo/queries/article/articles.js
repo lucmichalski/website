@@ -11,6 +11,7 @@ const ARTICLES_QUERY = gql`
       image {
         alt
         media {
+          name
           url
           provider_metadata
         }
