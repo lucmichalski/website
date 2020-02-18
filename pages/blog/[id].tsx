@@ -5,7 +5,7 @@ import { Row, Col, Button, Tag, Avatar} from 'antd';
 import styled from 'styled-components';
 import Query from "../../components/Query"; 
 import ARTICLE_QUERY from "../../apollo/queries/article/article";
-import ReactMarkdown from "react-markdown";
+import { Markdown } from 'react-showdown';
 import { Image, Transformation} from 'cloudinary-react';
 import ArticleAuthor from '../../components/ArticleAuthor';
 import Header from '../../components/Header';
@@ -68,7 +68,7 @@ const Article = () => {
             </Image>
             <Row type="flex" justify="center" align="top">
               <Col xs={24} md={16} style={{padding: "80px 0"}}>
-                <ReactMarkdown source={article.content}/>
+                <Markdown markup={article.content} />
               </Col>
             </Row>
             <Footer />
