@@ -39,7 +39,7 @@ const Article = () => {
                 },
                 images: [
                   {
-                    url: "https://res.cloudinary.com/angulaire/image/upload/c_scale,h_630,w_1200/sample.jpg",
+                    url: `https://res.cloudinary.com/angulaire/image/upload/c_scale,h_630,w_1200/${article.image.media.name}`,
                     alt: article.image.alt,
                     width: 1200,
                     height: 630,
