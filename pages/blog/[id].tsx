@@ -61,7 +61,7 @@ const Article = () => {
               publicId={article.image.media.provider_metadata.public_id} 
               alt={article.image.alt}
               secure="true"
-              width="300"
+              width="100%"
             >
               <Transformation 
                 quality="auto" 
