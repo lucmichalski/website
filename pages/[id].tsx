@@ -16,7 +16,6 @@ const Page = () => {
     <Query query={PAGE_QUERY} slug={router.query.id} >
       {({ data: { pages } }) => {
         const page = pages[0]
-        console.log(page)
         if (page == undefined) {
           return 404
         } else {

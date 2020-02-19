@@ -73,7 +73,6 @@ type HeroSideFormProps = {
 }
 
 const HeroSideForm = ({ section }: HeroSideFormProps) => {
-  console.log(section)
   return (
     <>
       <Header afterScroll defaultTheme="light" showNav={false} showActions={false}/>
