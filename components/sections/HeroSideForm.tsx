@@ -1,9 +1,10 @@
 import React from 'react';
 import { Row, Col, Button } from 'antd';
 import styled from 'styled-components';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import WhitePaperForm from '../components/forms/WhitePaperForm'
+import Header from '../Header';
+import Footer from '../Footer';
+import { Markdown } from 'react-showdown';
+import WhitePaperForm from '../forms/WhitePaperForm'
 
 const Hero = styled.section`
   display: flex;
@@ -63,14 +64,23 @@ const StyledRow = styled(Row)`
   padding: 10rem 20px 0;
 `
 
-const LivreBlanc = () => {  
+type HeroSideFormProps = {
+  section: {
+    title: string;
+    headline: string;
+    content: any
+  }
+}
+
+const HeroSideForm = ({ section }: HeroSideFormProps) => {
+  console.log(section)
   return (
     <>
       <Header afterScroll defaultTheme="light" showNav={false} showActions={false}/>
       <Hero>
         <HeadingGroup>
-          <h1>Livre Blanc</h1>
-          <p>Comment optimiser son profil LinkedIn pour être visible par les recruteurs</p>
+          <h1>{section.title}</h1>
+          <p>{section.headline}</p>
         </HeadingGroup>
       </Hero>
       <FormGroup>
@@ -78,8 +88,7 @@ const LivreBlanc = () => {
       </FormGroup>
       <StyledRow type="flex" justify="start" align="middle">
         <Col xs={22} md={14}>
-          <h2>What is Lorem Ipsum?</h2>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <Markdown markup={section.content} />
         </Col>
       </StyledRow>
       <Footer/>
@@ -87,4 +96,4 @@ const LivreBlanc = () => {
   )
 }
 
-export default LivreBlanc
+export default HeroSideForm

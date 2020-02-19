@@ -39,16 +39,28 @@
             "name": "deleteCategoryPayload"
           },
           {
-            "name": "Offre"
+            "name": "Job"
           },
           {
-            "name": "createOffrePayload"
+            "name": "createJobPayload"
           },
           {
-            "name": "updateOffrePayload"
+            "name": "updateJobPayload"
           },
           {
-            "name": "deleteOffrePayload"
+            "name": "deleteJobPayload"
+          },
+          {
+            "name": "Page"
+          },
+          {
+            "name": "createPagePayload"
+          },
+          {
+            "name": "updatePagePayload"
+          },
+          {
+            "name": "deletePagePayload"
           },
           {
             "name": "UploadFile"
@@ -79,6 +91,15 @@
           },
           {
             "name": "deleteUserPayload"
+          }
+        ]
+      },
+      {
+        "kind": "UNION",
+        "name": "PageContentDynamicZone",
+        "possibleTypes": [
+          {
+            "name": "ComponentSectionHeroSideForm"
           }
         ]
       }
